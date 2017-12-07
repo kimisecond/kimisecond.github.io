@@ -1,0 +1,6 @@
+## README
+This is a repository for the test of a new blog setting.
+### Usage
+Hexo
+git (for pulling themes & deploy)
+Atom
