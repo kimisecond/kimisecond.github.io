@@ -1,0 +1,1203 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="en">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.3">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.3" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Computer_Network," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Kimi's Blog" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="2017年10月13日11:03 写在前面本笔记仅仅是本人在上课时的一些随手记录，并不完整也不完全正确。 如有错误，请在评论中或直接联系我指正，谢谢！ 由于markdown限制，一些手写部分无法很好转换。如要获得更详细信息，请下载下面提供的mht和pdf.">
+<meta name="keywords" content="Computer_Network">
+<meta property="og:type" content="article">
+<meta property="og:title" content="计算机网络 数据链路层&#x2F;Data Link Layer 第三章笔记">
+<meta property="og:url" content="https://kimisecond.com/2018/01/CN-Chapter-Three/index.html">
+<meta property="og:site_name" content="Kimi&#39;s Blog">
+<meta property="og:description" content="2017年10月13日11:03 写在前面本笔记仅仅是本人在上课时的一些随手记录，并不完整也不完全正确。 如有错误，请在评论中或直接联系我指正，谢谢！ 由于markdown限制，一些手写部分无法很好转换。如要获得更详细信息，请下载下面提供的mht和pdf.">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://kimisecond.com/2018/01/CN-Chapter-Three/aa7705c86c203905b8c87f0b9b0cdf86.png">
+<meta property="og:image" content="https://kimisecond.com/2018/01/CN-Chapter-Three/b6d2fe0c89fabdf83b1062251e3ca9bd.png">
+<meta property="og:image" content="https://kimisecond.com/2018/01/CN-Chapter-Three/758f84c8c43fd7ae9fe9dcd6f278071b.png">
+<meta property="og:image" content="https://kimisecond.com/2018/01/CN-Chapter-Three/0e6f3915d41fc577f4bf3fc3a786aa62.png">
+<meta property="og:image" content="https://kimisecond.com/2018/01/CN-Chapter-Three/76b14838786eacebbb41cb8eb4f03832.png">
+<meta property="og:image" content="https://kimisecond.com/2018/01/CN-Chapter-Three/dd88821380e53395d2a32155f80b591c.png">
+<meta property="og:image" content="https://kimisecond.com/2018/01/CN-Chapter-Three/f67a78360be7c45e9531047548a193f9.png">
+<meta property="og:image" content="https://kimisecond.com/2018/01/CN-Chapter-Three/36e79235e95652a0f9511b0e5493d9f8.png">
+<meta property="og:image" content="https://kimisecond.com/2018/01/CN-Chapter-Three/fd1d8f3ca434f093f81c15da61f5b563.png">
+<meta property="og:image" content="https://kimisecond.com/2018/01/CN-Chapter-Three/3524e6711761a3e81dabe005db14131f.png">
+<meta property="og:image" content="https://kimisecond.com/2018/01/CN-Chapter-Three/7b46e70f97f9ea1fad3aac8646ca70f0.png">
+<meta property="og:image" content="https://kimisecond.com/2018/01/CN-Chapter-Three/0d7d5ad9b1e2bd88369aaf8b79c4bf72.png">
+<meta property="og:image" content="https://kimisecond.com/2018/01/CN-Chapter-Three/d9bff52c6d3918f205f7ef1003bfc4d7.png">
+<meta property="og:image" content="https://kimisecond.com/2018/01/CN-Chapter-Three/3a61a7cf2ed9113c172c0c9f02c58b14.png">
+<meta property="og:image" content="https://kimisecond.com/2018/01/CN-Chapter-Three/93d5b4182f863c80bd22cfcf213ace14.png">
+<meta property="og:image" content="https://kimisecond.com/2018/01/CN-Chapter-Three/9971539de5ef6e81cfa08de10fe1e3fa.png">
+<meta property="og:image" content="https://kimisecond.com/2018/01/CN-Chapter-Three/1e4b3bf62883db90e8633f27f8e9e48d.png">
+<meta property="og:image" content="https://kimisecond.com/2018/01/CN-Chapter-Three/2d3e6446d0bca7b9cee57e9d69abc87e.png">
+<meta property="og:image" content="https://kimisecond.com/2018/01/CN-Chapter-Three/f8ef1761bef58f60eddcca5678cb4a72.png">
+<meta property="og:image" content="https://kimisecond.com/2018/01/CN-Chapter-Three/d64325a0c67355b0a41f7251e786fd77.png">
+<meta property="og:image" content="https://kimisecond.com/2018/01/CN-Chapter-Three/7f00d0b8e1ec317d1f37a4e5395dcd52.png">
+<meta property="og:image" content="https://kimisecond.com/2018/01/CN-Chapter-Three/f4ca265d8bdd834a7fa86c015fe3f4b7.png">
+<meta property="og:image" content="https://kimisecond.com/2018/01/CN-Chapter-Three/fbee5dbbfbabf7385a73a40302130deb.png">
+<meta property="og:image" content="https://kimisecond.com/2018/01/CN-Chapter-Three/e9c81707a580175b32e359142d982717.png">
+<meta property="og:image" content="https://kimisecond.com/2018/01/CN-Chapter-Three/ec8388a5c3017b4fbc8bfa5594f2bee1.png">
+<meta property="og:image" content="https://kimisecond.com/2018/01/CN-Chapter-Three/a7a24f3d1d9d69a12cf886ebee270296.png">
+<meta property="og:image" content="https://kimisecond.com/2018/01/CN-Chapter-Three/a24371b737bf03651ceb4f6d95ac9ad0.png">
+<meta property="og:image" content="https://kimisecond.com/2018/01/CN-Chapter-Three/b71144b8374af7e7823abd02c7eb1ab0.png">
+<meta property="og:image" content="https://kimisecond.com/2018/01/CN-Chapter-Three/44759957f4fd868ca73e863091cc39c2.png">
+<meta property="og:image" content="https://kimisecond.com/2018/01/CN-Chapter-Three/9a5a8c76c18788cc312c2fc885c28897.png">
+<meta property="og:image" content="https://kimisecond.com/2018/01/CN-Chapter-Three/63f93765cc0ba01684d1d2ab02bd4b33.png">
+<meta property="og:image" content="https://kimisecond.com/2018/01/CN-Chapter-Three/eb9a48b162971f1ce7a78f190e125ec2.png">
+<meta property="og:image" content="https://kimisecond.com/2018/01/CN-Chapter-Three/1a11890c04eb21df563cc6567d5d1f80.png">
+<meta property="og:image" content="https://kimisecond.com/2018/01/CN-Chapter-Three/a4e2daf348ddf935efc01357b9f6bfc6.png">
+<meta property="og:image" content="https://kimisecond.com/2018/01/CN-Chapter-Three/7994a06376c2b0e4cdff779dbe09ab6e.png">
+<meta property="og:image" content="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png">
+<meta property="og:updated_time" content="2018-01-03T06:29:55.114Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="计算机网络 数据链路层&#x2F;Data Link Layer 第三章笔记">
+<meta name="twitter:description" content="2017年10月13日11:03 写在前面本笔记仅仅是本人在上课时的一些随手记录，并不完整也不完全正确。 如有错误，请在评论中或直接联系我指正，谢谢！ 由于markdown限制，一些手写部分无法很好转换。如要获得更详细信息，请下载下面提供的mht和pdf.">
+<meta name="twitter:image" content="https://kimisecond.com/2018/01/CN-Chapter-Three/aa7705c86c203905b8c87f0b9b0cdf86.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.3',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://kimisecond.com/2018/01/CN-Chapter-Three/"/>
+
+
+
+
+
+  <title>计算机网络 数据链路层/Data Link Layer 第三章笔记 | Kimi's Blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Kimi's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">一个垃圾分类站</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />
+            
+            Sitemap
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://kimisecond.com/2018/01/CN-Chapter-Three/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Kimisecond">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Kimi's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">计算机网络 数据链路层/Data Link Layer 第三章笔记</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-01-03T08:48:39+08:00">
+                2018-01-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Notes/" itemprop="url" rel="index">
+                    <span itemprop="name">Notes</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/01/CN-Chapter-Three/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/01/CN-Chapter-Three/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+<span>&nbsp; | &nbsp;
+<span id="busuanzi_value_page_pv" ></span>次阅读
+</span>
+
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>2017年10月13日<br>11:03</p>
+<h2 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h2><p>本笔记仅仅是本人在上课时的一些随手记录，并不完整也不完全正确。</p>
+<p>如有错误，请在评论中或直接联系我指正，谢谢！</p>
+<p>由于markdown限制，一些手写部分无法很好转换。如要获得更详细信息，请下载下面提供的mht和pdf.</p>
+<a id="more"></a>
+<p><strong>原始文件下载：<a href="https://1drv.ms/u/s!AkFCnbJhobZ2i3TE-DSJ0Xmuqnzw" target="_blank" rel="noopener">(mht)</a><a href="https://1drv.ms/b/s!AkFCnbJhobZ2i3NE55w96MII-dQs" target="_blank" rel="noopener">(pdf)</a></strong></p>
+<p><strong>目标：提供两个相邻机器之间的可靠有效率的通信</strong></p>
+<h2 id="Functions-of-the-Data-Link-Layer"><a href="#Functions-of-the-Data-Link-Layer" class="headerlink" title="Functions of the Data Link Layer"></a>Functions of the Data Link Layer</h2><ul>
+<li>Provide service interface to the network layer</li>
+<li>Dealing with transmission errors</li>
+<li>Regulating data flow: Slow receivers not swamped by fast senders</li>
+</ul>
+<p><img src="/2018/01/CN-Chapter-Three/aa7705c86c203905b8c87f0b9b0cdf86.png" alt=""></p>
+<h3 id="Services-Provided-to-the-Network-Layer"><a href="#Services-Provided-to-the-Network-Layer" class="headerlink" title="Services Provided to the Network Layer"></a><strong>Services Provided to the Network Layer</strong></h3><p><img src="/2018/01/CN-Chapter-Three/b6d2fe0c89fabdf83b1062251e3ca9bd.png" alt=""></p>
+<p>提供了三种服务</p>
+<h4 id="不确认的无连接服务（不确认的服务不可靠）"><a href="#不确认的无连接服务（不确认的服务不可靠）" class="headerlink" title="不确认的无连接服务（不确认的服务不可靠）"></a>不确认的无连接服务（不确认的服务不可靠）</h4><p>应用场合</p>
+<ul>
+<li>出错概率极低</li>
+<li>要求数据实时性高</li>
+<li>大多数局域网</li>
+</ul>
+<h4 id="确认无连接服务"><a href="#确认无连接服务" class="headerlink" title="确认无连接服务"></a>确认无连接服务</h4><ul>
+<li>不可靠信道，比如说无线系统</li>
+</ul>
+<h4 id="确认面向连接服务"><a href="#确认面向连接服务" class="headerlink" title="确认面向连接服务"></a>确认面向连接服务</h4><ul>
+<li>WAN，点到点</li>
+</ul>
+<p>三阶段：</p>
+<ul>
+<li>建立连接</li>
+<li>传输数据帧</li>
+<li>释放连接</li>
+</ul>
+<p>每一帧只会收到一次，且帧以发送顺序接收（确定连接）</p>
+<p><img src="/2018/01/CN-Chapter-Three/758f84c8c43fd7ae9fe9dcd6f278071b.png" alt=""></p>
+<p>收到的数据帧与转发的数据帧可能不一样<br>比如不同端口的协议不同，需要修改格式</p>
+<h3 id="Framing（成帧）"><a href="#Framing（成帧）" class="headerlink" title="Framing（成帧）"></a><strong>Framing（成帧）</strong></h3><h4 id="Character-count（字符计数法）"><a href="#Character-count（字符计数法）" class="headerlink" title="Character count（字符计数法）"></a>Character count（字符计数法）</h4><p><img src="/2018/01/CN-Chapter-Three/0e6f3915d41fc577f4bf3fc3a786aa62.png" alt=""></p>
+<p>在发送的数据帧前面加一个字节，标识数据帧的长度</p>
+<p>缺陷：</p>
+<ul>
+<li>如果数据帧长度不是字符<br>&emsp;&emsp;只能针对以字符为整数倍成帧</li>
+<li>字符计数位出错<br>&emsp;&emsp;出错位之后的数据全部无法解析<br>&emsp;&emsp;（成帧标识出错会影响后面所有数据帧的成帧）</li>
+</ul>
+<h4 id="Flag-bytes-with-byte-stuffing（字符填充法）"><a href="#Flag-bytes-with-byte-stuffing（字符填充法）" class="headerlink" title="Flag bytes with byte stuffing（字符填充法）"></a>Flag bytes with byte stuffing（字符填充法）</h4><p>对字符计数法中第二个缺陷进行改进</p>
+<p><img src="/2018/01/CN-Chapter-Three/76b14838786eacebbb41cb8eb4f03832.png" alt=""></p>
+<p><strong>Need to escape Extra ESCAPE Bytes too!</strong></p>
+<p>Special <em>flag</em> bytes delimit frames; occurrences of flags in the data must be stuffed(escaped)<br>Frames longer, but easier to resynchronize after error</p>
+<p>Example:</p>
+<p>FLAG,A,ESC,FLAG,B,FLAG  </p>
+<p>数据帧的头尾部加上标识（FLAG）<br>ESC：转义字节，在“偶尔”出现的标志位前添加（为大数据块，比如图片等，帧分界受干扰时所设计）<br>接收方的数据链路层在将数据传递给网络层之前<em>必须删除转义字节</em><br>PPP协议使用的略微简化形式</p>
+<p>缺陷：只能针对以字符为整数倍成帧</p>
+<h4 id="Starting-and-ending-flags-with-bit-stuffing（位填充法）"><a href="#Starting-and-ending-flags-with-bit-stuffing（位填充法）" class="headerlink" title="Starting and ending flags, with bit stuffing（位填充法）"></a>Starting and ending flags, with bit stuffing（位填充法）</h4><p>为HDLC（高级数据链路控制）所开发<br>USB中使用</p>
+<p>在数据帧中进行位填充<br>在五个连续1后加入0<br>在接收端，每五个1后的0被删除<br>帧标识有六个1</p>
+<p><img src="/2018/01/CN-Chapter-Three/dd88821380e53395d2a32155f80b591c.png" alt=""></p>
+<h4 id="Physical-layer-coding-violations（物理层违例编码法）"><a href="#Physical-layer-coding-violations（物理层违例编码法）" class="headerlink" title="Physical layer coding violations（物理层违例编码法）"></a>Physical layer coding violations（物理层违例编码法）</h4><p>在以太网中采用</p>
+<p>曼彻斯特编码</p>
+<ul>
+<li>前低后高：0</li>
+<li>前高后低：1</li>
+</ul>
+<p>则有两个违例编码：</p>
+<ul>
+<li>低低/高高</li>
+</ul>
+<p>用违例编码来表示帧始末</p>
+<h3 id="Error-Control（错误控制）"><a href="#Error-Control（错误控制）" class="headerlink" title="Error Control（错误控制）"></a><strong>Error Control（错误控制）</strong></h3><p>检错/纠错<br>检错码/纠错码</p>
+<ul>
+<li>检错码：高度可靠的信道/偶尔发生错误时直接重传整个数据块</li>
+<li>纠错码：错误发生频繁的信道/接收方能够计算出原始的数据块</li>
+<li>检错：奇偶校验码，校验和，循环冗余码</li>
+<li>纠错：海明码（Hamming）</li>
+</ul>
+<h4 id="海明码"><a href="#海明码" class="headerlink" title="海明码"></a>海明码</h4><h5 id="海明距离"><a href="#海明距离" class="headerlink" title="海明距离"></a>海明距离</h5><p>The minimum bits flips to turn one valid codeword into any other valid one<br>从一种有效码字转换到另外一种至少需要改变多少位（两个码字中不同位的个数）</p>
+<p><img src="/2018/01/CN-Chapter-Three/f67a78360be7c45e9531047548a193f9.png" alt=""></p>
+<h5 id="编码"><a href="#编码" class="headerlink" title="编码"></a>编码</h5><p>在原始编码中插入检错位<br>在所有2i的位置都是检错位  </p>
+<p>如下图，1,2,4,8<br>在剩余位中插入原码</p>
+<p><img src="/2018/01/CN-Chapter-Three/36e79235e95652a0f9511b0e5493d9f8.png" alt=""></p>
+<p><img src="/2018/01/CN-Chapter-Three/fd1d8f3ca434f093f81c15da61f5b563.png" alt=""></p>
+<p>问题：如何确定检测位？</p>
+<p>编号：<br>&emsp;&emsp;1=2^0<br>&emsp;&emsp;2=2^1<br>&emsp;&emsp;3=2^0+2^1  </p>
+<p>确定2^i检测位</p>
+<p>&emsp;&emsp;2^i与编号中有2^i子项的数据，构造偶校验码</p>
+<p>e.g：偶校验例子（和偶为0，和奇为1）</p>
+<p>2^0子项：0  </p>
+<blockquote>
+<p>  3，5，7，9，11<br>  1，0，0，0，1  </p>
+</blockquote>
+<p>2^1子项：0</p>
+<blockquote>
+<p>  3，6，7，10，11<br>  1，0，0，0，1  </p>
+</blockquote>
+<p>2^2子项：0</p>
+<blockquote>
+<p>  5，6，7<br>  0，0，0  </p>
+</blockquote>
+<p>2^3子项：1</p>
+<blockquote>
+<p>  9，10，11<br>  0，0，1  </p>
+</blockquote>
+<h5 id="纠错"><a href="#纠错" class="headerlink" title="纠错"></a>纠错</h5><p>Counter（计数器）&lt;—-0<br>对所有的检测位（2^i），判断该检测位与其对应的数据位是否构成偶校验  </p>
+<ul>
+<li>是，计数器不变</li>
+<li>不是，计数器+2^I</li>
+</ul>
+<p>计数器值指示了错误所在位置<br>（11，7）只能纠正一位错，检测两位错</p>
+<p>如果连续出错，则可以将原数据分开发送</p>
+<blockquote>
+<p>  例：7个字符，横向排列编码，再竖向编码发送</p>
+</blockquote>
+<h4 id="奇偶校验码"><a href="#奇偶校验码" class="headerlink" title="奇偶校验码"></a>奇偶校验码</h4><p>在数据末尾加入校验码（比如偶校验：1的个数为偶，校验位为0）<br>单个校验位只能可靠地检测出一位错误<br>这种错误被检测出来的概率只有0.5<br>则将每个数据块作为一个数据矩阵处理<br>对于大批量数据只有少数位出错的情况中，效率很高<br>矩阵检测，则对突发连续错误的检测比较好  </p>
+<h4 id="CRC"><a href="#CRC" class="headerlink" title="CRC"></a>CRC</h4><p><img src="/2018/01/CN-Chapter-Three/3524e6711761a3e81dabe005db14131f.png" alt=""></p>
+<p>也称多项式编码<br>将位串堪称是系数为0或1的多项式，进行长除<br>发送方和接收方预先商定一个生成多项式<br>生成多项式的最高位和最低位系数必须是1<br>（不借位除法，可以直接理解为异或）   </p>
+<h4 id="存传机制"><a href="#存传机制" class="headerlink" title="存传机制"></a>存传机制</h4><h4 id="定时器"><a href="#定时器" class="headerlink" title="定时器"></a>定时器</h4><h3 id="Flow-Control（流量控制）"><a href="#Flow-Control（流量控制）" class="headerlink" title="Flow Control（流量控制）"></a><strong>Flow Control（流量控制）</strong></h3><p>数据链路层&amp;传输层</p>
+<h2 id="基本数据链路层协议"><a href="#基本数据链路层协议" class="headerlink" title="基本数据链路层协议"></a>基本数据链路层协议</h2><p><img src="/2018/01/CN-Chapter-Three/7b46e70f97f9ea1fad3aac8646ca70f0.png" alt=""></p>
+<p>协议头文件 protocol.h</p>
+<p><img src="/2018/01/CN-Chapter-Three/0d7d5ad9b1e2bd88369aaf8b79c4bf72.png" alt=""></p>
+<p>一些协议（函数，事件）</p>
+<p><img src="/2018/01/CN-Chapter-Three/d9bff52c6d3918f205f7ef1003bfc4d7.png" alt=""></p>
+<p><img src="/2018/01/CN-Chapter-Three/3a61a7cf2ed9113c172c0c9f02c58b14.png" alt=""></p>
+<blockquote>
+<p>  在讨论协议前，需要知道，对于理想协议来说，前提十分重要</p>
+</blockquote>
+<h3 id="理想化单工协议-A-Utopian-Simplex-Protocol"><a href="#理想化单工协议-A-Utopian-Simplex-Protocol" class="headerlink" title="理想化单工协议 A Utopian Simplex Protocol"></a>理想化单工协议 A Utopian Simplex Protocol</h3><p>假设</p>
+<ul>
+<li>物理层，数据链路层，网络层是独立进程  </li>
+<li>单向传输  </li>
+<li>物理层服务可靠  </li>
+<li>A有无限数据准备发送  </li>
+<li>B一直准备接收  </li>
+<li>机器不崩溃  </li>
+</ul>
+<p><img src="/2018/01/CN-Chapter-Three/93d5b4182f863c80bd22cfcf213ace14.png" alt=""></p>
+<h3 id="无噪声信道单工停-等协议"><a href="#无噪声信道单工停-等协议" class="headerlink" title="无噪声信道单工停-等协议"></a>无噪声信道单工停-等协议</h3><p>A Simplex Stop-and-Wait Protocol for an Error-Free Channel</p>
+<p>实现了流量控制<br>当接收端收到数据后，发送确认帧</p>
+<p><img src="/2018/01/CN-Chapter-Three/9971539de5ef6e81cfa08de10fe1e3fa.png" alt="C:\\C91AD6E5\\13E160B8-C3A1-4988-8C65-75934CEC0446.files\\image016.png"></p>
+<p><img src="/2018/01/CN-Chapter-Three/1e4b3bf62883db90e8633f27f8e9e48d.png" alt=""></p>
+<h3 id="有噪声信道单工停-等协议"><a href="#有噪声信道单工停-等协议" class="headerlink" title="有噪声信道单工停-等协议"></a>有噪声信道单工停-等协议</h3><p>不可靠的物理线路</p>
+<p>解决方案</p>
+<ul>
+<li>发送方的数据帧带有CRC</li>
+<li>接收方通过CRC值，发送ACK或NAK（按照序列号分辨）</li>
+<li>发送方在收到ACK之后发送新帧，若NAK或超时则重发老帧</li>
+</ul>
+<p>当ACK丢失<br>&emsp;&emsp;产生重复帧<br>&emsp;&emsp;一个一位序列数字来区别新老帧</p>
+<p>发送进程</p>
+<p><img src="/2018/01/CN-Chapter-Three/2d3e6446d0bca7b9cee57e9d69abc87e.png" alt=""></p>
+<p>接收进程</p>
+<p><img src="/2018/01/CN-Chapter-Three/f8ef1761bef58f60eddcca5678cb4a72.png" alt=""></p>
+<h2 id="滑动窗口协议"><a href="#滑动窗口协议" class="headerlink" title="滑动窗口协议"></a>滑动窗口协议</h2><h3 id="捎带Piggybacking"><a href="#捎带Piggybacking" class="headerlink" title="捎带Piggybacking"></a>捎带Piggybacking</h3><p>双向发送中，在发送分组时捎带确认帧</p>
+<p>条件：<br>&emsp;&emsp;收到发送的数据帧<br>&emsp;&emsp;接收方有向发送方送回的数据帧（不然发送方无法继续发送，无确认）<br>有时Timeout重发不是因为发送错误，而是因为接收方没有数据发送，而无法捎带确认<br>为避免上述情况，引入（ack_Timer）  </p>
+<blockquote>
+<table>
+<thead>
+<tr>
+<th>分组</th>
+<th>From_network_layer()</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>   网络层</p>
+<table>
+<thead>
+<tr>
+<th>分组</th>
+<th>To_network_layer()</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>  数据链路层</p>
+<table>
+<thead>
+<tr>
+<th>帧</th>
+<th>To_physical_layer()</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>帧</td>
+<td>From_physical_layer()</td>
+</tr>
+</tbody>
+</table>
+<p>  物理层</p>
+</blockquote>
+<p>发送端给接收端发送包F0，接收端可能：</p>
+<ul>
+<li><p>CRC检测出错<br>&emsp;&emsp;接收端发送确认错误帧让发送端重发F0（1）</p>
+</li>
+<li><p>在传输中丢失此包<br>&emsp;&emsp;接收端无回复确认帧，接收端等Timeout之后重发F0(1)</p>
+</li>
+</ul>
+<p>正确到达，发送确认帧，确认帧可能：</p>
+<ul>
+<li><p>在传输中丢失此包<br>&emsp;&emsp;发送端Timeout，重发</p>
+</li>
+<li><p>正确到达<br>&emsp;&emsp;完成一次成功传输</p>
+</li>
+</ul>
+<p>停等协议流程图</p>
+<p><img src="/2018/01/CN-Chapter-Three/d64325a0c67355b0a41f7251e786fd77.png" alt=""></p>
+<p>停等协议线路利用率</p>
+<p><img src="/2018/01/CN-Chapter-Three/7f00d0b8e1ec317d1f37a4e5395dcd52.png" alt=""></p>
+<h3 id="1位滑动窗口协议"><a href="#1位滑动窗口协议" class="headerlink" title="1位滑动窗口协议"></a>1位滑动窗口协议</h3><ul>
+<li>数据传输双向</li>
+<li>捎带</li>
+</ul>
+<p>滑动窗口</p>
+<ul>
+<li>序列号</li>
+<li>大小</li>
+<li>上边界指针，下边界指针（决定窗口大小）</li>
+</ul>
+<p>发送窗口</p>
+<ul>
+<li>帧已发送但未收到确认帧</li>
+<li>缓存这些确认帧（缓冲区）</li>
+<li>发送新数据帧，上界指针+1</li>
+<li>收到确认桢，下界指针+1</li>
+<li>上下界指针变更<em>不同步</em></li>
+</ul>
+<p>接收窗口</p>
+<ul>
+<li>可接收的帧</li>
+<li>上下界指针同步变更</li>
+</ul>
+<p><img src="/2018/01/CN-Chapter-Three/f4ca265d8bdd834a7fa86c015fe3f4b7.png" alt=""></p>
+<p>以圆盘表示滑动窗口，序列号几位决定扇形区域多少</p>
+<p>当窗口大小=1（目前的例子），接收数据帧的顺序与发送数据的顺序一致</p>
+<p>而大小&gt;1，可以不一致（选择性存传协议）</p>
+<p><img src="/2018/01/CN-Chapter-Three/fbee5dbbfbabf7385a73a40302130deb.png" alt=""></p>
+<p><img src="/2018/01/CN-Chapter-Three/e9c81707a580175b32e359142d982717.png" alt=""></p>
+<blockquote>
+<p>  实际上还是停等协议，只不过双工</p>
+</blockquote>
+<p><img src="/2018/01/CN-Chapter-Three/ec8388a5c3017b4fbc8bfa5594f2bee1.png" alt=""></p>
+<p>区分主从站点，从站点协议中没有第一次发送过程（to_physical_layer(&amp;s);start_timer(s.seq);）</p>
+<blockquote>
+<p>  原因：会导致第一次发送时，发送站点浪费一次发送</p>
+</blockquote>
+<p><img src="/2018/01/CN-Chapter-Three/a7a24f3d1d9d69a12cf886ebee270296.png" alt=""></p>
+<p>利用率和停等协议相当</p>
+<h3 id="回退N帧协议"><a href="#回退N帧协议" class="headerlink" title="回退N帧协议"></a>回退N帧协议</h3><table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>利用率</td>
+<td>up</td>
+</tr>
+<tr>
+<td>适用场合</td>
+<td>出错率低</td>
+</tr>
+<tr>
+<td>发送窗口大小</td>
+<td>0~2n-1</td>
+</tr>
+<tr>
+<td>接收窗口大小</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<p>收到n号确认—->n号到发送窗口下界指针的帧都被确认</p>
+<p>当出错数据帧发生定时时间溢出，指针回退到出错数据帧，重发到上边界指针</p>
+<p><img src="/2018/01/CN-Chapter-Three/a24371b737bf03651ceb4f6d95ac9ad0.png" alt=""></p>
+<h3 id="选择性存传协议"><a href="#选择性存传协议" class="headerlink" title="选择性存传协议"></a>选择性存传协议</h3><table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>利用率</td>
+<td>up</td>
+</tr>
+<tr>
+<td>适用场合</td>
+<td>出错率高</td>
+</tr>
+<tr>
+<td>发送窗口大小</td>
+<td>0~2n-1</td>
+</tr>
+<tr>
+<td>接收窗口大小</td>
+<td>2n-1</td>
+</tr>
+</tbody>
+</table>
+<p>n为序列号位数<br>接收窗口指针同步滑动<br>下界指针只会收到时滑动<br>发送端等收到确认帧之后再发下一帧</p>
+<p><img src="/2018/01/CN-Chapter-Three/b71144b8374af7e7823abd02c7eb1ab0.png" alt=""></p>
+<p><img src="/2018/01/CN-Chapter-Three/44759957f4fd868ca73e863091cc39c2.png" alt="]"></p>
+<h2 id="Example-Data-Link-Protocols"><a href="#Example-Data-Link-Protocols" class="headerlink" title="Example Data Link Protocols"></a><strong>Example Data Link Protocols</strong></h2><h3 id="HDLC高级数据链路控制协议"><a href="#HDLC高级数据链路控制协议" class="headerlink" title="HDLC高级数据链路控制协议"></a>HDLC高级数据链路控制协议</h3><blockquote>
+<p>  全双工<br>  滑动窗口协议<br>  面向连接的可靠传输<br>  无序号帧用于链路连接的建立、维护和拆除<br>  信息帧用于发送数据并实现捎带的帧确认<br>  监控帧用于告诉对方数据帧传输出错并同时给出建议的差错控制方式</p>
+</blockquote>
+<p><img src="/2018/01/CN-Chapter-Three/9a5a8c76c18788cc312c2fc885c28897.png" alt=""></p>
+<p><img src="/2018/01/CN-Chapter-Three/63f93765cc0ba01684d1d2ab02bd4b33.png" alt=""></p>
+<p>P/F用来指示此帧是否为本次传输最后一帧</p>
+<p><img src="/2018/01/CN-Chapter-Three/eb9a48b162971f1ce7a78f190e125ec2.png" alt=""></p>
+<h3 id="PPP"><a href="#PPP" class="headerlink" title="PPP"></a>PPP</h3><h4 id="PPP架构"><a href="#PPP架构" class="headerlink" title="PPP架构"></a>PPP架构</h4><p><img src="/2018/01/CN-Chapter-Three/1a11890c04eb21df563cc6567d5d1f80.png" alt=""></p>
+<p><img src="/2018/01/CN-Chapter-Three/a4e2daf348ddf935efc01357b9f6bfc6.png" alt=""></p>
+<h4 id="PPP帧格式"><a href="#PPP帧格式" class="headerlink" title="PPP帧格式"></a>PPP帧格式</h4><p><img src="/2018/01/CN-Chapter-Three/7994a06376c2b0e4cdff779dbe09ab6e.png" alt=""></p>
+<p>面向字符，字符填充成帧  </p>
+<p>会话建立过程  </p>
+<ul>
+<li>链路的建立和配置协调  </li>
+<li>链路质量检测  </li>
+<li>网络层协议配置协调  </li>
+<li>关闭链路</li>
+</ul>
+<hr>
+<h1 id="Copyright"><a href="#Copyright" class="headerlink" title="Copyright"></a>Copyright</h1><p>本文标题：操作系统概念 CPU调度/CPU Scheduling 第五章笔记<br>本文链接：<a href="https://kimisecond.com/2017/12/CN-Chapter-Three/">https://kimisecond.com/2017/12/CN-Chapter-Three/</a><br>作者：<a href="https://kimisecond.com/">Kimisecond</a><br>出处：<a href="https://kimisecond.com/2017/12/CN-Chapter-Three/">Kimi’s Blog</a><br>发布时间：2018年01月03日<br>最后更新：2018年01月03日  </p>
+<p><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"></p>
+<p>本文基于<strong><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener">Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)</a></strong> <strong>署名-非商业性使用-相同方式共享 4.0 国际许可协议</strong>发布，欢迎转载，但是<strong>必须保留</strong>本文的署名<a href="https://kimisecond.com/">Kimisecond</a>及链接: <a href="https://kimisecond.com/">https://kimisecond.com/</a>.</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Computer-Network/" rel="tag"># Computer_Network</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/01/CN-Chapter-Two/" rel="next" title="计算机网络 物理层/Physical Layer 第二章笔记">
+                <i class="fa fa-chevron-left"></i> 计算机网络 物理层/Physical Layer 第二章笔记
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="Kimisecond" />
+            
+              <p class="site-author-name" itemprop="name">Kimisecond</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          <div class="links-of-author motion-element">
+            
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/Kimisecond" target="_blank" title="GitHub">
+                    
+                      <i class="fa fa-fw fa-github"></i></a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="mailto:1064590327.ks@gmail.com" target="_blank" title="E-Mail">
+                    
+                      <i class="fa fa-fw fa-envelope"></i></a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://plus.google.com/100364558058107909301" target="_blank" title="Google">
+                    
+                      <i class="fa fa-fw fa-google"></i></a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://twitter.com/kimisecond" target="_blank" title="Twitter">
+                    
+                      <i class="fa fa-fw fa-twitter"></i></a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://instagram.com/kimisecond" target="_blank" title="Instagram">
+                    
+                      <i class="fa fa-fw fa-instagram"></i></a>
+                </span>
+              
+            
+          </div>
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#写在前面"><span class="nav-number">1.</span> <span class="nav-text"><a href="#&#x5199;&#x5728;&#x524D;&#x9762;" class="headerlink" title="&#x5199;&#x5728;&#x524D;&#x9762;"></a>&#x5199;&#x5728;&#x524D;&#x9762;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Functions-of-the-Data-Link-Layer"><span class="nav-number">2.</span> <span class="nav-text"><a href="#Functions-of-the-Data-Link-Layer" class="headerlink" title="Functions of the Data Link Layer"></a>Functions of the Data Link Layer</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Services-Provided-to-the-Network-Layer"><span class="nav-number">2.1.</span> <span class="nav-text"><a href="#Services-Provided-to-the-Network-Layer" class="headerlink" title="Services Provided to the Network Layer"></a><strong>Services Provided to the Network Layer</strong></span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#不确认的无连接服务（不确认的服务不可靠）"><span class="nav-number">2.1.1.</span> <span class="nav-text"><a href="#&#x4E0D;&#x786E;&#x8BA4;&#x7684;&#x65E0;&#x8FDE;&#x63A5;&#x670D;&#x52A1;&#xFF08;&#x4E0D;&#x786E;&#x8BA4;&#x7684;&#x670D;&#x52A1;&#x4E0D;&#x53EF;&#x9760;&#xFF09;" class="headerlink" title="&#x4E0D;&#x786E;&#x8BA4;&#x7684;&#x65E0;&#x8FDE;&#x63A5;&#x670D;&#x52A1;&#xFF08;&#x4E0D;&#x786E;&#x8BA4;&#x7684;&#x670D;&#x52A1;&#x4E0D;&#x53EF;&#x9760;&#xFF09;"></a>&#x4E0D;&#x786E;&#x8BA4;&#x7684;&#x65E0;&#x8FDE;&#x63A5;&#x670D;&#x52A1;&#xFF08;&#x4E0D;&#x786E;&#x8BA4;&#x7684;&#x670D;&#x52A1;&#x4E0D;&#x53EF;&#x9760;&#xFF09;</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#确认无连接服务"><span class="nav-number">2.1.2.</span> <span class="nav-text"><a href="#&#x786E;&#x8BA4;&#x65E0;&#x8FDE;&#x63A5;&#x670D;&#x52A1;" class="headerlink" title="&#x786E;&#x8BA4;&#x65E0;&#x8FDE;&#x63A5;&#x670D;&#x52A1;"></a>&#x786E;&#x8BA4;&#x65E0;&#x8FDE;&#x63A5;&#x670D;&#x52A1;</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#确认面向连接服务"><span class="nav-number">2.1.3.</span> <span class="nav-text"><a href="#&#x786E;&#x8BA4;&#x9762;&#x5411;&#x8FDE;&#x63A5;&#x670D;&#x52A1;" class="headerlink" title="&#x786E;&#x8BA4;&#x9762;&#x5411;&#x8FDE;&#x63A5;&#x670D;&#x52A1;"></a>&#x786E;&#x8BA4;&#x9762;&#x5411;&#x8FDE;&#x63A5;&#x670D;&#x52A1;</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Framing（成帧）"><span class="nav-number">2.2.</span> <span class="nav-text"><a href="#Framing&#xFF08;&#x6210;&#x5E27;&#xFF09;" class="headerlink" title="Framing&#xFF08;&#x6210;&#x5E27;&#xFF09;"></a><strong>Framing&#xFF08;&#x6210;&#x5E27;&#xFF09;</strong></span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Character-count（字符计数法）"><span class="nav-number">2.2.1.</span> <span class="nav-text"><a href="#Character-count&#xFF08;&#x5B57;&#x7B26;&#x8BA1;&#x6570;&#x6CD5;&#xFF09;" class="headerlink" title="Character count&#xFF08;&#x5B57;&#x7B26;&#x8BA1;&#x6570;&#x6CD5;&#xFF09;"></a>Character count&#xFF08;&#x5B57;&#x7B26;&#x8BA1;&#x6570;&#x6CD5;&#xFF09;</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Flag-bytes-with-byte-stuffing（字符填充法）"><span class="nav-number">2.2.2.</span> <span class="nav-text"><a href="#Flag-bytes-with-byte-stuffing&#xFF08;&#x5B57;&#x7B26;&#x586B;&#x5145;&#x6CD5;&#xFF09;" class="headerlink" title="Flag bytes with byte stuffing&#xFF08;&#x5B57;&#x7B26;&#x586B;&#x5145;&#x6CD5;&#xFF09;"></a>Flag bytes with byte stuffing&#xFF08;&#x5B57;&#x7B26;&#x586B;&#x5145;&#x6CD5;&#xFF09;</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Starting-and-ending-flags-with-bit-stuffing（位填充法）"><span class="nav-number">2.2.3.</span> <span class="nav-text"><a href="#Starting-and-ending-flags-with-bit-stuffing&#xFF08;&#x4F4D;&#x586B;&#x5145;&#x6CD5;&#xFF09;" class="headerlink" title="Starting and ending flags, with bit stuffing&#xFF08;&#x4F4D;&#x586B;&#x5145;&#x6CD5;&#xFF09;"></a>Starting and ending flags, with bit stuffing&#xFF08;&#x4F4D;&#x586B;&#x5145;&#x6CD5;&#xFF09;</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Physical-layer-coding-violations（物理层违例编码法）"><span class="nav-number">2.2.4.</span> <span class="nav-text"><a href="#Physical-layer-coding-violations&#xFF08;&#x7269;&#x7406;&#x5C42;&#x8FDD;&#x4F8B;&#x7F16;&#x7801;&#x6CD5;&#xFF09;" class="headerlink" title="Physical layer coding violations&#xFF08;&#x7269;&#x7406;&#x5C42;&#x8FDD;&#x4F8B;&#x7F16;&#x7801;&#x6CD5;&#xFF09;"></a>Physical layer coding violations&#xFF08;&#x7269;&#x7406;&#x5C42;&#x8FDD;&#x4F8B;&#x7F16;&#x7801;&#x6CD5;&#xFF09;</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Error-Control（错误控制）"><span class="nav-number">2.3.</span> <span class="nav-text"><a href="#Error-Control&#xFF08;&#x9519;&#x8BEF;&#x63A7;&#x5236;&#xFF09;" class="headerlink" title="Error Control&#xFF08;&#x9519;&#x8BEF;&#x63A7;&#x5236;&#xFF09;"></a><strong>Error Control&#xFF08;&#x9519;&#x8BEF;&#x63A7;&#x5236;&#xFF09;</strong></span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#海明码"><span class="nav-number">2.3.1.</span> <span class="nav-text"><a href="#&#x6D77;&#x660E;&#x7801;" class="headerlink" title="&#x6D77;&#x660E;&#x7801;"></a>&#x6D77;&#x660E;&#x7801;</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#海明距离"><span class="nav-number">2.3.1.1.</span> <span class="nav-text"><a href="#&#x6D77;&#x660E;&#x8DDD;&#x79BB;" class="headerlink" title="&#x6D77;&#x660E;&#x8DDD;&#x79BB;"></a>&#x6D77;&#x660E;&#x8DDD;&#x79BB;</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#编码"><span class="nav-number">2.3.1.2.</span> <span class="nav-text"><a href="#&#x7F16;&#x7801;" class="headerlink" title="&#x7F16;&#x7801;"></a>&#x7F16;&#x7801;</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#纠错"><span class="nav-number">2.3.1.3.</span> <span class="nav-text"><a href="#&#x7EA0;&#x9519;" class="headerlink" title="&#x7EA0;&#x9519;"></a>&#x7EA0;&#x9519;</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#奇偶校验码"><span class="nav-number">2.3.2.</span> <span class="nav-text"><a href="#&#x5947;&#x5076;&#x6821;&#x9A8C;&#x7801;" class="headerlink" title="&#x5947;&#x5076;&#x6821;&#x9A8C;&#x7801;"></a>&#x5947;&#x5076;&#x6821;&#x9A8C;&#x7801;</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#CRC"><span class="nav-number">2.3.3.</span> <span class="nav-text"><a href="#CRC" class="headerlink" title="CRC"></a>CRC</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#存传机制"><span class="nav-number">2.3.4.</span> <span class="nav-text"><a href="#&#x5B58;&#x4F20;&#x673A;&#x5236;" class="headerlink" title="&#x5B58;&#x4F20;&#x673A;&#x5236;"></a>&#x5B58;&#x4F20;&#x673A;&#x5236;</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#定时器"><span class="nav-number">2.3.5.</span> <span class="nav-text"><a href="#&#x5B9A;&#x65F6;&#x5668;" class="headerlink" title="&#x5B9A;&#x65F6;&#x5668;"></a>&#x5B9A;&#x65F6;&#x5668;</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Flow-Control（流量控制）"><span class="nav-number">2.4.</span> <span class="nav-text"><a href="#Flow-Control&#xFF08;&#x6D41;&#x91CF;&#x63A7;&#x5236;&#xFF09;" class="headerlink" title="Flow Control&#xFF08;&#x6D41;&#x91CF;&#x63A7;&#x5236;&#xFF09;"></a><strong>Flow Control&#xFF08;&#x6D41;&#x91CF;&#x63A7;&#x5236;&#xFF09;</strong></span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基本数据链路层协议"><span class="nav-number">3.</span> <span class="nav-text"><a href="#&#x57FA;&#x672C;&#x6570;&#x636E;&#x94FE;&#x8DEF;&#x5C42;&#x534F;&#x8BAE;" class="headerlink" title="&#x57FA;&#x672C;&#x6570;&#x636E;&#x94FE;&#x8DEF;&#x5C42;&#x534F;&#x8BAE;"></a>&#x57FA;&#x672C;&#x6570;&#x636E;&#x94FE;&#x8DEF;&#x5C42;&#x534F;&#x8BAE;</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#理想化单工协议-A-Utopian-Simplex-Protocol"><span class="nav-number">3.1.</span> <span class="nav-text"><a href="#&#x7406;&#x60F3;&#x5316;&#x5355;&#x5DE5;&#x534F;&#x8BAE;-A-Utopian-Simplex-Protocol" class="headerlink" title="&#x7406;&#x60F3;&#x5316;&#x5355;&#x5DE5;&#x534F;&#x8BAE; A Utopian Simplex Protocol"></a>&#x7406;&#x60F3;&#x5316;&#x5355;&#x5DE5;&#x534F;&#x8BAE; A Utopian Simplex Protocol</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#无噪声信道单工停-等协议"><span class="nav-number">3.2.</span> <span class="nav-text"><a href="#&#x65E0;&#x566A;&#x58F0;&#x4FE1;&#x9053;&#x5355;&#x5DE5;&#x505C;-&#x7B49;&#x534F;&#x8BAE;" class="headerlink" title="&#x65E0;&#x566A;&#x58F0;&#x4FE1;&#x9053;&#x5355;&#x5DE5;&#x505C;-&#x7B49;&#x534F;&#x8BAE;"></a>&#x65E0;&#x566A;&#x58F0;&#x4FE1;&#x9053;&#x5355;&#x5DE5;&#x505C;-&#x7B49;&#x534F;&#x8BAE;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#有噪声信道单工停-等协议"><span class="nav-number">3.3.</span> <span class="nav-text"><a href="#&#x6709;&#x566A;&#x58F0;&#x4FE1;&#x9053;&#x5355;&#x5DE5;&#x505C;-&#x7B49;&#x534F;&#x8BAE;" class="headerlink" title="&#x6709;&#x566A;&#x58F0;&#x4FE1;&#x9053;&#x5355;&#x5DE5;&#x505C;-&#x7B49;&#x534F;&#x8BAE;"></a>&#x6709;&#x566A;&#x58F0;&#x4FE1;&#x9053;&#x5355;&#x5DE5;&#x505C;-&#x7B49;&#x534F;&#x8BAE;</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#滑动窗口协议"><span class="nav-number">4.</span> <span class="nav-text"><a href="#&#x6ED1;&#x52A8;&#x7A97;&#x53E3;&#x534F;&#x8BAE;" class="headerlink" title="&#x6ED1;&#x52A8;&#x7A97;&#x53E3;&#x534F;&#x8BAE;"></a>&#x6ED1;&#x52A8;&#x7A97;&#x53E3;&#x534F;&#x8BAE;</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#捎带Piggybacking"><span class="nav-number">4.1.</span> <span class="nav-text"><a href="#&#x634E;&#x5E26;Piggybacking" class="headerlink" title="&#x634E;&#x5E26;Piggybacking"></a>&#x634E;&#x5E26;Piggybacking</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1位滑动窗口协议"><span class="nav-number">4.2.</span> <span class="nav-text"><a href="#1&#x4F4D;&#x6ED1;&#x52A8;&#x7A97;&#x53E3;&#x534F;&#x8BAE;" class="headerlink" title="1&#x4F4D;&#x6ED1;&#x52A8;&#x7A97;&#x53E3;&#x534F;&#x8BAE;"></a>1&#x4F4D;&#x6ED1;&#x52A8;&#x7A97;&#x53E3;&#x534F;&#x8BAE;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#回退N帧协议"><span class="nav-number">4.3.</span> <span class="nav-text"><a href="#&#x56DE;&#x9000;N&#x5E27;&#x534F;&#x8BAE;" class="headerlink" title="&#x56DE;&#x9000;N&#x5E27;&#x534F;&#x8BAE;"></a>&#x56DE;&#x9000;N&#x5E27;&#x534F;&#x8BAE;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#选择性存传协议"><span class="nav-number">4.4.</span> <span class="nav-text"><a href="#&#x9009;&#x62E9;&#x6027;&#x5B58;&#x4F20;&#x534F;&#x8BAE;" class="headerlink" title="&#x9009;&#x62E9;&#x6027;&#x5B58;&#x4F20;&#x534F;&#x8BAE;"></a>&#x9009;&#x62E9;&#x6027;&#x5B58;&#x4F20;&#x534F;&#x8BAE;</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Example-Data-Link-Protocols"><span class="nav-number">5.</span> <span class="nav-text"><a href="#Example-Data-Link-Protocols" class="headerlink" title="Example Data Link Protocols"></a><strong>Example Data Link Protocols</strong></span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#HDLC高级数据链路控制协议"><span class="nav-number">5.1.</span> <span class="nav-text"><a href="#HDLC&#x9AD8;&#x7EA7;&#x6570;&#x636E;&#x94FE;&#x8DEF;&#x63A7;&#x5236;&#x534F;&#x8BAE;" class="headerlink" title="HDLC&#x9AD8;&#x7EA7;&#x6570;&#x636E;&#x94FE;&#x8DEF;&#x63A7;&#x5236;&#x534F;&#x8BAE;"></a>HDLC&#x9AD8;&#x7EA7;&#x6570;&#x636E;&#x94FE;&#x8DEF;&#x63A7;&#x5236;&#x534F;&#x8BAE;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PPP"><span class="nav-number">5.2.</span> <span class="nav-text"><a href="#PPP" class="headerlink" title="PPP"></a>PPP</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#PPP架构"><span class="nav-number">5.2.1.</span> <span class="nav-text"><a href="#PPP&#x67B6;&#x6784;" class="headerlink" title="PPP&#x67B6;&#x6784;"></a>PPP&#x67B6;&#x6784;</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#PPP帧格式"><span class="nav-number">5.2.2.</span> <span class="nav-text"><a href="#PPP&#x5E27;&#x683C;&#x5F0F;" class="headerlink" title="PPP&#x5E27;&#x683C;&#x5F0F;"></a>PPP&#x5E27;&#x683C;&#x5F0F;</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Copyright"><span class="nav-number"></span> <span class="nav-text"><a href="#Copyright" class="headerlink" title="Copyright"></a>Copyright</span></a></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Kimisecond</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.3</div>
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+本站总访问量 <span id="busuanzi_value_site_pv"></span> &nbsp&nbsp&nbsp
+您是第<span id="busuanzi_value_site_uv"></span>个来到的小伙伴
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://kimisecond.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'https://kimisecond.com/2018/01/CN-Chapter-Three/';
+          this.page.identifier = '2018/01/CN-Chapter-Three/';
+          this.page.title = '计算机网络 数据链路层/Data Link Layer 第三章笔记';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://kimisecond.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
