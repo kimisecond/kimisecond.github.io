@@ -1,0 +1,1076 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.3">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.3" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="OS_Concept," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="2017年9月20日13:56 写在前面本笔记仅仅是本人在上课时的一些随手记录，并不完整也不完全正确。 如有错误，请在评论中或直接联系我指正，谢谢！">
+<meta name="keywords" content="OS_Concept">
+<meta property="og:type" content="article">
+<meta property="og:title" content="操作系统概念 进程&#x2F;Process 第三章笔记">
+<meta property="og:url" content="http://yoursite.com/2017/12/14/OS_Concept_Chapter_Three/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="2017年9月20日13:56 写在前面本笔记仅仅是本人在上课时的一些随手记录，并不完整也不完全正确。 如有错误，请在评论中或直接联系我指正，谢谢！">
+<meta property="og:image" content="http://yoursite.com/2017/12/14/OS_Concept_Chapter_Three/388ad9e85e2d1984da645e4bdbb93634.png">
+<meta property="og:image" content="http://yoursite.com/2017/12/14/OS_Concept_Chapter_Three/acad6a06f2f8b9985043cee67e1ce35c.png">
+<meta property="og:image" content="http://yoursite.com/2017/12/14/OS_Concept_Chapter_Three/4308232d45a3a8285f09172e3e3379dc.png">
+<meta property="og:image" content="http://yoursite.com/2017/12/14/OS_Concept_Chapter_Three/14b20852d6668bc54dc278ba90abceca.png">
+<meta property="og:image" content="http://yoursite.com/2017/12/14/OS_Concept_Chapter_Three/7b7b79cd357ce5f042b474a2764fcc37.png">
+<meta property="og:image" content="http://yoursite.com/2017/12/14/OS_Concept_Chapter_Three/412a4111a85827fd346fe0c1c7534878.png">
+<meta property="og:image" content="http://yoursite.com/2017/12/14/OS_Concept_Chapter_Three/6f9dd42e36edf9e7f09d28eb59353897.png">
+<meta property="og:image" content="http://yoursite.com/2017/12/14/OS_Concept_Chapter_Three/5e26c699832d1aa224c5560d796901ba.png">
+<meta property="og:image" content="http://yoursite.com/2017/12/14/OS_Concept_Chapter_Three/e77123bb57ec3e6dcf86b72a59d63848.png">
+<meta property="og:image" content="http://yoursite.com/2017/12/14/OS_Concept_Chapter_Three/e095dec99b7701eac1eec5753b348d29.png">
+<meta property="og:image" content="http://yoursite.com/2017/12/14/OS_Concept_Chapter_Three/4aa856f5723b5bf568edc3a69a8a14f3.png">
+<meta property="og:image" content="http://yoursite.com/2017/12/14/OS_Concept_Chapter_Three/d95f41d9209b25846d1974f280fd3723.png">
+<meta property="og:image" content="http://yoursite.com/2017/12/14/OS_Concept_Chapter_Three/31046a2b209f68690ab7f64bd317e4d8.png">
+<meta property="og:image" content="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png">
+<meta property="og:updated_time" content="2018-01-03T00:52:48.702Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="操作系统概念 进程&#x2F;Process 第三章笔记">
+<meta name="twitter:description" content="2017年9月20日13:56 写在前面本笔记仅仅是本人在上课时的一些随手记录，并不完整也不完全正确。 如有错误，请在评论中或直接联系我指正，谢谢！">
+<meta name="twitter:image" content="http://yoursite.com/2017/12/14/OS_Concept_Chapter_Three/388ad9e85e2d1984da645e4bdbb93634.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.3',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/12/14/OS_Concept_Chapter_Three/"/>
+
+
+
+
+
+  <title>操作系统概念 进程/Process 第三章笔记 | Hexo</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hexo</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Startseite
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            Über
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Kategorien
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archiv
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />
+            
+            Sitemap
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/14/OS_Concept_Chapter_Three/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Kimisecond">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">操作系统概念 进程/Process 第三章笔记</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-12-14T18:25:06+08:00">
+                2017-12-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">in</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Notes/" itemprop="url" rel="index">
+                    <span itemprop="name">Notes</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/12/14/OS_Concept_Chapter_Three/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/12/14/OS_Concept_Chapter_Three/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+<span>&nbsp; | &nbsp;
+<span id="busuanzi_value_page_pv" ></span>次阅读
+</span>
+
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>2017年9月20日<br>13:56</p>
+<h2 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h2><p>本笔记仅仅是本人在上课时的一些随手记录，并不完整也不完全正确。</p>
+<p>如有错误，请在评论中或直接联系我指正，谢谢！</p>
+<a id="more"></a>
+<p><strong>原始文件下载：<a href="https://1drv.ms/u/s!AkFCnbJhobZ2imlj2W8TmfdSAxKe" target="_blank" rel="noopener">(mht)</a><a href="https://1drv.ms/b/s!AkFCnbJhobZ2imjpU2cQvQqMXLre" target="_blank" rel="noopener">(pdf)</a></strong></p>
+<p><strong>Notion of process</strong><br><strong>Various features of processes</strong><br><strong>communication</strong></p>
+<h2 id="Main-Problems"><a href="#Main-Problems" class="headerlink" title="Main Problems"></a>Main Problems</h2><p><strong>1.    process vs. program</strong><br><strong>2.    pcb 分配资源 初始化pcb</strong><br><strong>3.    process fork()</strong>   </p>
+<ul>
+<li><strong>创建，删除 进程树</strong>  </li>
+<li><strong>状态图</strong>   </li>
+<li><strong>动作/操作</strong></li>
+</ul>
+<p><strong>4.    Scheduling:</strong>  </p>
+<ul>
+<li><strong>Short term</strong>  </li>
+<li><strong>Medium term</strong>  </li>
+<li><strong>Long term</strong></li>
+</ul>
+<p><strong>5.    Communication</strong><br><strong>6.    Process context</strong></p>
+<h2 id="Process-Concept"><a href="#Process-Concept" class="headerlink" title="Process Concept"></a><strong>Process Concept</strong></h2><blockquote>
+<p>  Process Defintion<br>  Process State<br>  Process Control Block (PCB)  </p>
+</blockquote>
+<h3 id="Problems-for-Process-Management"><a href="#Problems-for-Process-Management" class="headerlink" title="Problems for Process Management"></a><em>Problems for Process Management</em></h3><p><em>Dispatch CPU</em><br><em>Allocate resource (deadlock hungry)</em>     <em>Implement the process communication</em>   </p>
+<h3 id="Process-Definition"><a href="#Process-Definition" class="headerlink" title="Process Definition"></a><em>Process Definition</em></h3><blockquote>
+<p>  Process —- a program in execution; process execution must progress in sequential fashion<br>  一个具有独立功能的程序在一个数据集合上的一次动态执行过程</p>
+</blockquote>
+<h4 id="Process-includes"><a href="#Process-includes" class="headerlink" title="Process includes"></a><em>Process includes</em></h4><ul>
+<li>Program counter  </li>
+<li>Stack  </li>
+<li>Data section  </li>
+<li>*heap  <h4 id="Process-in-Memory"><a href="#Process-in-Memory" class="headerlink" title="Process in Memory"></a>Process in Memory</h4><img src="388ad9e85e2d1984da645e4bdbb93634.png" alt=""></li>
+</ul>
+<h4 id="一些进程概念和特性："><a href="#一些进程概念和特性：" class="headerlink" title="一些进程概念和特性："></a>一些进程概念和特性：</h4><ul>
+<li>真实描述任务的<em>并发执行</em>  </li>
+<li>进程由<em>程序</em>和<em>数据</em>两部分组成  </li>
+<li>进程是<em>动态的</em>  </li>
+<li>一个程序对应<em>多个进程</em>  </li>
+<li>进程具有<em>创建其它进程</em>的功能  </li>
+</ul>
+<h4 id="进程特征："><a href="#进程特征：" class="headerlink" title="进程特征："></a>进程特征：</h4><ul>
+<li>结构特征：程序段、数据段、PCB  </li>
+<li>动态性：程序的一次执行过程  </li>
+<li>并发性：多个进程同存于内存中，在一段时间中同时运行  </li>
+<li>独立性：进程独立运行、独立分配资源的基本单位  </li>
+<li>异步性：独立、不可预知  </li>
+<li>交互性：需要交互  <h3 id="Process-State"><a href="#Process-State" class="headerlink" title="Process State"></a><em>Process State</em></h3></li>
+</ul>
+<blockquote>
+</blockquote>
+<p><img src="acad6a06f2f8b9985043cee67e1ce35c.png" alt=""></p>
+<h4 id="注意"><a href="#注意" class="headerlink" title="注意"></a><strong>注意</strong></h4><p><strong>进程和程序的联系与区别</strong></p>
+<h3 id="PCB-Process-Control-Block"><a href="#PCB-Process-Control-Block" class="headerlink" title="PCB(Process Control Block)"></a><em>PCB(Process Control Block)</em></h3><h4 id="Content-Brief"><a href="#Content-Brief" class="headerlink" title="Content(Brief)"></a>Content(Brief)</h4><ul>
+<li>Process state  </li>
+<li>Program counter  </li>
+<li>CPU registers  </li>
+<li>CPU scheduling information  </li>
+<li>Memory-management information  </li>
+<li>Accounting information  </li>
+<li>I/O status information  </li>
+</ul>
+<h4 id="表本身…"><a href="#表本身…" class="headerlink" title="表本身…"></a>表本身…</h4><p>系统把PCB组织在一起，并放在内存固定区域，构成PCB表  </p>
+<ul>
+<li>链表  </li>
+<li>索引表  </li>
+</ul>
+<p>PCB表的大小决定了系统中<em>最多可同时存在的进程个数</em>，称为系统的并发度</p>
+<h4 id="PCB组织方式-—-链接方式"><a href="#PCB组织方式-—-链接方式" class="headerlink" title="PCB组织方式 — 链接方式"></a>PCB组织方式 — 链接方式</h4><p><img src="4308232d45a3a8285f09172e3e3379dc.png" alt=""></p>
+<h4 id="PCB组织方式-—-索引方式"><a href="#PCB组织方式-—-索引方式" class="headerlink" title="PCB组织方式 — 索引方式"></a>PCB组织方式 — 索引方式</h4><p><img src="14b20852d6668bc54dc278ba90abceca.png" alt=""></p>
+<h4 id="PCB内容："><a href="#PCB内容：" class="headerlink" title="PCB内容："></a><strong>PCB内容：</strong></h4><p><img src="7b7b79cd357ce5f042b474a2764fcc37.png" alt=""></p>
+<p><strong>进程标识符、处理机状态、进程调度信息、进程控制信息</strong></p>
+<h5 id="进程标识符"><a href="#进程标识符" class="headerlink" title="进程标识符"></a>进程标识符</h5><ul>
+<li>内部标识符：<br>操作系统赋予，一个进程的序号  </li>
+<li>外部标识符：<br>由<em>创建者提供</em>，由字母、数组组成。由<em>用户（进程）</em>在访问该进程时使用。 </li>
+</ul>
+<h5 id="处理机状态"><a href="#处理机状态" class="headerlink" title="处理机状态"></a>处理机状态</h5><p>寄存器中内容</p>
+<ul>
+<li>通用寄存器   </li>
+<li>指令计数器：存放了要访问的下一条指令的地址  </li>
+<li>程序状态字PSW：状态信息，（条件码、执行方式、中断屏蔽标志）  </li>
+<li>用户栈指针：存放过程和系统调用参数及调用地址。栈指针指向该栈的栈顶</li>
+</ul>
+<h5 id="进程调度信息："><a href="#进程调度信息：" class="headerlink" title="进程调度信息："></a>进程调度信息：</h5><ul>
+<li>进程状态  </li>
+<li>优先级  </li>
+<li>其他信息：与进程调度算法有关  </li>
+<li>事件：进程由执行状态转变为阻塞状态所等待发生的事件、即阻塞原因</li>
+</ul>
+<h5 id="进程控制信息："><a href="#进程控制信息：" class="headerlink" title="进程控制信息："></a>进程控制信息：</h5><ul>
+<li>程序和数据的地址  </li>
+<li>进程同步和通信信息：消息队列指针、信号量等（可能全部或部分在PCB中）   </li>
+<li>链接指针：当前进程PCB所在队列中下一个进程PCB地址</li>
+</ul>
+<h3 id="CPU-Switch-所谓上下文"><a href="#CPU-Switch-所谓上下文" class="headerlink" title="CPU Switch 所谓上下文"></a><em>CPU Switch</em> 所谓上下文</h3><h4 id="CPU-Switch-From-Process-to-Process"><a href="#CPU-Switch-From-Process-to-Process" class="headerlink" title="CPU Switch From Process to Process"></a>CPU Switch From Process to Process</h4><p><img src="412a4111a85827fd346fe0c1c7534878.png" alt=""></p>
+<h2 id="Process-Scheduling"><a href="#Process-Scheduling" class="headerlink" title="Process Scheduling"></a><strong>Process Scheduling</strong></h2><h3 id="Objective"><a href="#Objective" class="headerlink" title="Objective:"></a>Objective:</h3><ul>
+<li><em>Maximize</em> CPU usage  </li>
+<li><em>Quickly</em> switch processes onto CPU for time sharing   <h3 id="Process-Scheduler"><a href="#Process-Scheduler" class="headerlink" title="Process Scheduler"></a><em>Process Scheduler</em></h3></li>
+</ul>
+<p>Select processes for next execution on CPU</p>
+<h3 id="Maintains-scheduling-queues-of-processes"><a href="#Maintains-scheduling-queues-of-processes" class="headerlink" title="Maintains scheduling queues of processes"></a>Maintains <em>scheduling queues</em> of processes</h3><ul>
+<li>Job queue  </li>
+<li>Ready queue  </li>
+<li>Device queue</li>
+</ul>
+<hr>
+<ul>
+<li>Short-term  </li>
+<li>Mid-term  </li>
+<li>Long-term</li>
+</ul>
+<blockquote>
+</blockquote>
+<p><img src="6f9dd42e36edf9e7f09d28eb59353897.png" alt=""></p>
+<p><img src="5e26c699832d1aa224c5560d796901ba.png" alt=""></p>
+<p><img src="e77123bb57ec3e6dcf86b72a59d63848.png" alt=""></p>
+<h3 id="进程上下文："><a href="#进程上下文：" class="headerlink" title="进程上下文："></a><em>进程上下文</em>：</h3><p>进程执行活动全过程的静态描述</p>
+<ul>
+<li>计算机系统中执行该进程有关的<em>各种寄存器的值</em>  </li>
+<li>程序段在经过编译之后形成的机器指令代码集（正文段）、<em>数据集</em>  </li>
+<li>各种堆栈值  </li>
+<li>PCB结构</li>
+</ul>
+<h2 id="进程操作："><a href="#进程操作：" class="headerlink" title="进程操作："></a><strong>进程操作：</strong></h2><h3 id="进程创建："><a href="#进程创建：" class="headerlink" title="进程创建："></a>进程创建：</h3><p><em>父进程</em>创建<em>子进程</em>，创建了一个进程树<br>通常来说，以进程标识符（pid）标识  </p>
+<p>资源共享：（三种情况）   </p>
+<ul>
+<li>父进程子进程共享<em>所有资源</em>  </li>
+<li>子进程分享父进程的<em>资源子集（一部分）</em>  </li>
+<li>父进程和子进程<em>不分享资源</em>  </li>
+</ul>
+<p>执行（两种）</p>
+<ul>
+<li>父进程子进程同时执行  </li>
+<li>父进程等待子进程结束  </li>
+</ul>
+<p>命名空间</p>
+<ul>
+<li>子复制父  </li>
+<li>子加载了程序  </li>
+</ul>
+<p>UNIX例子</p>
+<ul>
+<li>Fork()创建  </li>
+<li>Exec()替代fork()所创建进程（用新程序覆盖内存空间）  <h4 id="过程："><a href="#过程：" class="headerlink" title="过程："></a>过程：</h4></li>
+</ul>
+<ol>
+<li>申请空白PCB。  </li>
+<li>为新进程分配资源。  </li>
+<li>初始化进程控制块。  </li>
+<li>将新进程插入就绪队列，如果进程就绪队列能够接纳新进程，便将新进程插入就绪队列。</li>
+</ol>
+<h3 id="进程结束-终止"><a href="#进程结束-终止" class="headerlink" title="进程结束/终止"></a>进程结束/终止</h3><p>Process executes last statement and asks the operating system to delete it (exit)</p>
+<ul>
+<li>Output data from child to parent(via wait)  </li>
+<li>Process’ resources are deallocated by operating system  </li>
+</ul>
+<p>Parent may terminate execution of children processes (<em>abort</em>)</p>
+<ul>
+<li>Child has exceeded allocated resources  </li>
+<li>Task assigned to child is no longer required  </li>
+<li>If parent is exiting<blockquote>
+<p>  Some operating systems do not allow child to continue if its parent terminates<br>  All children terminated - cascading termination(级联终止)</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="进程的挂起与激活"><a href="#进程的挂起与激活" class="headerlink" title="进程的挂起与激活"></a>进程的挂起与激活</h3><p>Pending</p>
+<ul>
+<li>出现了进程挂起的事件 比如，用户进程请求将自己挂起  </li>
+<li>或父进程请求子进程 suspend()</li>
+</ul>
+<p>Activation</p>
+<ul>
+<li>出现了进程激活的事件  </li>
+<li>Active()</li>
+</ul>
+<h2 id="进程交互（通信）"><a href="#进程交互（通信）" class="headerlink" title="进程交互（通信）"></a>进程交互（通信）</h2><p>IPC</p>
+<ul>
+<li>Shared memory共享存储器  </li>
+<li>Message passing消息传递  </li>
+<li>Pipe管道</li>
+</ul>
+<h3 id="Shared-memory"><a href="#Shared-memory" class="headerlink" title="Shared memory"></a>Shared memory</h3><p><img src="e095dec99b7701eac1eec5753b348d29.png" alt=""></p>
+<h3 id="Message-passing"><a href="#Message-passing" class="headerlink" title="Message passing"></a>Message passing</h3><ul>
+<li>消息传递机制都是用得最广泛的一种进程间通信的机制。  </li>
+<li>在消息传递系统中，进程间的数据交换，是以格式化的消息(message)为单位的；  </li>
+<li>程序员直接利用系统提供的一组通信命令(原语)进行通信,大大减化了通信程序编制的复杂性，而获得广泛的应用。  </li>
+<li>消息传递系统的通信方式属于高级通信方式。  </li>
+<li>又分为直接通信方式和间接通信方式两种。</li>
+</ul>
+<h3 id="Pipe"><a href="#Pipe" class="headerlink" title="Pipe"></a>Pipe</h3><p>所谓“管道”，是指用于连接一个读进程和一个写进程以实现他们之间通信的一个共享文件，又名pipe文件。</p>
+<p>向管道(共享文件)提供输入的发送进程(即写进程)，以字符流形式将大量的数据送入管道；<br>而接受管道输出的接收进程(即读进程)，则从管道中接收(读)数据。</p>
+<p><em>由于发送进程和接收进程是利用管道进行通信的，故又称为管道通信</em></p>
+<p>首创于UNIX系统，由于它能有效地传送大量数据，因而又被引入到许多其它操作系统中  </p>
+<h3 id="Producer-Consumer-Problem写作进程的通用范例"><a href="#Producer-Consumer-Problem写作进程的通用范例" class="headerlink" title="Producer-Consumer Problem写作进程的通用范例"></a>Producer-Consumer Problem写作进程的通用范例</h3><blockquote>
+<p>  Producer process produces information</p>
+<p>  Consumer process consume information</p>
+</blockquote>
+<p><img src="4aa856f5723b5bf568edc3a69a8a14f3.png" alt=""></p>
+<p><img src="d95f41d9209b25846d1974f280fd3723.png" alt=""></p>
+<ol>
+<li><p><strong>进程的状态有哪几种？请画出进程间基本的转换图，并说明不同状态之间怎样转换（语言描述转换图）</strong></p>
+</li>
+<li><p><strong>PCB的信息包括哪些，请简单说明</strong></p>
+</li>
+<li><p><strong>调度队列有哪几种？请简单说明。</strong></p>
+</li>
+<li><p><strong>进程调度有哪几种？请分别简单说明一下。</strong></p>
+</li>
+<li><p><strong>Process Context包括哪些信息？简单说明</strong></p>
+</li>
+<li><p><strong>在什么情况下需要创建进程？简单说明。</strong></p>
+</li>
+<li><p><strong>简述进程创建过程。</strong></p>
+</li>
+<li><p><strong>什么情况下需要终止进程，简单说明。</strong></p>
+</li>
+<li><p><strong>什么情况下进程被阻塞？什么情况下进程被唤醒？简单说明</strong></p>
+</li>
+<li><p><strong>进程间通信有哪几种方式？简述每一种方式。</strong></p>
+</li>
+</ol>
+<p><img src="31046a2b209f68690ab7f64bd317e4d8.png" alt=""></p>
+<hr>
+<h1 id="Copyright"><a href="#Copyright" class="headerlink" title="Copyright"></a>Copyright</h1><p>本文标题：操作系统概念 进程/Process 第三章笔记<br>本文链接：<a href="https://kimisecond.com/2017/12/OS_Concept_Chapter_Three/" target="_blank" rel="noopener">https://kimisecond.com/2017/12/OS_Concept_Chapter_Three/</a><br>作者：<a href="https://kimisecond.com/" target="_blank" rel="noopener">Kimisecond</a><br>出处：<a href="https://kimisecond.com/2017/12/OS_Concept_Chapter_Three/" target="_blank" rel="noopener">Kimi’s Blog</a><br>发布时间：2017年12月14日<br>最后更新：2017年12月15日  </p>
+<p><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"></p>
+<p>本文基于<strong><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener">Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)</a></strong> <strong>署名-非商业性使用-相同方式共享 4.0 国际许可协议</strong>发布，欢迎转载，但是<strong>必须保留</strong>本文的署名<a href="https://kimisecond.com/" target="_blank" rel="noopener">Kimisecond</a>及链接: <a href="https://kimisecond.com/" target="_blank" rel="noopener">https://kimisecond.com/</a>.</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/OS-Concept/" rel="tag"># OS_Concept</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/12/12/OS_Concept_Chapter_Two/" rel="next" title="操作系统概念 操作系统结构/Operating-System Structures 第二章笔记">
+                <i class="fa fa-chevron-left"></i> 操作系统概念 操作系统结构/Operating-System Structures 第二章笔记
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/12/18/OS_Concept_Chapter_Four/" rel="prev" title="操作系统概念 线程/Thread 第四章笔记">
+                操作系统概念 线程/Thread 第四章笔记 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Inhaltsverzeichnis
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Übersicht
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="Kimisecond" />
+            
+              <p class="site-author-name" itemprop="name">Kimisecond</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-name">Artikel</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">Kategorien</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">Tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          <div class="links-of-author motion-element">
+            
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/Kimisecond" target="_blank" title="GitHub">
+                    
+                      <i class="fa fa-fw fa-github"></i></a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="mailto:1064590327.ks@gmail.com" target="_blank" title="E-Mail">
+                    
+                      <i class="fa fa-fw fa-envelope"></i></a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://plus.google.com/100364558058107909301" target="_blank" title="Google">
+                    
+                      <i class="fa fa-fw fa-google"></i></a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://twitter.com/kimisecond" target="_blank" title="Twitter">
+                    
+                      <i class="fa fa-fw fa-twitter"></i></a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://instagram.com/kimisecond" target="_blank" title="Instagram">
+                    
+                      <i class="fa fa-fw fa-instagram"></i></a>
+                </span>
+              
+            
+          </div>
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#写在前面"><span class="nav-number">1.</span> <span class="nav-text"><a href="#&#x5199;&#x5728;&#x524D;&#x9762;" class="headerlink" title="&#x5199;&#x5728;&#x524D;&#x9762;"></a>&#x5199;&#x5728;&#x524D;&#x9762;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Main-Problems"><span class="nav-number">2.</span> <span class="nav-text"><a href="#Main-Problems" class="headerlink" title="Main Problems"></a>Main Problems</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Process-Concept"><span class="nav-number">3.</span> <span class="nav-text"><a href="#Process-Concept" class="headerlink" title="Process Concept"></a><strong>Process Concept</strong></span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Problems-for-Process-Management"><span class="nav-number">3.1.</span> <span class="nav-text"><a href="#Problems-for-Process-Management" class="headerlink" title="Problems for Process Management"></a><em>Problems for Process Management</em></span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Process-Definition"><span class="nav-number">3.2.</span> <span class="nav-text"><a href="#Process-Definition" class="headerlink" title="Process Definition"></a><em>Process Definition</em></span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Process-includes"><span class="nav-number">3.2.1.</span> <span class="nav-text"><a href="#Process-includes" class="headerlink" title="Process includes"></a><em>Process includes</em></span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Process-in-Memory"><span class="nav-number">3.2.2.</span> <span class="nav-text"><a href="#Process-in-Memory" class="headerlink" title="Process in Memory"></a>Process in Memory</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#一些进程概念和特性："><span class="nav-number">3.2.3.</span> <span class="nav-text"><a href="#&#x4E00;&#x4E9B;&#x8FDB;&#x7A0B;&#x6982;&#x5FF5;&#x548C;&#x7279;&#x6027;&#xFF1A;" class="headerlink" title="&#x4E00;&#x4E9B;&#x8FDB;&#x7A0B;&#x6982;&#x5FF5;&#x548C;&#x7279;&#x6027;&#xFF1A;"></a>&#x4E00;&#x4E9B;&#x8FDB;&#x7A0B;&#x6982;&#x5FF5;&#x548C;&#x7279;&#x6027;&#xFF1A;</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#进程特征："><span class="nav-number">3.2.4.</span> <span class="nav-text"><a href="#&#x8FDB;&#x7A0B;&#x7279;&#x5F81;&#xFF1A;" class="headerlink" title="&#x8FDB;&#x7A0B;&#x7279;&#x5F81;&#xFF1A;"></a>&#x8FDB;&#x7A0B;&#x7279;&#x5F81;&#xFF1A;</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Process-State"><span class="nav-number">3.3.</span> <span class="nav-text"><a href="#Process-State" class="headerlink" title="Process State"></a><em>Process State</em></span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#注意"><span class="nav-number">3.3.1.</span> <span class="nav-text"><a href="#&#x6CE8;&#x610F;" class="headerlink" title="&#x6CE8;&#x610F;"></a><strong>&#x6CE8;&#x610F;</strong></span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PCB-Process-Control-Block"><span class="nav-number">3.4.</span> <span class="nav-text"><a href="#PCB-Process-Control-Block" class="headerlink" title="PCB(Process Control Block)"></a><em>PCB(Process Control Block)</em></span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Content-Brief"><span class="nav-number">3.4.1.</span> <span class="nav-text"><a href="#Content-Brief" class="headerlink" title="Content(Brief)"></a>Content(Brief)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#表本身…"><span class="nav-number">3.4.2.</span> <span class="nav-text"><a href="#&#x8868;&#x672C;&#x8EAB;&#x2026;" class="headerlink" title="&#x8868;&#x672C;&#x8EAB;&#x2026;"></a>&#x8868;&#x672C;&#x8EAB;&#x2026;</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#PCB组织方式-—-链接方式"><span class="nav-number">3.4.3.</span> <span class="nav-text"><a href="#PCB&#x7EC4;&#x7EC7;&#x65B9;&#x5F0F;-&#x2014;-&#x94FE;&#x63A5;&#x65B9;&#x5F0F;" class="headerlink" title="PCB&#x7EC4;&#x7EC7;&#x65B9;&#x5F0F; &#x2014; &#x94FE;&#x63A5;&#x65B9;&#x5F0F;"></a>PCB&#x7EC4;&#x7EC7;&#x65B9;&#x5F0F; &#x2014; &#x94FE;&#x63A5;&#x65B9;&#x5F0F;</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#PCB组织方式-—-索引方式"><span class="nav-number">3.4.4.</span> <span class="nav-text"><a href="#PCB&#x7EC4;&#x7EC7;&#x65B9;&#x5F0F;-&#x2014;-&#x7D22;&#x5F15;&#x65B9;&#x5F0F;" class="headerlink" title="PCB&#x7EC4;&#x7EC7;&#x65B9;&#x5F0F; &#x2014; &#x7D22;&#x5F15;&#x65B9;&#x5F0F;"></a>PCB&#x7EC4;&#x7EC7;&#x65B9;&#x5F0F; &#x2014; &#x7D22;&#x5F15;&#x65B9;&#x5F0F;</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#PCB内容："><span class="nav-number">3.4.5.</span> <span class="nav-text"><a href="#PCB&#x5185;&#x5BB9;&#xFF1A;" class="headerlink" title="PCB&#x5185;&#x5BB9;&#xFF1A;"></a><strong>PCB&#x5185;&#x5BB9;&#xFF1A;</strong></span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#进程标识符"><span class="nav-number">3.4.5.1.</span> <span class="nav-text"><a href="#&#x8FDB;&#x7A0B;&#x6807;&#x8BC6;&#x7B26;" class="headerlink" title="&#x8FDB;&#x7A0B;&#x6807;&#x8BC6;&#x7B26;"></a>&#x8FDB;&#x7A0B;&#x6807;&#x8BC6;&#x7B26;</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#处理机状态"><span class="nav-number">3.4.5.2.</span> <span class="nav-text"><a href="#&#x5904;&#x7406;&#x673A;&#x72B6;&#x6001;" class="headerlink" title="&#x5904;&#x7406;&#x673A;&#x72B6;&#x6001;"></a>&#x5904;&#x7406;&#x673A;&#x72B6;&#x6001;</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#进程调度信息："><span class="nav-number">3.4.5.3.</span> <span class="nav-text"><a href="#&#x8FDB;&#x7A0B;&#x8C03;&#x5EA6;&#x4FE1;&#x606F;&#xFF1A;" class="headerlink" title="&#x8FDB;&#x7A0B;&#x8C03;&#x5EA6;&#x4FE1;&#x606F;&#xFF1A;"></a>&#x8FDB;&#x7A0B;&#x8C03;&#x5EA6;&#x4FE1;&#x606F;&#xFF1A;</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#进程控制信息："><span class="nav-number">3.4.5.4.</span> <span class="nav-text"><a href="#&#x8FDB;&#x7A0B;&#x63A7;&#x5236;&#x4FE1;&#x606F;&#xFF1A;" class="headerlink" title="&#x8FDB;&#x7A0B;&#x63A7;&#x5236;&#x4FE1;&#x606F;&#xFF1A;"></a>&#x8FDB;&#x7A0B;&#x63A7;&#x5236;&#x4FE1;&#x606F;&#xFF1A;</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CPU-Switch-所谓上下文"><span class="nav-number">3.5.</span> <span class="nav-text"><a href="#CPU-Switch-&#x6240;&#x8C13;&#x4E0A;&#x4E0B;&#x6587;" class="headerlink" title="CPU Switch &#x6240;&#x8C13;&#x4E0A;&#x4E0B;&#x6587;"></a><em>CPU Switch</em> &#x6240;&#x8C13;&#x4E0A;&#x4E0B;&#x6587;</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#CPU-Switch-From-Process-to-Process"><span class="nav-number">3.5.1.</span> <span class="nav-text"><a href="#CPU-Switch-From-Process-to-Process" class="headerlink" title="CPU Switch From Process to Process"></a>CPU Switch From Process to Process</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Process-Scheduling"><span class="nav-number">4.</span> <span class="nav-text"><a href="#Process-Scheduling" class="headerlink" title="Process Scheduling"></a><strong>Process Scheduling</strong></span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Objective"><span class="nav-number">4.1.</span> <span class="nav-text"><a href="#Objective" class="headerlink" title="Objective:"></a>Objective:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Process-Scheduler"><span class="nav-number">4.2.</span> <span class="nav-text"><a href="#Process-Scheduler" class="headerlink" title="Process Scheduler"></a><em>Process Scheduler</em></span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Maintains-scheduling-queues-of-processes"><span class="nav-number">4.3.</span> <span class="nav-text"><a href="#Maintains-scheduling-queues-of-processes" class="headerlink" title="Maintains scheduling queues of processes"></a>Maintains <em>scheduling queues</em> of processes</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#进程上下文："><span class="nav-number">4.4.</span> <span class="nav-text"><a href="#&#x8FDB;&#x7A0B;&#x4E0A;&#x4E0B;&#x6587;&#xFF1A;" class="headerlink" title="&#x8FDB;&#x7A0B;&#x4E0A;&#x4E0B;&#x6587;&#xFF1A;"></a><em>&#x8FDB;&#x7A0B;&#x4E0A;&#x4E0B;&#x6587;</em>&#xFF1A;</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#进程操作："><span class="nav-number">5.</span> <span class="nav-text"><a href="#&#x8FDB;&#x7A0B;&#x64CD;&#x4F5C;&#xFF1A;" class="headerlink" title="&#x8FDB;&#x7A0B;&#x64CD;&#x4F5C;&#xFF1A;"></a><strong>&#x8FDB;&#x7A0B;&#x64CD;&#x4F5C;&#xFF1A;</strong></span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#进程创建："><span class="nav-number">5.1.</span> <span class="nav-text"><a href="#&#x8FDB;&#x7A0B;&#x521B;&#x5EFA;&#xFF1A;" class="headerlink" title="&#x8FDB;&#x7A0B;&#x521B;&#x5EFA;&#xFF1A;"></a>&#x8FDB;&#x7A0B;&#x521B;&#x5EFA;&#xFF1A;</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#过程："><span class="nav-number">5.1.1.</span> <span class="nav-text"><a href="#&#x8FC7;&#x7A0B;&#xFF1A;" class="headerlink" title="&#x8FC7;&#x7A0B;&#xFF1A;"></a>&#x8FC7;&#x7A0B;&#xFF1A;</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#进程结束-终止"><span class="nav-number">5.2.</span> <span class="nav-text"><a href="#&#x8FDB;&#x7A0B;&#x7ED3;&#x675F;-&#x7EC8;&#x6B62;" class="headerlink" title="&#x8FDB;&#x7A0B;&#x7ED3;&#x675F;/&#x7EC8;&#x6B62;"></a>&#x8FDB;&#x7A0B;&#x7ED3;&#x675F;/&#x7EC8;&#x6B62;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#进程的挂起与激活"><span class="nav-number">5.3.</span> <span class="nav-text"><a href="#&#x8FDB;&#x7A0B;&#x7684;&#x6302;&#x8D77;&#x4E0E;&#x6FC0;&#x6D3B;" class="headerlink" title="&#x8FDB;&#x7A0B;&#x7684;&#x6302;&#x8D77;&#x4E0E;&#x6FC0;&#x6D3B;"></a>&#x8FDB;&#x7A0B;&#x7684;&#x6302;&#x8D77;&#x4E0E;&#x6FC0;&#x6D3B;</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#进程交互（通信）"><span class="nav-number">6.</span> <span class="nav-text"><a href="#&#x8FDB;&#x7A0B;&#x4EA4;&#x4E92;&#xFF08;&#x901A;&#x4FE1;&#xFF09;" class="headerlink" title="&#x8FDB;&#x7A0B;&#x4EA4;&#x4E92;&#xFF08;&#x901A;&#x4FE1;&#xFF09;"></a>&#x8FDB;&#x7A0B;&#x4EA4;&#x4E92;&#xFF08;&#x901A;&#x4FE1;&#xFF09;</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Shared-memory"><span class="nav-number">6.1.</span> <span class="nav-text"><a href="#Shared-memory" class="headerlink" title="Shared memory"></a>Shared memory</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Message-passing"><span class="nav-number">6.2.</span> <span class="nav-text"><a href="#Message-passing" class="headerlink" title="Message passing"></a>Message passing</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pipe"><span class="nav-number">6.3.</span> <span class="nav-text"><a href="#Pipe" class="headerlink" title="Pipe"></a>Pipe</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Producer-Consumer-Problem写作进程的通用范例"><span class="nav-number">6.4.</span> <span class="nav-text"><a href="#Producer-Consumer-Problem&#x5199;&#x4F5C;&#x8FDB;&#x7A0B;&#x7684;&#x901A;&#x7528;&#x8303;&#x4F8B;" class="headerlink" title="Producer-Consumer Problem&#x5199;&#x4F5C;&#x8FDB;&#x7A0B;&#x7684;&#x901A;&#x7528;&#x8303;&#x4F8B;"></a>Producer-Consumer Problem&#x5199;&#x4F5C;&#x8FDB;&#x7A0B;&#x7684;&#x901A;&#x7528;&#x8303;&#x4F8B;</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Copyright"><span class="nav-number"></span> <span class="nav-text"><a href="#Copyright" class="headerlink" title="Copyright"></a>Copyright</span></a></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Erstellt mit  <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.3</div>
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+本站总访问量 <span id="busuanzi_value_site_pv"></span> &nbsp&nbsp&nbsp
+您是第<span id="busuanzi_value_site_uv"></span>个来到的小伙伴
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://kimisecond.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://yoursite.com/2017/12/14/OS_Concept_Chapter_Three/';
+          this.page.identifier = '2017/12/14/OS_Concept_Chapter_Three/';
+          this.page.title = '操作系统概念 进程/Process 第三章笔记';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://kimisecond.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
