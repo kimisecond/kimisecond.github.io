@@ -92,7 +92,7 @@
 <meta property="og:image" content="https://kimisecond.com/2018/03/DBS-Concept-Lecture-One/4afda9b1ff307f1d243f2bfdafc65ce1.png">
 <meta property="og:image" content="https://kimisecond.com/2018/03/DBS-Concept-Lecture-One/4f21f714cea913a9528efd27d7b43acb.png">
 <meta property="og:image" content="https://kimisecond.com/2018/03/DBS-Concept-Lecture-One/58eeb82b64bd679f7cba00001e112942.png">
-<meta property="og:updated_time" content="2018-03-15T16:43:34.484Z">
+<meta property="og:updated_time" content="2018-03-15T16:57:48.940Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据库概念 序言&#x2F;Introduction 第一课笔记">
 <meta name="twitter:description" content="2018年3月1日12:59 写在前面本笔记仅仅是本人在上课时的一些随手记录，并不完整也不完全正确。如有错误，请在评论中或直接联系我指正，谢谢！">
@@ -521,7 +521,7 @@
 <li>Procedural DMLs require a user to specify what data are needed and how to<br>get those data</li>
 <li>Declarative DMLs (also referred to as nonprocedural DMLs) require a user to<br>specify what data are needed without specifying how to get those data<br>Query language<br>SQL is the best.</li>
 </ul>
-<p>e.g.<br><strong>select</strong> instructor<strong>.</strong>name<br><strong>from</strong> instructor<br><strong>where</strong> instructor<strong>.</strong>dept name <strong>=</strong> ’History’<strong>;</strong></p>
+<p>e.g.<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> instructor.name</span><br><span class="line"><span class="keyword">from</span> instructor</span><br><span class="line"><span class="keyword">where</span> instructor.dept <span class="keyword">name</span> = ’History’;</span><br></pre></td></tr></table></figure></p>
 <h3 id="DDL"><a href="#DDL" class="headerlink" title="DDL"></a>DDL</h3><ul>
 <li>Data storage and definition language define the implementation details of<br>the database schemas(hidden from the users)</li>
 <li>Must satisfy certain consistency constraints<ul>
@@ -532,7 +532,7 @@
 </ul>
 </li>
 </ul>
-<p>SQL provides a rich DDL that allows one to define tables, integrity constraints,<br>assertions, etc.<br>e.g.:<br><strong>create table</strong> department<br><strong>(</strong>dept_name <strong>char (</strong>20<strong>),</strong><br>building <strong>char (</strong>15<strong>),</strong><br>budget <strong>numeric (</strong>12<strong>,</strong>2<strong>));</strong></p>
+<p>SQL provides a rich DDL that allows one to define tables, integrity constraints,<br>assertions, etc.<br>e.g.:<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> department</span><br><span class="line">(dept_name <span class="built_in">char</span> (<span class="number">20</span>),</span><br><span class="line">building <span class="built_in">char</span> (<span class="number">15</span>),</span><br><span class="line">budget <span class="built_in">numeric</span> (<span class="number">12</span>,<span class="number">2</span>));</span><br></pre></td></tr></table></figure></p>
 <p>Application programs generally access databases through one of</p>
 <ul>
 <li>Embedded/ language extension</li>
