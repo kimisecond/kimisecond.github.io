@@ -5,9 +5,9 @@
   <subtitle>一个垃圾分类站</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="https://kimisecond.com/"/>
+  <link href="https://blog.kimisecond.com/"/>
   <updated>2018-03-15T16:57:48.940Z</updated>
-  <id>https://kimisecond.com/</id>
+  <id>https://blog.kimisecond.com/</id>
   
   <author>
     <name>Kimisecond</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>数据库概念 序言/Introduction 第一课笔记</title>
-    <link href="https://kimisecond.com/2018/03/DBS-Concept-Lecture-One/"/>
-    <id>https://kimisecond.com/2018/03/DBS-Concept-Lecture-One/</id>
+    <link href="https://blog.kimisecond.com/2018/03/DBS-Concept-Lecture-One/"/>
+    <id>https://blog.kimisecond.com/2018/03/DBS-Concept-Lecture-One/</id>
     <published>2018-03-15T16:43:34.000Z</published>
     <updated>2018-03-15T16:57:48.940Z</updated>
     
@@ -32,17 +32,17 @@
     
     </summary>
     
-      <category term="Notes" scheme="https://kimisecond.com/categories/Notes/"/>
+      <category term="Notes" scheme="https://blog.kimisecond.com/categories/Notes/"/>
     
     
-      <category term="Database_System_Concept" scheme="https://kimisecond.com/tags/Database-System-Concept/"/>
+      <category term="Database_System_Concept" scheme="https://blog.kimisecond.com/tags/Database-System-Concept/"/>
     
   </entry>
   
   <entry>
     <title>操作系统概念 安全/Security 第十四章笔记</title>
-    <link href="https://kimisecond.com/2018/01/OS-Concept-Chapter-Fourteen/"/>
-    <id>https://kimisecond.com/2018/01/OS-Concept-Chapter-Fourteen/</id>
+    <link href="https://blog.kimisecond.com/2018/01/OS-Concept-Chapter-Fourteen/"/>
+    <id>https://blog.kimisecond.com/2018/01/OS-Concept-Chapter-Fourteen/</id>
     <published>2018-01-03T22:59:35.000Z</published>
     <updated>2018-03-15T11:56:17.298Z</updated>
     
@@ -56,17 +56,17 @@
     
     </summary>
     
-      <category term="Notes" scheme="https://kimisecond.com/categories/Notes/"/>
+      <category term="Notes" scheme="https://blog.kimisecond.com/categories/Notes/"/>
     
     
-      <category term="OS_Concept" scheme="https://kimisecond.com/tags/OS-Concept/"/>
+      <category term="OS_Concept" scheme="https://blog.kimisecond.com/tags/OS-Concept/"/>
     
   </entry>
   
   <entry>
     <title>计算机网络 数据链路层/Data Link Layer 第三章笔记</title>
-    <link href="https://kimisecond.com/2018/01/CN-Chapter-Three/"/>
-    <id>https://kimisecond.com/2018/01/CN-Chapter-Three/</id>
+    <link href="https://blog.kimisecond.com/2018/01/CN-Chapter-Three/"/>
+    <id>https://blog.kimisecond.com/2018/01/CN-Chapter-Three/</id>
     <published>2018-01-03T22:59:26.000Z</published>
     <updated>2018-03-15T11:54:32.844Z</updated>
     
@@ -81,17 +81,17 @@
     
     </summary>
     
-      <category term="Notes" scheme="https://kimisecond.com/categories/Notes/"/>
+      <category term="Notes" scheme="https://blog.kimisecond.com/categories/Notes/"/>
     
     
-      <category term="Computer_Network" scheme="https://kimisecond.com/tags/Computer-Network/"/>
+      <category term="Computer_Network" scheme="https://blog.kimisecond.com/tags/Computer-Network/"/>
     
   </entry>
   
   <entry>
     <title>计算机网络 物理层/Physical Layer 第二章笔记</title>
-    <link href="https://kimisecond.com/2018/01/CN-Chapter-Two/"/>
-    <id>https://kimisecond.com/2018/01/CN-Chapter-Two/</id>
+    <link href="https://blog.kimisecond.com/2018/01/CN-Chapter-Two/"/>
+    <id>https://blog.kimisecond.com/2018/01/CN-Chapter-Two/</id>
     <published>2018-01-03T00:36:00.000Z</published>
     <updated>2018-03-15T11:54:41.558Z</updated>
     
@@ -105,17 +105,17 @@
     
     </summary>
     
-      <category term="Notes" scheme="https://kimisecond.com/categories/Notes/"/>
+      <category term="Notes" scheme="https://blog.kimisecond.com/categories/Notes/"/>
     
     
-      <category term="Computer_Network" scheme="https://kimisecond.com/tags/Computer-Network/"/>
+      <category term="Computer_Network" scheme="https://blog.kimisecond.com/tags/Computer-Network/"/>
     
   </entry>
   
   <entry>
     <title>计算机网络 序言/Introduction 第一章笔记</title>
-    <link href="https://kimisecond.com/2017/12/CN-Chapter-One/"/>
-    <id>https://kimisecond.com/2017/12/CN-Chapter-One/</id>
+    <link href="https://blog.kimisecond.com/2017/12/CN-Chapter-One/"/>
+    <id>https://blog.kimisecond.com/2017/12/CN-Chapter-One/</id>
     <published>2017-12-24T13:36:24.000Z</published>
     <updated>2018-03-15T11:54:23.497Z</updated>
     
@@ -129,17 +129,17 @@
     
     </summary>
     
-      <category term="Notes" scheme="https://kimisecond.com/categories/Notes/"/>
+      <category term="Notes" scheme="https://blog.kimisecond.com/categories/Notes/"/>
     
     
-      <category term="Computer_Network" scheme="https://kimisecond.com/tags/Computer-Network/"/>
+      <category term="Computer_Network" scheme="https://blog.kimisecond.com/tags/Computer-Network/"/>
     
   </entry>
   
   <entry>
     <title>操作系统概念 进程同步/Process Synchronization 第六章笔记</title>
-    <link href="https://kimisecond.com/2017/12/OS_Concept_Chapter_Six/"/>
-    <id>https://kimisecond.com/2017/12/OS_Concept_Chapter_Six/</id>
+    <link href="https://blog.kimisecond.com/2017/12/OS_Concept_Chapter_Six/"/>
+    <id>https://blog.kimisecond.com/2017/12/OS_Concept_Chapter_Six/</id>
     <published>2017-12-20T23:29:01.000Z</published>
     <updated>2018-03-15T11:55:55.480Z</updated>
     
@@ -153,21 +153,21 @@
     
     </summary>
     
-      <category term="Notes" scheme="https://kimisecond.com/categories/Notes/"/>
+      <category term="Notes" scheme="https://blog.kimisecond.com/categories/Notes/"/>
     
     
-      <category term="OS_Concept" scheme="https://kimisecond.com/tags/OS-Concept/"/>
+      <category term="OS_Concept" scheme="https://blog.kimisecond.com/tags/OS-Concept/"/>
     
   </entry>
   
   <entry>
     <title>操作系统概念 CPU调度/CPU Scheduling 第五章笔记</title>
-    <link href="https://kimisecond.com/2017/12/OS_Concept_Chapter_Five/"/>
-    <id>https://kimisecond.com/2017/12/OS_Concept_Chapter_Five/</id>
+    <link href="https://blog.kimisecond.com/2017/12/OS_Concept_Chapter_Five/"/>
+    <id>https://blog.kimisecond.com/2017/12/OS_Concept_Chapter_Five/</id>
     <published>2017-12-18T12:19:12.000Z</published>
     <updated>2018-03-15T11:55:17.964Z</updated>
     
-    <content type="html"><![CDATA[<p>2017年10月12日<br>08:01</p><h2 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h2><p>本笔记仅仅是本人在上课时的一些随手记录，并不完整也不完全正确。</p><p>如有错误，请在评论中或直接联系我指正，谢谢！</p><a id="more"></a><p><strong>原始文件下载：<a href="https://1drv.ms/u/s!AkFCnbJhobZ2i1GXy0MAHwPiEaM2" target="_blank" rel="noopener">(mht)</a><a href="https://1drv.ms/b/s!AkFCnbJhobZ2i1Jvb6itFn4XUf_B" target="_blank" rel="noopener">(pdf)</a></strong></p><h2 id="Basic-Concepts"><a href="#Basic-Concepts" class="headerlink" title="Basic Concepts"></a><strong>Basic Concepts</strong></h2><p>Maximum CPU utilization obtained with multiprogramming</p><h3 id="CPU-I-O-Burst-Cycle（突发时间）"><a href="#CPU-I-O-Burst-Cycle（突发时间）" class="headerlink" title="CPU-I/O Burst Cycle（突发时间）"></a>CPU-I/O Burst Cycle（突发时间）</h3><p>Process execution consists of a cycle of <em>CPU execution</em> and I/O wait</p><p><img src="/2017/12/OS_Concept_Chapter_Five/media/c0735cb7a208e52e5bfb798015837059.png" alt=""></p><ul><li>I/O bound: I/O↑ CPU↓  </li><li>CPU bound：I/O↓ CPU↑</li></ul><h3 id="进程调度的关键"><a href="#进程调度的关键" class="headerlink" title="进程调度的关键"></a>进程调度的关键</h3><p>在长期调度中协调I/O bound与CPU bound</p><h3 id="CPU调度"><a href="#CPU调度" class="headerlink" title="CPU调度"></a>CPU调度</h3><p>Selects from among the processes in memory that are ready to execute<br>Allocates the CPU to one of them</p><p><a href="http://kimisecond.com/2017/12/OS_Concept_Chapter_Three/">调度<br>Review</a></p><h4 id="Non-preemptive（非抢占方式）"><a href="#Non-preemptive（非抢占方式）" class="headerlink" title="Non-preemptive（非抢占方式）"></a>Non-preemptive（非抢占方式）</h4><p>Scheduling take place when a process:  </p><ul><li>Terminates  </li><li>Switches from running to waiting(I/O requests)  </li><li>Some kind of primitive is executed in process communication or<br>synchronization, such as Block primitive（阻塞原语）,Wakeup<br>primitives（唤醒原语）</li></ul><h4 id="Preemptive（抢占方式）"><a href="#Preemptive（抢占方式）" class="headerlink" title="Preemptive（抢占方式）"></a>Preemptive（抢占方式）</h4><p>允许打断正在运行中的进程</p><p>Scheduling take place when a process:  </p><ul><li>Running to ready  </li><li>Waiting to ready</li></ul><p>Causes</p><ul><li>Access to Shared data  </li><li>While in kernel mode  </li><li>Interrupts occurring during crucial OS activities</li></ul><h3 id="Dispatcher（进程调度程序）"><a href="#Dispatcher（进程调度程序）" class="headerlink" title="Dispatcher（进程调度程序）"></a>Dispatcher（进程调度程序）</h3><p>将cpu的控制权分配给process</p><p>Tasks:  </p><ul><li>Switching context  </li><li>To user mode  </li><li>Jumping to the proper location in their user program to restart that program</li></ul><p>Dispatch latency</p><ul><li>Stop one process and start another running</li></ul><h2 id="Scheduling-Criteria"><a href="#Scheduling-Criteria" class="headerlink" title="Scheduling Criteria"></a><strong>Scheduling Criteria</strong></h2><h3 id="General-Criteria"><a href="#General-Criteria" class="headerlink" title="General Criteria"></a>General Criteria</h3><ul><li>CPU utilization</li><li><p>Throughput</p><blockquote><p>  Number of Processes that are completed per time unit</p></blockquote></li><li><p>Turnaround time  </p><p>Time spent waiting to</p><blockquote><p>  Get into memory<br>  Waiting in the ready queue<br>  Executing on the CPU<br>  Doing I/O  </p></blockquote><p><em>Long-term Scheduling</em></p></li><li><p>Waiting time</p></li></ul><blockquote><p>  Time that a process spends waiting in the ready queue</p></blockquote><ul><li>Response time</li></ul><blockquote><p>  From the submission of a request until the first response is produced</p></blockquote><p><em>Interactive system</em></p><h3 id="Optimization-Criteria"><a href="#Optimization-Criteria" class="headerlink" title="Optimization Criteria"></a>Optimization Criteria</h3><ul><li>Max CPU utilization   </li><li>Max throughput   </li><li>Min turnaround time（轮转时间）   </li><li>Min waiting time   </li><li>Min response time   </li></ul><h2 id="Scheduling-Algorithms"><a href="#Scheduling-Algorithms" class="headerlink" title="Scheduling Algorithms*"></a><strong>Scheduling Algorithms*</strong></h2><h3 id="FCFS"><a href="#FCFS" class="headerlink" title="FCFS"></a>FCFS</h3><p>First-come, first-served<br>Average waiting time is often quite long.<br>适合处理长调度，有利于长作业<br>Convoy effect（护航效应）<br>&emsp;&emsp;short process behind long process</p><h3 id="SJF"><a href="#SJF" class="headerlink" title="SJF"></a>SJF</h3><p>Shortest-job-first（SJF）（非抢占）<br>对于抢占，非抢占  </p><ul><li>抢占效果更优  </li><li>抢占：SRTF</li></ul><p>Optimal - gives minimum average waiting time for a given set of processes   </p><ul><li>The difficulty is knowing the length of the next CPU request   </li><li>Could ask the user</li></ul><h4 id="预测下一个CPU-burst-time"><a href="#预测下一个CPU-burst-time" class="headerlink" title="预测下一个CPU burst time"></a>预测下一个CPU burst time</h4><p>指数平均</p><p><img src="/2017/12/OS_Concept_Chapter_Five/media/3496d68ec121e1a5ed313ca848a61d72.png" alt=""></p><p>Tn= actual length of nth CPU burst</p><p>α->0<br>&emsp;&emsp;History not count</p><p>α->1<br>&emsp;&emsp;Only the actual last CPU burst counts  </p><p>算法易于实现，但是效率不高</p><h4 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h4><ul><li>忽略作业等待时间  </li><li>会出现饥饿现象（大作业很难执行）  </li></ul><h4 id="比较"><a href="#比较" class="headerlink" title="比较"></a>比较</h4><p>SJF的平均作业周转时间比FCFS要小，所以它的调度性能比FCFS好</p><h4 id="SJF调度算法问题"><a href="#SJF调度算法问题" class="headerlink" title="SJF调度算法问题"></a>SJF调度算法问题</h4><p>需要知道作业所需运行时间，否则调度就没有依据，不可能精确计算出运行时间<br>（即难点为预测下一个作业时间片长度）</p><h3 id="Priority-Scheduling"><a href="#Priority-Scheduling" class="headerlink" title="Priority Scheduling"></a>Priority Scheduling</h3><p>数字越小，优先级越高</p><p>SJF: Priority is the predicted next CPU burst time</p><p>Starvation:<br>&emsp;&emsp;Low priority processes may never execute</p><p>Solution:<br>动态调整优先级，Aging —- as time progresses increase the priority of the process</p><p>静态优先级</p><p>动态优先级</p><p>高响应比优先调度HRRF<br>响应比：<strong>作业等待时间与运行时间比值</strong><br><strong>响应比=（等待时间+要求服务时间）/要求服务时间</strong></p><h4 id="缺点："><a href="#缺点：" class="headerlink" title="缺点："></a>缺点：</h4><ul><li>响应比计算增加了系统开销  </li></ul><h3 id="Round-Robin-Scheduling-轮转算法"><a href="#Round-Robin-Scheduling-轮转算法" class="headerlink" title="Round-Robin Scheduling 轮转算法"></a>Round-Robin Scheduling 轮转算法</h3><p>将cpu时间分为确定的时间片，每个作业不得超过这个固定时间<br>若单个任务超过这个时间，则按时间片划分，按FIFO处理（ready queue）<br>时间片不能太长，不然会退化成FCFS<br>时间片不能太短  </p><ul><li>负载严重     </li><li>吞吐量受影响  </li></ul><p>平衡短作业的性能和长作业的吞吐量</p><ul><li>10-100ms  </li><li>上下文切换：0.1-1ms  </li><li>1%的负载是上下文切换   </li></ul><h3 id="Multilevel-Queue-Scheduling"><a href="#Multilevel-Queue-Scheduling" class="headerlink" title="Multilevel Queue Scheduling"></a>Multilevel Queue Scheduling</h3><p>每个队列有自己的调度算法   </p><h4 id="Multilevel-Feedback-Queue"><a href="#Multilevel-Feedback-Queue" class="headerlink" title="Multilevel Feedback Queue"></a>Multilevel Feedback Queue</h4><ul><li>队列之间必须有调度，采用固定优先级抢占调度  </li><li>进程可以在队列之间移动，借助aging实现</li></ul><h4 id="Definition"><a href="#Definition" class="headerlink" title="Definition"></a>Definition</h4><ul><li>分为前台foreground process和后台background process  </li><li>前台交互，后台批处理  </li><li>80%(time) foreground RR  </li><li>20% background FCFS  </li></ul><h4 id="Feedback-Queue"><a href="#Feedback-Queue" class="headerlink" title="Feedback Queue"></a>Feedback Queue</h4><ul><li>根据时间推移，动态改变作业所在的队列  </li><li>Number of queues   </li><li>Scheduling algorithms for each queue  </li><li>Method used to determine when to upgrade/demote a process  </li><li>Method used to determine which queue a process will enter when that process needs service  </li></ul><h3 id="Algorithm-for-a-particular-system"><a href="#Algorithm-for-a-particular-system" class="headerlink" title="Algorithm for a particular system"></a>Algorithm for a particular system</h3><h4 id="Multiple-Processor-Scheduling"><a href="#Multiple-Processor-Scheduling" class="headerlink" title="Multiple-Processor Scheduling"></a>Multiple-Processor Scheduling</h4><p>SMP / Asymmetric multiprocessing</p><p>Load Balancing  </p><ul><li><p>SMP: keep the workload balances<br>one or more processors sit idle, others high workload(bad)</p><p>Pull  </p><ul><li>空闲cpu从繁忙cpu中获取一个进程  </li></ul><p>Push  </p><ul><li>繁忙cpu队列把一个进程推送到空闲CPU队列中</li></ul></li></ul><h4 id="Real-Time-Scheduling"><a href="#Real-Time-Scheduling" class="headerlink" title="Real-Time Scheduling"></a>Real-Time Scheduling</h4><h5 id="硬实时"><a href="#硬实时" class="headerlink" title="硬实时"></a>硬实时</h5><p>硬件实现</p><ul><li>CPU运算周期按照原先设定的标准（比如Time Slice）  </li><li>或按照某些硬件优先权分配  </li></ul><h5 id="软实时"><a href="#软实时" class="headerlink" title="软实时"></a>软实时</h5><ul><li>对非实时的操作系统进行某些改动，达到近乎实时的效果   </li><li>用一个专门的软件部件，达到快速反应   </li><li>这个进程的优先级相当高</li></ul><h2 id="Thread-Scheduling"><a href="#Thread-Scheduling" class="headerlink" title="Thread Scheduling"></a><strong>Thread Scheduling</strong></h2><h3 id="Local-Scheduling"><a href="#Local-Scheduling" class="headerlink" title="Local Scheduling"></a>Local Scheduling</h3><p>How the threads library decides which thread to put onto an available LWP</p><h3 id="Global-Scheduling"><a href="#Global-Scheduling" class="headerlink" title="Global Scheduling"></a>Global Scheduling</h3><p>How the kernel decides which kernel thread to run next</p><h3 id="PCS-amp-SCS"><a href="#PCS-amp-SCS" class="headerlink" title="PCS&amp;SCS"></a>PCS&amp;SCS</h3><ul><li>PCS进程竞争范围  </li><li>SCS系统竞争范围  </li><li>先PCS，再通过LWP放到SCS，再放到CPU</li></ul><h3 id="Solaris-2"><a href="#Solaris-2" class="headerlink" title="Solaris 2"></a>Solaris 2</h3><ul><li>Real time  </li><li>System  </li><li>Interactive &amp; time sharing</li></ul><h2 id="Scheduling-evaluation"><a href="#Scheduling-evaluation" class="headerlink" title="Scheduling evaluation"></a><strong>Scheduling evaluation</strong></h2><p>Deterministic modeling</p><p>Queuing models</p><p>Implementation/simulation</p>]]></content>
+    <content type="html"><![CDATA[<p>2017年10月12日<br>08:01</p><h2 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h2><p>本笔记仅仅是本人在上课时的一些随手记录，并不完整也不完全正确。</p><p>如有错误，请在评论中或直接联系我指正，谢谢！</p><a id="more"></a><p><strong>原始文件下载：<a href="https://1drv.ms/u/s!AkFCnbJhobZ2i1GXy0MAHwPiEaM2" target="_blank" rel="noopener">(mht)</a><a href="https://1drv.ms/b/s!AkFCnbJhobZ2i1Jvb6itFn4XUf_B" target="_blank" rel="noopener">(pdf)</a></strong></p><h2 id="Basic-Concepts"><a href="#Basic-Concepts" class="headerlink" title="Basic Concepts"></a><strong>Basic Concepts</strong></h2><p>Maximum CPU utilization obtained with multiprogramming</p><h3 id="CPU-I-O-Burst-Cycle（突发时间）"><a href="#CPU-I-O-Burst-Cycle（突发时间）" class="headerlink" title="CPU-I/O Burst Cycle（突发时间）"></a>CPU-I/O Burst Cycle（突发时间）</h3><p>Process execution consists of a cycle of <em>CPU execution</em> and I/O wait</p><p><img src="/2017/12/OS_Concept_Chapter_Five/media/c0735cb7a208e52e5bfb798015837059.png" alt=""></p><ul><li>I/O bound: I/O↑ CPU↓  </li><li>CPU bound：I/O↓ CPU↑</li></ul><h3 id="进程调度的关键"><a href="#进程调度的关键" class="headerlink" title="进程调度的关键"></a>进程调度的关键</h3><p>在长期调度中协调I/O bound与CPU bound</p><h3 id="CPU调度"><a href="#CPU调度" class="headerlink" title="CPU调度"></a>CPU调度</h3><p>Selects from among the processes in memory that are ready to execute<br>Allocates the CPU to one of them</p><p><a href="http://kimisecond.com/2017/12/OS_Concept_Chapter_Three/" target="_blank" rel="noopener">调度<br>Review</a></p><h4 id="Non-preemptive（非抢占方式）"><a href="#Non-preemptive（非抢占方式）" class="headerlink" title="Non-preemptive（非抢占方式）"></a>Non-preemptive（非抢占方式）</h4><p>Scheduling take place when a process:  </p><ul><li>Terminates  </li><li>Switches from running to waiting(I/O requests)  </li><li>Some kind of primitive is executed in process communication or<br>synchronization, such as Block primitive（阻塞原语）,Wakeup<br>primitives（唤醒原语）</li></ul><h4 id="Preemptive（抢占方式）"><a href="#Preemptive（抢占方式）" class="headerlink" title="Preemptive（抢占方式）"></a>Preemptive（抢占方式）</h4><p>允许打断正在运行中的进程</p><p>Scheduling take place when a process:  </p><ul><li>Running to ready  </li><li>Waiting to ready</li></ul><p>Causes</p><ul><li>Access to Shared data  </li><li>While in kernel mode  </li><li>Interrupts occurring during crucial OS activities</li></ul><h3 id="Dispatcher（进程调度程序）"><a href="#Dispatcher（进程调度程序）" class="headerlink" title="Dispatcher（进程调度程序）"></a>Dispatcher（进程调度程序）</h3><p>将cpu的控制权分配给process</p><p>Tasks:  </p><ul><li>Switching context  </li><li>To user mode  </li><li>Jumping to the proper location in their user program to restart that program</li></ul><p>Dispatch latency</p><ul><li>Stop one process and start another running</li></ul><h2 id="Scheduling-Criteria"><a href="#Scheduling-Criteria" class="headerlink" title="Scheduling Criteria"></a><strong>Scheduling Criteria</strong></h2><h3 id="General-Criteria"><a href="#General-Criteria" class="headerlink" title="General Criteria"></a>General Criteria</h3><ul><li>CPU utilization</li><li><p>Throughput</p><blockquote><p>  Number of Processes that are completed per time unit</p></blockquote></li><li><p>Turnaround time  </p><p>Time spent waiting to</p><blockquote><p>  Get into memory<br>  Waiting in the ready queue<br>  Executing on the CPU<br>  Doing I/O  </p></blockquote><p><em>Long-term Scheduling</em></p></li><li><p>Waiting time</p></li></ul><blockquote><p>  Time that a process spends waiting in the ready queue</p></blockquote><ul><li>Response time</li></ul><blockquote><p>  From the submission of a request until the first response is produced</p></blockquote><p><em>Interactive system</em></p><h3 id="Optimization-Criteria"><a href="#Optimization-Criteria" class="headerlink" title="Optimization Criteria"></a>Optimization Criteria</h3><ul><li>Max CPU utilization   </li><li>Max throughput   </li><li>Min turnaround time（轮转时间）   </li><li>Min waiting time   </li><li>Min response time   </li></ul><h2 id="Scheduling-Algorithms"><a href="#Scheduling-Algorithms" class="headerlink" title="Scheduling Algorithms*"></a><strong>Scheduling Algorithms*</strong></h2><h3 id="FCFS"><a href="#FCFS" class="headerlink" title="FCFS"></a>FCFS</h3><p>First-come, first-served<br>Average waiting time is often quite long.<br>适合处理长调度，有利于长作业<br>Convoy effect（护航效应）<br>&emsp;&emsp;short process behind long process</p><h3 id="SJF"><a href="#SJF" class="headerlink" title="SJF"></a>SJF</h3><p>Shortest-job-first（SJF）（非抢占）<br>对于抢占，非抢占  </p><ul><li>抢占效果更优  </li><li>抢占：SRTF</li></ul><p>Optimal - gives minimum average waiting time for a given set of processes   </p><ul><li>The difficulty is knowing the length of the next CPU request   </li><li>Could ask the user</li></ul><h4 id="预测下一个CPU-burst-time"><a href="#预测下一个CPU-burst-time" class="headerlink" title="预测下一个CPU burst time"></a>预测下一个CPU burst time</h4><p>指数平均</p><p><img src="/2017/12/OS_Concept_Chapter_Five/media/3496d68ec121e1a5ed313ca848a61d72.png" alt=""></p><p>Tn= actual length of nth CPU burst</p><p>α->0<br>&emsp;&emsp;History not count</p><p>α->1<br>&emsp;&emsp;Only the actual last CPU burst counts  </p><p>算法易于实现，但是效率不高</p><h4 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h4><ul><li>忽略作业等待时间  </li><li>会出现饥饿现象（大作业很难执行）  </li></ul><h4 id="比较"><a href="#比较" class="headerlink" title="比较"></a>比较</h4><p>SJF的平均作业周转时间比FCFS要小，所以它的调度性能比FCFS好</p><h4 id="SJF调度算法问题"><a href="#SJF调度算法问题" class="headerlink" title="SJF调度算法问题"></a>SJF调度算法问题</h4><p>需要知道作业所需运行时间，否则调度就没有依据，不可能精确计算出运行时间<br>（即难点为预测下一个作业时间片长度）</p><h3 id="Priority-Scheduling"><a href="#Priority-Scheduling" class="headerlink" title="Priority Scheduling"></a>Priority Scheduling</h3><p>数字越小，优先级越高</p><p>SJF: Priority is the predicted next CPU burst time</p><p>Starvation:<br>&emsp;&emsp;Low priority processes may never execute</p><p>Solution:<br>动态调整优先级，Aging —- as time progresses increase the priority of the process</p><p>静态优先级</p><p>动态优先级</p><p>高响应比优先调度HRRF<br>响应比：<strong>作业等待时间与运行时间比值</strong><br><strong>响应比=（等待时间+要求服务时间）/要求服务时间</strong></p><h4 id="缺点："><a href="#缺点：" class="headerlink" title="缺点："></a>缺点：</h4><ul><li>响应比计算增加了系统开销  </li></ul><h3 id="Round-Robin-Scheduling-轮转算法"><a href="#Round-Robin-Scheduling-轮转算法" class="headerlink" title="Round-Robin Scheduling 轮转算法"></a>Round-Robin Scheduling 轮转算法</h3><p>将cpu时间分为确定的时间片，每个作业不得超过这个固定时间<br>若单个任务超过这个时间，则按时间片划分，按FIFO处理（ready queue）<br>时间片不能太长，不然会退化成FCFS<br>时间片不能太短  </p><ul><li>负载严重     </li><li>吞吐量受影响  </li></ul><p>平衡短作业的性能和长作业的吞吐量</p><ul><li>10-100ms  </li><li>上下文切换：0.1-1ms  </li><li>1%的负载是上下文切换   </li></ul><h3 id="Multilevel-Queue-Scheduling"><a href="#Multilevel-Queue-Scheduling" class="headerlink" title="Multilevel Queue Scheduling"></a>Multilevel Queue Scheduling</h3><p>每个队列有自己的调度算法   </p><h4 id="Multilevel-Feedback-Queue"><a href="#Multilevel-Feedback-Queue" class="headerlink" title="Multilevel Feedback Queue"></a>Multilevel Feedback Queue</h4><ul><li>队列之间必须有调度，采用固定优先级抢占调度  </li><li>进程可以在队列之间移动，借助aging实现</li></ul><h4 id="Definition"><a href="#Definition" class="headerlink" title="Definition"></a>Definition</h4><ul><li>分为前台foreground process和后台background process  </li><li>前台交互，后台批处理  </li><li>80%(time) foreground RR  </li><li>20% background FCFS  </li></ul><h4 id="Feedback-Queue"><a href="#Feedback-Queue" class="headerlink" title="Feedback Queue"></a>Feedback Queue</h4><ul><li>根据时间推移，动态改变作业所在的队列  </li><li>Number of queues   </li><li>Scheduling algorithms for each queue  </li><li>Method used to determine when to upgrade/demote a process  </li><li>Method used to determine which queue a process will enter when that process needs service  </li></ul><h3 id="Algorithm-for-a-particular-system"><a href="#Algorithm-for-a-particular-system" class="headerlink" title="Algorithm for a particular system"></a>Algorithm for a particular system</h3><h4 id="Multiple-Processor-Scheduling"><a href="#Multiple-Processor-Scheduling" class="headerlink" title="Multiple-Processor Scheduling"></a>Multiple-Processor Scheduling</h4><p>SMP / Asymmetric multiprocessing</p><p>Load Balancing  </p><ul><li><p>SMP: keep the workload balances<br>one or more processors sit idle, others high workload(bad)</p><p>Pull  </p><ul><li>空闲cpu从繁忙cpu中获取一个进程  </li></ul><p>Push  </p><ul><li>繁忙cpu队列把一个进程推送到空闲CPU队列中</li></ul></li></ul><h4 id="Real-Time-Scheduling"><a href="#Real-Time-Scheduling" class="headerlink" title="Real-Time Scheduling"></a>Real-Time Scheduling</h4><h5 id="硬实时"><a href="#硬实时" class="headerlink" title="硬实时"></a>硬实时</h5><p>硬件实现</p><ul><li>CPU运算周期按照原先设定的标准（比如Time Slice）  </li><li>或按照某些硬件优先权分配  </li></ul><h5 id="软实时"><a href="#软实时" class="headerlink" title="软实时"></a>软实时</h5><ul><li>对非实时的操作系统进行某些改动，达到近乎实时的效果   </li><li>用一个专门的软件部件，达到快速反应   </li><li>这个进程的优先级相当高</li></ul><h2 id="Thread-Scheduling"><a href="#Thread-Scheduling" class="headerlink" title="Thread Scheduling"></a><strong>Thread Scheduling</strong></h2><h3 id="Local-Scheduling"><a href="#Local-Scheduling" class="headerlink" title="Local Scheduling"></a>Local Scheduling</h3><p>How the threads library decides which thread to put onto an available LWP</p><h3 id="Global-Scheduling"><a href="#Global-Scheduling" class="headerlink" title="Global Scheduling"></a>Global Scheduling</h3><p>How the kernel decides which kernel thread to run next</p><h3 id="PCS-amp-SCS"><a href="#PCS-amp-SCS" class="headerlink" title="PCS&amp;SCS"></a>PCS&amp;SCS</h3><ul><li>PCS进程竞争范围  </li><li>SCS系统竞争范围  </li><li>先PCS，再通过LWP放到SCS，再放到CPU</li></ul><h3 id="Solaris-2"><a href="#Solaris-2" class="headerlink" title="Solaris 2"></a>Solaris 2</h3><ul><li>Real time  </li><li>System  </li><li>Interactive &amp; time sharing</li></ul><h2 id="Scheduling-evaluation"><a href="#Scheduling-evaluation" class="headerlink" title="Scheduling evaluation"></a><strong>Scheduling evaluation</strong></h2><p>Deterministic modeling</p><p>Queuing models</p><p>Implementation/simulation</p>]]></content>
     
     <summary type="html">
     
@@ -177,17 +177,17 @@
     
     </summary>
     
-      <category term="Notes" scheme="https://kimisecond.com/categories/Notes/"/>
+      <category term="Notes" scheme="https://blog.kimisecond.com/categories/Notes/"/>
     
     
-      <category term="OS_Concept" scheme="https://kimisecond.com/tags/OS-Concept/"/>
+      <category term="OS_Concept" scheme="https://blog.kimisecond.com/tags/OS-Concept/"/>
     
   </entry>
   
   <entry>
     <title>操作系统概念 线程/Thread 第四章笔记</title>
-    <link href="https://kimisecond.com/2017/12/OS_Concept_Chapter_Four/"/>
-    <id>https://kimisecond.com/2017/12/OS_Concept_Chapter_Four/</id>
+    <link href="https://blog.kimisecond.com/2017/12/OS_Concept_Chapter_Four/"/>
+    <id>https://blog.kimisecond.com/2017/12/OS_Concept_Chapter_Four/</id>
     <published>2017-12-18T11:26:55.000Z</published>
     <updated>2018-03-15T11:55:47.753Z</updated>
     
@@ -201,17 +201,17 @@
     
     </summary>
     
-      <category term="Notes" scheme="https://kimisecond.com/categories/Notes/"/>
+      <category term="Notes" scheme="https://blog.kimisecond.com/categories/Notes/"/>
     
     
-      <category term="OS_Concept" scheme="https://kimisecond.com/tags/OS-Concept/"/>
+      <category term="OS_Concept" scheme="https://blog.kimisecond.com/tags/OS-Concept/"/>
     
   </entry>
   
   <entry>
     <title>操作系统概念 进程/Process 第三章笔记</title>
-    <link href="https://kimisecond.com/2017/12/OS_Concept_Chapter_Three/"/>
-    <id>https://kimisecond.com/2017/12/OS_Concept_Chapter_Three/</id>
+    <link href="https://blog.kimisecond.com/2017/12/OS_Concept_Chapter_Three/"/>
+    <id>https://blog.kimisecond.com/2017/12/OS_Concept_Chapter_Three/</id>
     <published>2017-12-14T10:25:06.000Z</published>
     <updated>2018-03-15T11:56:03.273Z</updated>
     
@@ -225,17 +225,17 @@
     
     </summary>
     
-      <category term="Notes" scheme="https://kimisecond.com/categories/Notes/"/>
+      <category term="Notes" scheme="https://blog.kimisecond.com/categories/Notes/"/>
     
     
-      <category term="OS_Concept" scheme="https://kimisecond.com/tags/OS-Concept/"/>
+      <category term="OS_Concept" scheme="https://blog.kimisecond.com/tags/OS-Concept/"/>
     
   </entry>
   
   <entry>
     <title>操作系统概念 操作系统结构/Operating-System Structures 第二章笔记</title>
-    <link href="https://kimisecond.com/2017/12/OS_Concept_Chapter_Two/"/>
-    <id>https://kimisecond.com/2017/12/OS_Concept_Chapter_Two/</id>
+    <link href="https://blog.kimisecond.com/2017/12/OS_Concept_Chapter_Two/"/>
+    <id>https://blog.kimisecond.com/2017/12/OS_Concept_Chapter_Two/</id>
     <published>2017-12-12T02:11:10.000Z</published>
     <updated>2018-03-15T11:56:10.270Z</updated>
     
@@ -249,17 +249,17 @@
     
     </summary>
     
-      <category term="Notes" scheme="https://kimisecond.com/categories/Notes/"/>
+      <category term="Notes" scheme="https://blog.kimisecond.com/categories/Notes/"/>
     
     
-      <category term="OS_Concept" scheme="https://kimisecond.com/tags/OS-Concept/"/>
+      <category term="OS_Concept" scheme="https://blog.kimisecond.com/tags/OS-Concept/"/>
     
   </entry>
   
   <entry>
     <title>操作系统概念 操作系统概念/Operating System Concept 第一章笔记</title>
-    <link href="https://kimisecond.com/2017/12/OS_Concept_Chapter_One/"/>
-    <id>https://kimisecond.com/2017/12/OS_Concept_Chapter_One/</id>
+    <link href="https://blog.kimisecond.com/2017/12/OS_Concept_Chapter_One/"/>
+    <id>https://blog.kimisecond.com/2017/12/OS_Concept_Chapter_One/</id>
     <published>2017-12-11T09:35:06.000Z</published>
     <updated>2018-03-15T11:55:35.838Z</updated>
     
@@ -273,33 +273,33 @@
     
     </summary>
     
-      <category term="Notes" scheme="https://kimisecond.com/categories/Notes/"/>
+      <category term="Notes" scheme="https://blog.kimisecond.com/categories/Notes/"/>
     
     
-      <category term="OS_Concept" scheme="https://kimisecond.com/tags/OS-Concept/"/>
+      <category term="OS_Concept" scheme="https://blog.kimisecond.com/tags/OS-Concept/"/>
     
   </entry>
   
   <entry>
     <title>Hello World</title>
-    <link href="https://kimisecond.com/2017/12/hello-world/"/>
-    <id>https://kimisecond.com/2017/12/hello-world/</id>
+    <link href="https://blog.kimisecond.com/2017/12/hello-world/"/>
+    <id>https://blog.kimisecond.com/2017/12/hello-world/</id>
     <published>2017-12-07T16:40:00.000Z</published>
     <updated>2018-03-15T11:55:09.485Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="欢迎来到我的博客！"><a href="#欢迎来到我的博客！" class="headerlink" title="欢迎来到我的博客！"></a>欢迎来到我的博客！</h2><p>本博客刚刚搭建，托管于github pages. 项目链接为：<a href="https://github.com/kimisecond/kimisecond.github.io" target="_blank" rel="noopener">https://github.com/kimisecond/kimisecond.github.io</a>.</p><p>关于本人的有关信息请参阅<a href="http://kimisecond.com/about/">about页面</a>，谢谢！</p><a id="more"></a>]]></content>
+    <content type="html"><![CDATA[<h2 id="欢迎来到我的博客！"><a href="#欢迎来到我的博客！" class="headerlink" title="欢迎来到我的博客！"></a>欢迎来到我的博客！</h2><p>本博客刚刚搭建，托管于github pages. 项目链接为：<a href="https://github.com/kimisecond/kimisecond.github.io" target="_blank" rel="noopener">https://github.com/kimisecond/kimisecond.github.io</a>.</p><p>关于本人的有关信息请参阅<a href="http://kimisecond.com/about/" target="_blank" rel="noopener">about页面</a>，谢谢！</p><a id="more"></a>]]></content>
     
     <summary type="html">
     
       &lt;h2 id=&quot;欢迎来到我的博客！&quot;&gt;&lt;a href=&quot;#欢迎来到我的博客！&quot; class=&quot;headerlink&quot; title=&quot;欢迎来到我的博客！&quot;&gt;&lt;/a&gt;欢迎来到我的博客！&lt;/h2&gt;&lt;p&gt;本博客刚刚搭建，托管于github pages. 项目链接为：&lt;a href=&quot;https://github.com/kimisecond/kimisecond.github.io&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://github.com/kimisecond/kimisecond.github.io&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;关于本人的有关信息请参阅&lt;a href=&quot;http://kimisecond.com/about/&quot;&gt;about页面&lt;/a&gt;，谢谢！&lt;/p&gt;
+&lt;p&gt;关于本人的有关信息请参阅&lt;a href=&quot;http://kimisecond.com/about/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;about页面&lt;/a&gt;，谢谢！&lt;/p&gt;
     
     </summary>
     
-      <category term="Personal" scheme="https://kimisecond.com/categories/Personal/"/>
+      <category term="Personal" scheme="https://blog.kimisecond.com/categories/Personal/"/>
     
     
-      <category term="Personal Information" scheme="https://kimisecond.com/tags/Personal-Information/"/>
+      <category term="Personal Information" scheme="https://blog.kimisecond.com/tags/Personal-Information/"/>
     
   </entry>
   

@@ -85,36 +85,36 @@
 <meta name="keywords" content="OS_Concept">
 <meta property="og:type" content="article">
 <meta property="og:title" content="操作系统概念 进程同步&#x2F;Process Synchronization 第六章笔记">
-<meta property="og:url" content="https://kimisecond.com/2017/12/OS_Concept_Chapter_Six/index.html">
+<meta property="og:url" content="https://blog.kimisecond.com/2017/12/OS_Concept_Chapter_Six/index.html">
 <meta property="og:site_name" content="Kimi&#39;s Blog">
 <meta property="og:description" content="2017年10月24日09:53 写在前面本笔记仅仅是本人在上课时的一些随手记录，并不完整也不完全正确。 如有错误，请在评论中或直接联系我指正，谢谢！">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="https://kimisecond.com/2017/12/OS_Concept_Chapter_Six/b6e1b53a88e54edd4dafc15e52a4468c.png">
-<meta property="og:image" content="https://kimisecond.com/2017/12/OS_Concept_Chapter_Six/2ae76fdd4904ce6ceb1e51296fec8db6.png">
-<meta property="og:image" content="https://kimisecond.com/2017/12/OS_Concept_Chapter_Six/f55a642aea69656e2ca83887330998ae.png">
-<meta property="og:image" content="https://kimisecond.com/2017/12/OS_Concept_Chapter_Six/be5ba0148b905da6601622ad32a5342b.png">
-<meta property="og:image" content="https://kimisecond.com/2017/12/OS_Concept_Chapter_Six/697682e4fadc7ef3f83d7cf834fe640f.png">
-<meta property="og:image" content="https://kimisecond.com/2017/12/OS_Concept_Chapter_Six/c8f3dd4cdac99f6f652906d508383637.png">
-<meta property="og:image" content="https://kimisecond.com/2017/12/OS_Concept_Chapter_Six/8653cb02aa3de96612dbfbb83a020394.png">
-<meta property="og:image" content="https://kimisecond.com/2017/12/OS_Concept_Chapter_Six/566a220578be3a3c49a1779771444f0b.png">
-<meta property="og:image" content="https://kimisecond.com/2017/12/OS_Concept_Chapter_Six/e496d0bef66a8f2b90d74bb30d75b862.png">
-<meta property="og:image" content="https://kimisecond.com/2017/12/OS_Concept_Chapter_Six/0b439cc1cb2c1edd1a6299d6bd5ae830.png">
-<meta property="og:image" content="https://kimisecond.com/2017/12/OS_Concept_Chapter_Six/0b9563dd49d1963bfca404fc7d2f8b88.png">
-<meta property="og:image" content="https://kimisecond.com/2017/12/OS_Concept_Chapter_Six/c29d3ec828681545008d9d243222402e.png">
-<meta property="og:image" content="https://kimisecond.com/2017/12/OS_Concept_Chapter_Six/7c81483c2b963ae836cd73459a1ddc1f.png">
-<meta property="og:image" content="https://kimisecond.com/2017/12/OS_Concept_Chapter_Six/ea65d5e146a63b269b656ab27920f0d9.png">
-<meta property="og:image" content="https://kimisecond.com/2017/12/OS_Concept_Chapter_Six/9523c91a6141853ca5f2936f640893c6.png">
-<meta property="og:image" content="https://kimisecond.com/2017/12/OS_Concept_Chapter_Six/fbc85bf4fed8d4fa7eb63b38bfda848a.png">
-<meta property="og:image" content="https://kimisecond.com/2017/12/OS_Concept_Chapter_Six/cdbabb7fe9281bbeb224ac619b43e2b8.png">
-<meta property="og:image" content="https://kimisecond.com/2017/12/OS_Concept_Chapter_Six/1169ed130434f82d6fc9bf45c3bda0f4.png">
-<meta property="og:image" content="https://kimisecond.com/2017/12/OS_Concept_Chapter_Six/28a4faf7e40b3bfdfb3476ce1c98bb9e.png">
-<meta property="og:image" content="https://kimisecond.com/2017/12/OS_Concept_Chapter_Six/25b17fb2f4d66dcd9f537c721915aa1e.png">
-<meta property="og:image" content="https://kimisecond.com/2017/12/OS_Concept_Chapter_Six/98f754666203f43ca962981708746a9f.png">
+<meta property="og:image" content="https://blog.kimisecond.com/2017/12/OS_Concept_Chapter_Six/b6e1b53a88e54edd4dafc15e52a4468c.png">
+<meta property="og:image" content="https://blog.kimisecond.com/2017/12/OS_Concept_Chapter_Six/2ae76fdd4904ce6ceb1e51296fec8db6.png">
+<meta property="og:image" content="https://blog.kimisecond.com/2017/12/OS_Concept_Chapter_Six/f55a642aea69656e2ca83887330998ae.png">
+<meta property="og:image" content="https://blog.kimisecond.com/2017/12/OS_Concept_Chapter_Six/be5ba0148b905da6601622ad32a5342b.png">
+<meta property="og:image" content="https://blog.kimisecond.com/2017/12/OS_Concept_Chapter_Six/697682e4fadc7ef3f83d7cf834fe640f.png">
+<meta property="og:image" content="https://blog.kimisecond.com/2017/12/OS_Concept_Chapter_Six/c8f3dd4cdac99f6f652906d508383637.png">
+<meta property="og:image" content="https://blog.kimisecond.com/2017/12/OS_Concept_Chapter_Six/8653cb02aa3de96612dbfbb83a020394.png">
+<meta property="og:image" content="https://blog.kimisecond.com/2017/12/OS_Concept_Chapter_Six/566a220578be3a3c49a1779771444f0b.png">
+<meta property="og:image" content="https://blog.kimisecond.com/2017/12/OS_Concept_Chapter_Six/e496d0bef66a8f2b90d74bb30d75b862.png">
+<meta property="og:image" content="https://blog.kimisecond.com/2017/12/OS_Concept_Chapter_Six/0b439cc1cb2c1edd1a6299d6bd5ae830.png">
+<meta property="og:image" content="https://blog.kimisecond.com/2017/12/OS_Concept_Chapter_Six/0b9563dd49d1963bfca404fc7d2f8b88.png">
+<meta property="og:image" content="https://blog.kimisecond.com/2017/12/OS_Concept_Chapter_Six/c29d3ec828681545008d9d243222402e.png">
+<meta property="og:image" content="https://blog.kimisecond.com/2017/12/OS_Concept_Chapter_Six/7c81483c2b963ae836cd73459a1ddc1f.png">
+<meta property="og:image" content="https://blog.kimisecond.com/2017/12/OS_Concept_Chapter_Six/ea65d5e146a63b269b656ab27920f0d9.png">
+<meta property="og:image" content="https://blog.kimisecond.com/2017/12/OS_Concept_Chapter_Six/9523c91a6141853ca5f2936f640893c6.png">
+<meta property="og:image" content="https://blog.kimisecond.com/2017/12/OS_Concept_Chapter_Six/fbc85bf4fed8d4fa7eb63b38bfda848a.png">
+<meta property="og:image" content="https://blog.kimisecond.com/2017/12/OS_Concept_Chapter_Six/cdbabb7fe9281bbeb224ac619b43e2b8.png">
+<meta property="og:image" content="https://blog.kimisecond.com/2017/12/OS_Concept_Chapter_Six/1169ed130434f82d6fc9bf45c3bda0f4.png">
+<meta property="og:image" content="https://blog.kimisecond.com/2017/12/OS_Concept_Chapter_Six/28a4faf7e40b3bfdfb3476ce1c98bb9e.png">
+<meta property="og:image" content="https://blog.kimisecond.com/2017/12/OS_Concept_Chapter_Six/25b17fb2f4d66dcd9f537c721915aa1e.png">
+<meta property="og:image" content="https://blog.kimisecond.com/2017/12/OS_Concept_Chapter_Six/98f754666203f43ca962981708746a9f.png">
 <meta property="og:updated_time" content="2018-03-15T11:55:55.480Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="操作系统概念 进程同步&#x2F;Process Synchronization 第六章笔记">
 <meta name="twitter:description" content="2017年10月24日09:53 写在前面本笔记仅仅是本人在上课时的一些随手记录，并不完整也不完全正确。 如有错误，请在评论中或直接联系我指正，谢谢！">
-<meta name="twitter:image" content="https://kimisecond.com/2017/12/OS_Concept_Chapter_Six/b6e1b53a88e54edd4dafc15e52a4468c.png">
+<meta name="twitter:image" content="https://blog.kimisecond.com/2017/12/OS_Concept_Chapter_Six/b6e1b53a88e54edd4dafc15e52a4468c.png">
 
 
 
@@ -144,7 +144,7 @@
 
 
 
-  <link rel="canonical" href="https://kimisecond.com/2017/12/OS_Concept_Chapter_Six/"/>
+  <link rel="canonical" href="https://blog.kimisecond.com/2017/12/OS_Concept_Chapter_Six/"/>
 
 
 
@@ -331,7 +331,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://kimisecond.com/2017/12/OS_Concept_Chapter_Six/">
+    <link itemprop="mainEntityOfPage" href="https://blog.kimisecond.com/2017/12/OS_Concept_Chapter_Six/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Kimisecond">
@@ -586,7 +586,7 @@
        <ul class="post-copyright">
            <li class="post-copyright-link">
              <strong>本文标题：</strong>
-             <a href="https://kimisecond.com/2017/12/OS_Concept_Chapter_Six/" title="操作系统概念 进程同步/Process Synchronization 第六章笔记">操作系统概念 进程同步/Process Synchronization 第六章笔记</a>
+             <a href="https://blog.kimisecond.com/2017/12/OS_Concept_Chapter_Six/" title="操作系统概念 进程同步/Process Synchronization 第六章笔记">操作系统概念 进程同步/Process Synchronization 第六章笔记</a>
            </li>
 
           <li class="post-copyright-link">
@@ -596,7 +596,7 @@
 
          <li class="post-copyright-link">
            <strong>本文链接：</strong>
-           <a href="https://kimisecond.com/2017/12/OS_Concept_Chapter_Six/" title="操作系统概念 进程同步/Process Synchronization 第六章笔记">https://kimisecond.com/2017/12/OS_Concept_Chapter_Six/</a>
+           <a href="https://blog.kimisecond.com/2017/12/OS_Concept_Chapter_Six/" title="操作系统概念 进程同步/Process Synchronization 第六章笔记">https://blog.kimisecond.com/2017/12/OS_Concept_Chapter_Six/</a>
          </li>
 
          <li class="post-copyright-date">
@@ -984,7 +984,7 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'https://kimisecond.com/2017/12/OS_Concept_Chapter_Six/';
+          this.page.url = 'https://blog.kimisecond.com/2017/12/OS_Concept_Chapter_Six/';
           this.page.identifier = '2017/12/OS_Concept_Chapter_Six/';
           this.page.title = '操作系统概念 进程同步/Process Synchronization 第六章笔记';
         };
