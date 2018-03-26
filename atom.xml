@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.kimisecond.com/"/>
-  <updated>2018-03-15T16:57:48.940Z</updated>
+  <updated>2018-03-26T10:49:30.006Z</updated>
   <id>https://blog.kimisecond.com/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>数据库概念 关系模型/Relational Model 第二课笔记</title>
+    <link href="https://blog.kimisecond.com/2018/03/DBS-Concept-Lecture-Two/"/>
+    <id>https://blog.kimisecond.com/2018/03/DBS-Concept-Lecture-Two/</id>
+    <published>2018-03-26T10:29:45.462Z</published>
+    <updated>2018-03-26T10:49:30.006Z</updated>
+    
+    <content type="html"><![CDATA[<p>2018年3月6日<br>09:54</p><h2 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h2><p>本笔记仅仅是本人在上课时的一些随手记录，并不完整也不完全正确。<br>如有错误，请在评论中或直接联系我指正，谢谢！<br><a id="more"></a><br><strong>原始文件下载：<a href="https://1drv.ms/u/s!AkFCnbJhobZ2jSvVVi0-Kr1GCMMZ" target="_blank" rel="noopener">(mht)</a><a href="https://1drv.ms/b/s!AkFCnbJhobZ2jSxgJT2dkP93FeeV" target="_blank" rel="noopener">(pdf)</a></strong></p><p>Outline</p><ol><li>概念</li><li>关系代数</li><li>SQL查询语言</li></ol><p>Why Study RDM?</p><ol><li>Extremely useful and simple<ul><li>2D tables</li><li>Allows clean yet powerful manipulation languages</li></ul></li><li>Most widely used model</li><li>Competitors: object-oriented model, semi-structured (XML) model</li></ol><p>Example:<br><img src="/2018/03/DBS-Concept-Lecture-Two/media/618fdf73c519540d66575dfa7fbed7a9.png" alt=""><br><em>Instructor</em>: Relation name<br>每一行为一个tuple（记录）汉语为元组<br><em>Name of all the attributes(属性)</em>: ID name dept_name…<br>每一个实例为一个<em>relation instance</em><br>Relation -> table<br>Tuple -> row<br>Attribute -> column  </p><h2 id="Attribute-types"><a href="#Attribute-types" class="headerlink" title="Attribute types"></a>Attribute types</h2><p>The set of allowed values for each attribute is called the <strong>domain</strong> of the attribute.<br>Attribute values required to be <strong>atomic</strong>(indivisible)<br><strong>Null 空值</strong>: the value is unknown or doesn’t exist  </p><h2 id="Relation-Schema-and-Instance"><a href="#Relation-Schema-and-Instance" class="headerlink" title="Relation Schema and Instance"></a>Relation Schema and Instance</h2><p>规范化表达<br>A1-An Attributes<br>R=(A1, A2,…) <em>relation schema</em><br>Example: instructor = (ID, name, dept_name, salary)<br>Formally, given sets D1, D2,… a <strong>relation</strong> r is a subset of D1 x D2 x …<br>Thus, a relation is a set of n-tuples (a1, a2…) where each ai belongs to Di<br>The current values (<strong>relation instance</strong>) of a relation are specified by a table<br>An element t of r is a tuple, represented by a row in a table</p><p>Order of tuples is irrelevant (normally in an arbitrary order)<br><strong>Attributes of a relation form a set, not a list!</strong></p><h2 id="Keys"><a href="#Keys" class="headerlink" title="Keys"></a>Keys</h2><p>How tuples within a given relation are distinguished?<br>K为R子集  </p><ol><li>K is a <strong>superkey</strong> of R if values for K are sufficient to identify a unique tuple of each possible relation 超级码 区分元组的属性<ul><li>By possible r we mean a relation r that could exist in the enterprise we are modeling</li><li>Example: {customer_name, customer_street} and {customer_name} are both superkeys of customer, if no two customers can possibly have the same name</li></ul></li><li>K is a <strong>candidate key</strong> if K is minimal 候选码（最小超级码）<ul><li>Example: {customer_name} is a candidate key for Customer, since it is a superkey (assuming no two customers can possible have the same name), and no subset of it is a superkey.</li></ul></li><li><strong>Primary Key</strong>: a candidate key chosen as the principle means of<br>identifying tuples within a relation 主码 被选用为区分元组的候选码<ul><li>Should choose an attribute whose value never, or very rarely, changes(e.g. email addresses)</li></ul></li><li><strong>Foreign key</strong>: a relation schema may have an attribute that corresponds to the primary key of another relation. The attribute is called a foreign key. 外码<ul><li>Only values occurring in the primary key attribute of the <strong>referenced relation</strong> may occur in the foreign key attribute of the <strong>referencing relation</strong>.</li><li>将两张<strong>表</strong>的两个<strong>元组</strong>联系起来（两张表中可能存在<strong>相同</strong>的属性列，其在一张表中为<strong>主码</strong>，另一张表中则为<strong>外码</strong>）<br>在录入数据时，先录入<strong>主码</strong>表</li></ul></li></ol><h2 id="Schema-Diagrams"><a href="#Schema-Diagrams" class="headerlink" title="Schema Diagrams"></a>Schema Diagrams</h2><p>模式图<br><img src="/2018/03/DBS-Concept-Lecture-Two/media/7c0600a5d9f9bc14316810e8badd4e10.png" alt=""></p><h2 id="Relational-Query-Languages"><a href="#Relational-Query-Languages" class="headerlink" title="Relational Query Languages"></a>Relational Query Languages</h2><p>关系代数<br>A query language is a language in which a user requests information from the database.<br>基于关系的一些运算，基于运算符和运算数，访问查询数据库中的数据，一种数学表达<br><img src="/2018/03/DBS-Concept-Lecture-Two/media/dd936745b2642012dff87be30c8a21d5.png" alt=""></p><p>选择运算<br>σ A=B and D>5(r) 选择A=B且D>5的元组</p><p>投影运算<br>Π A, C (R) 取A，C属性并去重</p><p>连接运算 - 笛卡尔乘积<br>r x s</p><p>并集运算<br>r ∪ s</p><p>差集运算<br>列数相等且同质<br>r - s</p><p>Natural join<br>r ⋈ s<br>输出相同列中有相同值的元组的集合</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;2018年3月6日&lt;br&gt;09:54&lt;/p&gt;
+&lt;h2 id=&quot;写在前面&quot;&gt;&lt;a href=&quot;#写在前面&quot; class=&quot;headerlink&quot; title=&quot;写在前面&quot;&gt;&lt;/a&gt;写在前面&lt;/h2&gt;&lt;p&gt;本笔记仅仅是本人在上课时的一些随手记录，并不完整也不完全正确。&lt;br&gt;如有错误，请在评论中或直接联系我指正，谢谢！&lt;br&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Notes" scheme="https://blog.kimisecond.com/categories/Notes/"/>
+    
+    
+      <category term="Database_System_Concept" scheme="https://blog.kimisecond.com/tags/Database-System-Concept/"/>
+    
+  </entry>
   
   <entry>
     <title>数据库概念 序言/Introduction 第一课笔记</title>
