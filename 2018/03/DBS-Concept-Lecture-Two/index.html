@@ -89,14 +89,14 @@
 <meta property="og:site_name" content="Kimi&#39;s Blog">
 <meta property="og:description" content="2018年3月6日09:54 写在前面本笔记仅仅是本人在上课时的一些随手记录，并不完整也不完全正确。如有错误，请在评论中或直接联系我指正，谢谢！">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="https://blog.kimisecond.com/2018/03/DBS-Concept-Lecture-Two/media/618fdf73c519540d66575dfa7fbed7a9.png">
-<meta property="og:image" content="https://blog.kimisecond.com/2018/03/DBS-Concept-Lecture-Two/media/7c0600a5d9f9bc14316810e8badd4e10.png">
-<meta property="og:image" content="https://blog.kimisecond.com/2018/03/DBS-Concept-Lecture-Two/media/dd936745b2642012dff87be30c8a21d5.png">
-<meta property="og:updated_time" content="2018-03-26T10:49:30.006Z">
+<meta property="og:image" content="https://blog.kimisecond.com/2018/03/DBS-Concept-Lecture-Two/618fdf73c519540d66575dfa7fbed7a9.png">
+<meta property="og:image" content="https://blog.kimisecond.com/2018/03/DBS-Concept-Lecture-Two/7c0600a5d9f9bc14316810e8badd4e10.png">
+<meta property="og:image" content="https://blog.kimisecond.com/2018/03/DBS-Concept-Lecture-Two/dd936745b2642012dff87be30c8a21d5.png">
+<meta property="og:updated_time" content="2018-03-26T10:59:19.872Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据库概念 关系模型&#x2F;Relational Model 第二课笔记">
 <meta name="twitter:description" content="2018年3月6日09:54 写在前面本笔记仅仅是本人在上课时的一些随手记录，并不完整也不完全正确。如有错误，请在评论中或直接联系我指正，谢谢！">
-<meta name="twitter:image" content="https://blog.kimisecond.com/2018/03/DBS-Concept-Lecture-Two/media/618fdf73c519540d66575dfa7fbed7a9.png">
+<meta name="twitter:image" content="https://blog.kimisecond.com/2018/03/DBS-Concept-Lecture-Two/618fdf73c519540d66575dfa7fbed7a9.png">
 
 
 
@@ -342,7 +342,7 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-26T18:29:45+08:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-26T18:56:42+08:00">
                 2018-03-26
               </time>
             
@@ -431,7 +431,7 @@
 <li>Most widely used model</li>
 <li>Competitors: object-oriented model, semi-structured (XML) model</li>
 </ol>
-<p>Example:<br><img src="/2018/03/DBS-Concept-Lecture-Two/media/618fdf73c519540d66575dfa7fbed7a9.png" alt=""><br><em>Instructor</em>: Relation name<br>每一行为一个tuple（记录）汉语为元组<br><em>Name of all the attributes(属性)</em>: ID name dept_name…<br>每一个实例为一个<em>relation instance</em><br>Relation -> table<br>Tuple -> row<br>Attribute -> column  </p>
+<p>Example:<br><img src="/2018/03/DBS-Concept-Lecture-Two/618fdf73c519540d66575dfa7fbed7a9.png" alt=""><br><em>Instructor</em>: Relation name<br>每一行为一个tuple（记录）汉语为元组<br><em>Name of all the attributes(属性)</em>: ID name dept_name…<br>每一个实例为一个<em>relation instance</em><br>Relation -> table<br>Tuple -> row<br>Attribute -> column  </p>
 <h2 id="Attribute-types"><a href="#Attribute-types" class="headerlink" title="Attribute types"></a>Attribute types</h2><p>The set of allowed values for each attribute is called the <strong>domain</strong> of the attribute.<br>Attribute values required to be <strong>atomic</strong>(indivisible)<br><strong>Null 空值</strong>: the value is unknown or doesn’t exist  </p>
 <h2 id="Relation-Schema-and-Instance"><a href="#Relation-Schema-and-Instance" class="headerlink" title="Relation Schema and Instance"></a>Relation Schema and Instance</h2><p>规范化表达<br>A1-An Attributes<br>R=(A1, A2,…) <em>relation schema</em><br>Example: instructor = (ID, name, dept_name, salary)<br>Formally, given sets D1, D2,… a <strong>relation</strong> r is a subset of D1 x D2 x …<br>Thus, a relation is a set of n-tuples (a1, a2…) where each ai belongs to Di<br>The current values (<strong>relation instance</strong>) of a relation are specified by a table<br>An element t of r is a tuple, represented by a row in a table</p>
 <p>Order of tuples is irrelevant (normally in an arbitrary order)<br><strong>Attributes of a relation form a set, not a list!</strong></p>
@@ -456,8 +456,8 @@
 </ul>
 </li>
 </ol>
-<h2 id="Schema-Diagrams"><a href="#Schema-Diagrams" class="headerlink" title="Schema Diagrams"></a>Schema Diagrams</h2><p>模式图<br><img src="/2018/03/DBS-Concept-Lecture-Two/media/7c0600a5d9f9bc14316810e8badd4e10.png" alt=""></p>
-<h2 id="Relational-Query-Languages"><a href="#Relational-Query-Languages" class="headerlink" title="Relational Query Languages"></a>Relational Query Languages</h2><p>关系代数<br>A query language is a language in which a user requests information from the database.<br>基于关系的一些运算，基于运算符和运算数，访问查询数据库中的数据，一种数学表达<br><img src="/2018/03/DBS-Concept-Lecture-Two/media/dd936745b2642012dff87be30c8a21d5.png" alt=""></p>
+<h2 id="Schema-Diagrams"><a href="#Schema-Diagrams" class="headerlink" title="Schema Diagrams"></a>Schema Diagrams</h2><p>模式图<br><img src="/2018/03/DBS-Concept-Lecture-Two/7c0600a5d9f9bc14316810e8badd4e10.png" alt=""></p>
+<h2 id="Relational-Query-Languages"><a href="#Relational-Query-Languages" class="headerlink" title="Relational Query Languages"></a>Relational Query Languages</h2><p>关系代数<br>A query language is a language in which a user requests information from the database.<br>基于关系的一些运算，基于运算符和运算数，访问查询数据库中的数据，一种数学表达<br><img src="/2018/03/DBS-Concept-Lecture-Two/dd936745b2642012dff87be30c8a21d5.png" alt=""></p>
 <p>选择运算<br>σ A=B and D>5(r) 选择A=B且D>5的元组</p>
 <p>投影运算<br>Π A, C (R) 取A，C属性并去重</p>
 <p>连接运算 - 笛卡尔乘积<br>r x s</p>
