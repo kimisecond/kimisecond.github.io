@@ -469,13 +469,13 @@
 <blockquote>
 <p>  Win32<br>  POSIX<br>  JAVA</p>
 </blockquote>
-<p><img src="/2017/12/OS_Concept_Chapter_Two/d1cf5ae1db8157b2842f0a54ee45b524.png" alt="计算机生成了可选文字: source file destination file Cap fi19 na-rne Write érpgppttp_sqgeén, Acquirepoutputfile Write prömpt\@ screem Acce viripüt Create Outputflle i! filé exis.ts, abort Read ffom&#39;input. file Write&#39;to output,file Until&#39;: read CIO\&gt;e output file Write completion message to screen Terminate- nOrmally Figure 2.1 Example of how system calls are used. "></p>
+<p><img src="d1cf5ae1db8157b2842f0a54ee45b524.png" alt="计算机生成了可选文字: source file destination file Cap fi19 na-rne Write érpgppttp_sqgeén, Acquirepoutputfile Write prömpt\@ screem Acce viripüt Create Outputflle i! filé exis.ts, abort Read ffom&#39;input. file Write&#39;to output,file Until&#39;: read CIO\&gt;e output file Write completion message to screen Terminate- nOrmally Figure 2.1 Example of how system calls are used. "></p>
 <blockquote>
 <p>  System call sequence to copy the contents of one file to another file</p>
 </blockquote>
 <p>As an example of a standard API, consider the ReadFile() function in the Win32 API: a function for reading from a file.<br>The API for this function appears Ln Figure 2.2.</p>
-<p><img src="/2017/12/OS_Concept_Chapter_Two/f24ee11de0b8f0ac3d6dc8ca550f90ed.png" alt="return value BOOL ReadFiIe c function name I HANDLE LPVOID LECWORD bytes Read, LPOVERLAPPED ; Figure 2.2 The API fly the ReadFileO function. "></p>
-<p><img src="/2017/12/OS_Concept_Chapter_Two/dc195aa9fa86886100486684a55cf579.png" alt="open ( ) system call interface open () Implementation Of open l) systern can Figure 2.3 The handling of a user application invoking the open() system call. "></p>
+<p><img src="f24ee11de0b8f0ac3d6dc8ca550f90ed.png" alt="return value BOOL ReadFiIe c function name I HANDLE LPVOID LECWORD bytes Read, LPOVERLAPPED ; Figure 2.2 The API fly the ReadFileO function. "></p>
+<p><img src="dc195aa9fa86886100486684a55cf579.png" alt="open ( ) system call interface open () Implementation Of open l) systern can Figure 2.3 The handling of a user application invoking the open() system call. "></p>
 <p>A description of the parameters passed to ReadFile() is as follows:</p>
 <ul>
 <li>HANDLE file—the file to be read.</li>
@@ -497,14 +497,14 @@
 <p>  API是函数的定义，规定功能，和内核无直接联系<br>  系统调用通过中断<br>  API需要一个或多个系统调用<br>  API是一个提供给应用程序的接口函数，与程序员进行直接交互<br>  系统调用不与程序员进行交互，根据API函数，通过软中断向内核提交请求<br>  并不是所有API函数一一对应一个系统调用</p>
 </blockquote>
 <p>一个C语言的例子</p>
-<p><img src="/2017/12/OS_Concept_Chapter_Two/d86267f9d5962fa4f6f9174ef4362d62.png" alt=""></p>
+<p><img src="d86267f9d5962fa4f6f9174ef4362d62.png" alt=""></p>
 <h3 id="Design-and-Implementation-of-OS"><a href="#Design-and-Implementation-of-OS" class="headerlink" title="Design and Implementation of OS"></a>Design and Implementation of OS</h3><p>Important principle to separate</p>
 <blockquote>
 <p> Policy（策略）: What to do<br> Mechanism（机制）: How to do it</p>
 </blockquote>
 <h2 id="OS-Structure"><a href="#OS-Structure" class="headerlink" title="OS Structure"></a><strong>OS Structure</strong></h2><h3 id="Simple-Structure-DOS"><a href="#Simple-Structure-DOS" class="headerlink" title="Simple Structure:(DOS)"></a><em>Simple Structure:(DOS)</em></h3><h4 id="MS-DOS"><a href="#MS-DOS" class="headerlink" title="MS-DOS"></a>MS-DOS</h4><p>Not divided into modules<br>Most functionality in the least space<br>Interfaces and levels of functionality are not well separated</p>
-<p><img src="/2017/12/OS_Concept_Chapter_Two/188057a49daea8846f97291dde71f597.png" alt=""></p>
-<h3 id="Layered-Approach-UNIX"><a href="#Layered-Approach-UNIX" class="headerlink" title="Layered Approach:(UNIX)"></a><em>Layered Approach:(UNIX)</em></h3><p><img src="/2017/12/OS_Concept_Chapter_Two/aa135e39d9adaedda80ad01ee4a81972.png" alt=""></p>
+<p><img src="188057a49daea8846f97291dde71f597.png" alt=""></p>
+<h3 id="Layered-Approach-UNIX"><a href="#Layered-Approach-UNIX" class="headerlink" title="Layered Approach:(UNIX)"></a><em>Layered Approach:(UNIX)</em></h3><p><img src="aa135e39d9adaedda80ad01ee4a81972.png" alt=""></p>
 <p>Problems:</p>
 <blockquote>
 <p>  Tend to be less efficient</p>
@@ -550,23 +550,23 @@
 <p>  Easier to extend<br>  Easier to port the operating system to new architectures<br>  More reliable (less code is running in kernel mode)<br>  More secure<br>  e.g.: Mac OSX(Mach &amp; BSD -> Kernel) (<em>Hybrid Structure</em>)</p>
 </blockquote>
 <h3 id="Modular-Solaris"><a href="#Modular-Solaris" class="headerlink" title="Modular:(Solaris)"></a><em>Modular:(Solaris)</em></h3><p>Kernel: provide core services &amp; certain features to be implemented dynamically<br>Uses OO<br>Each core component is separate<br>Each talks to the others over known interfaces<br>Each is loadable as needed within the kernel<br>(Similar to layers but with more flexible)</p>
-<p><img src="/2017/12/OS_Concept_Chapter_Two/960c787b18d6bf4028499dbfd89a75aa.png" alt=""></p>
+<p><img src="960c787b18d6bf4028499dbfd89a75aa.png" alt=""></p>
 <p>Problems:</p>
 <blockquote>
 <p>  Kernel security crucial</p>
 </blockquote>
 <h2 id="Virtual-Machine"><a href="#Virtual-Machine" class="headerlink" title="Virtual Machine"></a><strong>Virtual Machine</strong></h2><p>Take layered approach to its logical conclusion<br>Treat hardware and the operating system kernel as though they were all  hardware<br>OS host: simulation, a process has its own processor and (virtual memory)<br>The resources of the physical computer are shared to create the virtual machines</p>
-<p><img src="/2017/12/OS_Concept_Chapter_Two/4ce414e869e32de4f4cd0998e41bf738.png" alt=""><br>Ad/Dis</p>
+<p><img src="4ce414e869e32de4f4cd0998e41bf738.png" alt=""><br>Ad/Dis</p>
 <blockquote>
 <p>  Provides complete protection of system resources<br>  Isolated from all other virtual machines<br>  Permit no direct sharing of resources</p>
 </blockquote>
 <h2 id="Operating-System-Generation"><a href="#Operating-System-Generation" class="headerlink" title="Operating-System Generation"></a>Operating-System Generation</h2><p>*SYSGEN: system generation （部署）(P70)</p>
 <h2 id="System-Boot"><a href="#System-Boot" class="headerlink" title="System Boot"></a>System Boot</h2><p>Bootstrap program<br>Bootstrap loader</p>
-<p><img src="/2017/12/OS_Concept_Chapter_Two/804735748ffcae5e2c294f359195154d.png" alt="2.1 The services and functions provided by an operating system can be divided into two main categories. Briefly describe the two categories and discuss how they differ. "></p>
-<p><img src="/2017/12/OS_Concept_Chapter_Two/f946a716b0838b0dde55e3d3f69c8ef8.png" alt="22 List five services provided by an operating system that are designed to make it morc convenient fir users to use the computer system, In what cases it would be impossible user-level programs to provide these services? Explain "></p>
-<p><img src="/2017/12/OS_Concept_Chapter_Two/23bbfb968809287bec9f4b74a149cc9a.png" alt="2.6 2.7 What are the advantages and disadvantages Of using the same system. call interface manipulating both and devices? What is the purpose of the command interpreter? Why is it usually separate the kernel? Would it be possible the user to develop a new command interpreter using the system-call interface provided by the operating system? "></p>
-<p><img src="/2017/12/OS_Concept_Chapter_Two/1bedf8a660706e9982c1a853f91b28df.png" alt="C:\\A87394C5\\F2723E28-457D-482E-A856-19FAEB92EECE.files\\image012.png"></p>
-<p><img src="/2017/12/OS_Concept_Chapter_Two/9b482d6b1722e12d5272333fdd84be35.png" alt="211 212 2.13 2.14 It is difficult to achieve a layered approach if two compentents of the operating system are dependent on each other. Identify a scenario in which it is how to layer two system components that require tight coupling of their functionalities. What is the main advantage Of the microkernel approach to System design? How do user programs and system services interact in a microkcrncl architecture? What are the disadvantages of using microkernel approach? In what ways is the modular kernel approach similar to the layered approach? In what ways does it differ from the layered approach? What is the main advantage for an operating-system designer Of using a Virtual-machine architecture? What is the main advantage a user? "></p>
+<p><img src="804735748ffcae5e2c294f359195154d.png" alt="2.1 The services and functions provided by an operating system can be divided into two main categories. Briefly describe the two categories and discuss how they differ. "></p>
+<p><img src="f946a716b0838b0dde55e3d3f69c8ef8.png" alt="22 List five services provided by an operating system that are designed to make it morc convenient fir users to use the computer system, In what cases it would be impossible user-level programs to provide these services? Explain "></p>
+<p><img src="23bbfb968809287bec9f4b74a149cc9a.png" alt="2.6 2.7 What are the advantages and disadvantages Of using the same system. call interface manipulating both and devices? What is the purpose of the command interpreter? Why is it usually separate the kernel? Would it be possible the user to develop a new command interpreter using the system-call interface provided by the operating system? "></p>
+<p><img src="1bedf8a660706e9982c1a853f91b28df.png" alt="C:\\A87394C5\\F2723E28-457D-482E-A856-19FAEB92EECE.files\\image012.png"></p>
+<p><img src="9b482d6b1722e12d5272333fdd84be35.png" alt="211 212 2.13 2.14 It is difficult to achieve a layered approach if two compentents of the operating system are dependent on each other. Identify a scenario in which it is how to layer two system components that require tight coupling of their functionalities. What is the main advantage Of the microkernel approach to System design? How do user programs and system services interact in a microkcrncl architecture? What are the disadvantages of using microkernel approach? In what ways is the modular kernel approach similar to the layered approach? In what ways does it differ from the layered approach? What is the main advantage for an operating-system designer Of using a Virtual-machine architecture? What is the main advantage a user? "></p>
 
       
     </div>
@@ -737,7 +737,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-count">14</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>

@@ -441,17 +441,17 @@
 <li>并发进程之间相互合作、互相约束  </li>
 <li>利用私用信号量实现</li>
 </ul>
-<p><img src="/2017/12/OS_Concept_Chapter_Six/b6e1b53a88e54edd4dafc15e52a4468c.png" alt="． P4 进 程 等 待 P2 和 P3 进 程 的 结 果 ． P4 进 程 和 P2 、 P3 之 间 要 同 步 协 调 0 "></p>
+<p><img src="b6e1b53a88e54edd4dafc15e52a4468c.png" alt="． P4 进 程 等 待 P2 和 P3 进 程 的 结 果 ． P4 进 程 和 P2 、 P3 之 间 要 同 步 协 调 0 "></p>
 <p><strong>进程互斥(exclusion)</strong></p>
 <ul>
 <li>并发进程之间互相竞争临界资源的排他性关系  </li>
 <li>利用公用信号量实现互斥  </li>
 <li>互斥源于资源共享，是进程之间的制约关系</li>
 </ul>
-<p><img src="/2017/12/OS_Concept_Chapter_Six/2ae76fdd4904ce6ceb1e51296fec8db6.png" alt="0 例 如 丫 PI 使 用 打 印 机 ， P2 就 不 能 使 用 "></p>
-<p><img src="/2017/12/OS_Concept_Chapter_Six/f55a642aea69656e2ca83887330998ae.png" alt="． 0 、 打 印 机 等 结 果 被 PI 一 P8 所 有 进 行 使 用 ， 需 要 排 他 使 用 一 个 使 用 时 ， 其 它 进 程 不 能 用 等 结 果 PI 和 P2 约 束 P3 、 P4 和 P5 之 日 一 束 匕 进 程 利 用 私 用 信 号 量 使 用 公 用 信 号 量 等 结 果 P6 、 P7 和 P8 之 间 束 及 其 它 、 利 用 私 用 信 号 量 公 用 信 号 量 、 私 用 信 号 量 ： 都 是 针 对 全 部 8 个 进 程 而 言 "></p>
+<p><img src="2ae76fdd4904ce6ceb1e51296fec8db6.png" alt="0 例 如 丫 PI 使 用 打 印 机 ， P2 就 不 能 使 用 "></p>
+<p><img src="f55a642aea69656e2ca83887330998ae.png" alt="． 0 、 打 印 机 等 结 果 被 PI 一 P8 所 有 进 行 使 用 ， 需 要 排 他 使 用 一 个 使 用 时 ， 其 它 进 程 不 能 用 等 结 果 PI 和 P2 约 束 P3 、 P4 和 P5 之 日 一 束 匕 进 程 利 用 私 用 信 号 量 使 用 公 用 信 号 量 等 结 果 P6 、 P7 和 P8 之 间 束 及 其 它 、 利 用 私 用 信 号 量 公 用 信 号 量 、 私 用 信 号 量 ： 都 是 针 对 全 部 8 个 进 程 而 言 "></p>
 <h2 id="Background"><a href="#Background" class="headerlink" title="Background"></a><strong>Background</strong></h2><p><em>Concurrent access</em> to shared data may result in <em>data inconsistency</em><br>Maintaining data consistency requires mechanisms to <em>ensure the orderly execution of cooperating processes</em>  </p>
-<p><img src="/2017/12/OS_Concept_Chapter_Six/be5ba0148b905da6601622ad32a5342b.png" alt=""></p>
+<p><img src="be5ba0148b905da6601622ad32a5342b.png" alt=""></p>
 <blockquote>
 <p>  生产者进程—->buffer—->消费者进程</p>
 </blockquote>
@@ -491,7 +491,7 @@
 <li>退出区exit section  </li>
 <li>代码中的其余部分remainder section</li>
 </ul>
-<p><img src="/2017/12/OS_Concept_Chapter_Six/697682e4fadc7ef3f83d7cf834fe640f.png" alt=""></p>
+<p><img src="697682e4fadc7ef3f83d7cf834fe640f.png" alt=""></p>
 <h3 id="临界区的访问规则"><a href="#临界区的访问规则" class="headerlink" title="临界区的访问规则"></a>临界区的访问规则</h3><h4 id="互斥-mutual-exclusion"><a href="#互斥-mutual-exclusion" class="headerlink" title="互斥/mutual exclusion"></a>互斥/mutual exclusion</h4><p>当进程i正在临界区，其他进程都不能访问他们的临界区</p>
 <h4 id="前进Progress"><a href="#前进Progress" class="headerlink" title="前进Progress"></a>前进Progress</h4><p>如果</p>
 <blockquote>
@@ -514,21 +514,21 @@
 <li>进循环前查值（空等待）  </li>
 <li>进循环后改变值</li>
 </ul>
-<p><img src="/2017/12/OS_Concept_Chapter_Six/c8f3dd4cdac99f6f652906d508383637.png" alt=""></p>
+<p><img src="c8f3dd4cdac99f6f652906d508383637.png" alt=""></p>
 <p>顺序：1，2，1，2，1，2…</p>
 <p>缺点：<br>&emsp;&emsp;进程强制轮流进入临界区，容易造成资源利用不充分</p>
 <p>e.g:<br>&emsp;&emsp;Pi让出临界区之后，Pj使用临界区之前，Pi不可能再次使用临界区</p>
 <h3 id="算法2：双标志位（先检查）"><a href="#算法2：双标志位（先检查）" class="headerlink" title="算法2：双标志位（先检查）"></a>算法2：双标志位（先检查）</h3><p>标志数组flag[]：描述进程是否在临界区，初值均为FALSE</p>
 <p>先检查，后修改</p>
-<p><img src="/2017/12/OS_Concept_Chapter_Six/8653cb02aa3de96612dbfbb83a020394.png" alt=""></p>
+<p><img src="8653cb02aa3de96612dbfbb83a020394.png" alt=""></p>
 <p>解决了顺序固定的问题</p>
 <p>缺点：可能同时进入临界区<br>&emsp;&emsp;检查对方flag之后和切换自己flag之前有一段时间，结果都检查通过。</p>
 <p><em>检查和修改操作不能连续进行</em></p>
-<h3 id="算法3：双标志（先修改）"><a href="#算法3：双标志（先修改）" class="headerlink" title="算法3：双标志（先修改）"></a>算法3：双标志（先修改）</h3><p><img src="/2017/12/OS_Concept_Chapter_Six/566a220578be3a3c49a1779771444f0b.png" alt=""></p>
+<h3 id="算法3：双标志（先修改）"><a href="#算法3：双标志（先修改）" class="headerlink" title="算法3：双标志（先修改）"></a>算法3：双标志（先修改）</h3><p><img src="566a220578be3a3c49a1779771444f0b.png" alt=""></p>
 <p>缺点：可能都无法进入临界区</p>
 <h3 id="实例：Peterson算法"><a href="#实例：Peterson算法" class="headerlink" title="实例：Peterson算法"></a>实例：Peterson算法</h3><p>将1与3相结合</p>
 <p>维护两个变量，turn和flag[]</p>
-<p><img src="/2017/12/OS_Concept_Chapter_Six/e496d0bef66a8f2b90d74bb30d75b862.png" alt=""></p>
+<p><img src="e496d0bef66a8f2b90d74bb30d75b862.png" alt=""></p>
 <p>互斥被保护，进程申请可以通过，有限等待也得以满足</p>
 <p>缺点：</p>
 <ul>
@@ -544,28 +544,28 @@
 <li>负：等待临界区进程数</li>
 </ul>
 <h3 id="P-V操作"><a href="#P-V操作" class="headerlink" title="P/V操作"></a>P/V操作</h3><h4 id="P操作P-S"><a href="#P操作P-S" class="headerlink" title="P操作P(S)"></a>P操作P(S)</h4><p>申请分配一个单位的资源</p>
-<p><img src="/2017/12/OS_Concept_Chapter_Six/0b439cc1cb2c1edd1a6299d6bd5ae830.png" alt=""></p>
+<p><img src="0b439cc1cb2c1edd1a6299d6bd5ae830.png" alt=""></p>
 <h4 id="V操作V-S"><a href="#V操作V-S" class="headerlink" title="V操作V(S)"></a>V操作V(S)</h4><p>释放一个单位的资源</p>
-<p><img src="/2017/12/OS_Concept_Chapter_Six/0b9563dd49d1963bfca404fc7d2f8b88.png" alt=""></p>
-<h4 id="关于…"><a href="#关于…" class="headerlink" title="关于…"></a>关于…</h4><p><img src="/2017/12/OS_Concept_Chapter_Six/c29d3ec828681545008d9d243222402e.png" alt=""></p>
+<p><img src="0b9563dd49d1963bfca404fc7d2f8b88.png" alt=""></p>
+<h4 id="关于…"><a href="#关于…" class="headerlink" title="关于…"></a>关于…</h4><p><img src="c29d3ec828681545008d9d243222402e.png" alt=""></p>
 <h4 id="优缺点："><a href="#优缺点：" class="headerlink" title="优缺点："></a>优缺点：</h4><ul>
 <li>简单，表达能力强</li>
 <li>不够安全，使用不当会出现死锁</li>
 <li>遇到复杂同步互斥问题实现比较难</li>
 </ul>
 <h4 id="应用：实现互斥"><a href="#应用：实现互斥" class="headerlink" title="应用：实现互斥"></a>应用：实现互斥</h4><p>引入mutex信号量，初值为1</p>
-<p><img src="/2017/12/OS_Concept_Chapter_Six/7c81483c2b963ae836cd73459a1ddc1f.png" alt=""></p>
+<p><img src="7c81483c2b963ae836cd73459a1ddc1f.png" alt=""></p>
 <p>同步：PV分别位于两个不同进程<br>互斥：在一个进程中</p>
-<h5 id="例1：读者、写者问题"><a href="#例1：读者、写者问题" class="headerlink" title="例1：读者、写者问题"></a>例1：读者、写者问题</h5><p><img src="/2017/12/OS_Concept_Chapter_Six/ea65d5e146a63b269b656ab27920f0d9.png" alt=""></p>
-<p><img src="/2017/12/OS_Concept_Chapter_Six/9523c91a6141853ca5f2936f640893c6.png" alt=""></p>
-<h5 id="例2：生产者、消费者问题"><a href="#例2：生产者、消费者问题" class="headerlink" title="例2：生产者、消费者问题"></a>例2：生产者、消费者问题</h5><p><img src="/2017/12/OS_Concept_Chapter_Six/fbc85bf4fed8d4fa7eb63b38bfda848a.png" alt=""></p>
+<h5 id="例1：读者、写者问题"><a href="#例1：读者、写者问题" class="headerlink" title="例1：读者、写者问题"></a>例1：读者、写者问题</h5><p><img src="ea65d5e146a63b269b656ab27920f0d9.png" alt=""></p>
+<p><img src="9523c91a6141853ca5f2936f640893c6.png" alt=""></p>
+<h5 id="例2：生产者、消费者问题"><a href="#例2：生产者、消费者问题" class="headerlink" title="例2：生产者、消费者问题"></a>例2：生产者、消费者问题</h5><p><img src="fbc85bf4fed8d4fa7eb63b38bfda848a.png" alt=""></p>
 <p><strong>先检查资源数目，再检查互斥（<em>避免死锁</em>）</strong></p>
-<p><img src="/2017/12/OS_Concept_Chapter_Six/cdbabb7fe9281bbeb224ac619b43e2b8.png" alt=""></p>
+<p><img src="cdbabb7fe9281bbeb224ac619b43e2b8.png" alt=""></p>
 <p>所有访问缓冲区的申请互斥<br>生产者消费者同步</p>
-<h5 id="哲学家进餐问题"><a href="#哲学家进餐问题" class="headerlink" title="哲学家进餐问题"></a>哲学家进餐问题</h5><p><img src="/2017/12/OS_Concept_Chapter_Six/1169ed130434f82d6fc9bf45c3bda0f4.png" alt=""> </p>
-<p><img src="/2017/12/OS_Concept_Chapter_Six/28a4faf7e40b3bfdfb3476ce1c98bb9e.png" alt=""></p>
-<p><img src="/2017/12/OS_Concept_Chapter_Six/25b17fb2f4d66dcd9f537c721915aa1e.png" alt=""></p>
-<h5 id="Sleeping-Barber"><a href="#Sleeping-Barber" class="headerlink" title="Sleeping Barber"></a>Sleeping Barber</h5><p><img src="/2017/12/OS_Concept_Chapter_Six/98f754666203f43ca962981708746a9f.png" alt=""></p>
+<h5 id="哲学家进餐问题"><a href="#哲学家进餐问题" class="headerlink" title="哲学家进餐问题"></a>哲学家进餐问题</h5><p><img src="1169ed130434f82d6fc9bf45c3bda0f4.png" alt=""> </p>
+<p><img src="28a4faf7e40b3bfdfb3476ce1c98bb9e.png" alt=""></p>
+<p><img src="25b17fb2f4d66dcd9f537c721915aa1e.png" alt=""></p>
+<h5 id="Sleeping-Barber"><a href="#Sleeping-Barber" class="headerlink" title="Sleeping Barber"></a>Sleeping Barber</h5><p><img src="98f754666203f43ca962981708746a9f.png" alt=""></p>
 
       
     </div>
@@ -736,7 +736,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-count">14</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>

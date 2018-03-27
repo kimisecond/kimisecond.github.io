@@ -456,8 +456,8 @@
 <li>Dealing with transmission errors</li>
 <li>Regulating data flow: Slow receivers not swamped by fast senders</li>
 </ul>
-<p><img src="/2018/01/CN-Chapter-Three/aa7705c86c203905b8c87f0b9b0cdf86.png" alt=""></p>
-<h3 id="Services-Provided-to-the-Network-Layer"><a href="#Services-Provided-to-the-Network-Layer" class="headerlink" title="Services Provided to the Network Layer"></a><strong>Services Provided to the Network Layer</strong></h3><p><img src="/2018/01/CN-Chapter-Three/b6d2fe0c89fabdf83b1062251e3ca9bd.png" alt=""></p>
+<p><img src="aa7705c86c203905b8c87f0b9b0cdf86.png" alt=""></p>
+<h3 id="Services-Provided-to-the-Network-Layer"><a href="#Services-Provided-to-the-Network-Layer" class="headerlink" title="Services Provided to the Network Layer"></a><strong>Services Provided to the Network Layer</strong></h3><p><img src="b6d2fe0c89fabdf83b1062251e3ca9bd.png" alt=""></p>
 <p>提供了三种服务</p>
 <h4 id="不确认的无连接服务（不确认的服务不可靠）"><a href="#不确认的无连接服务（不确认的服务不可靠）" class="headerlink" title="不确认的无连接服务（不确认的服务不可靠）"></a>不确认的无连接服务（不确认的服务不可靠）</h4><p>应用场合</p>
 <ul>
@@ -478,9 +478,9 @@
 <li>释放连接</li>
 </ul>
 <p>每一帧只会收到一次，且帧以发送顺序接收（确定连接）</p>
-<p><img src="/2018/01/CN-Chapter-Three/758f84c8c43fd7ae9fe9dcd6f278071b.png" alt=""></p>
+<p><img src="758f84c8c43fd7ae9fe9dcd6f278071b.png" alt=""></p>
 <p>收到的数据帧与转发的数据帧可能不一样<br>比如不同端口的协议不同，需要修改格式</p>
-<h3 id="Framing（成帧）"><a href="#Framing（成帧）" class="headerlink" title="Framing（成帧）"></a><strong>Framing（成帧）</strong></h3><h4 id="Character-count（字符计数法）"><a href="#Character-count（字符计数法）" class="headerlink" title="Character count（字符计数法）"></a>Character count（字符计数法）</h4><p><img src="/2018/01/CN-Chapter-Three/0e6f3915d41fc577f4bf3fc3a786aa62.png" alt=""></p>
+<h3 id="Framing（成帧）"><a href="#Framing（成帧）" class="headerlink" title="Framing（成帧）"></a><strong>Framing（成帧）</strong></h3><h4 id="Character-count（字符计数法）"><a href="#Character-count（字符计数法）" class="headerlink" title="Character count（字符计数法）"></a>Character count（字符计数法）</h4><p><img src="0e6f3915d41fc577f4bf3fc3a786aa62.png" alt=""></p>
 <p>在发送的数据帧前面加一个字节，标识数据帧的长度</p>
 <p>缺陷：</p>
 <ul>
@@ -488,7 +488,7 @@
 <li>字符计数位出错<br>&emsp;&emsp;出错位之后的数据全部无法解析<br>&emsp;&emsp;（成帧标识出错会影响后面所有数据帧的成帧）</li>
 </ul>
 <h4 id="Flag-bytes-with-byte-stuffing（字符填充法）"><a href="#Flag-bytes-with-byte-stuffing（字符填充法）" class="headerlink" title="Flag bytes with byte stuffing（字符填充法）"></a>Flag bytes with byte stuffing（字符填充法）</h4><p>对字符计数法中第二个缺陷进行改进</p>
-<p><img src="/2018/01/CN-Chapter-Three/76b14838786eacebbb41cb8eb4f03832.png" alt=""></p>
+<p><img src="76b14838786eacebbb41cb8eb4f03832.png" alt=""></p>
 <p><strong>Need to escape Extra ESCAPE Bytes too!</strong></p>
 <p>Special <em>flag</em> bytes delimit frames; occurrences of flags in the data must be stuffed(escaped)<br>Frames longer, but easier to resynchronize after error</p>
 <p>Example:</p>
@@ -497,7 +497,7 @@
 <p>缺陷：只能针对以字符为整数倍成帧</p>
 <h4 id="Starting-and-ending-flags-with-bit-stuffing（位填充法）"><a href="#Starting-and-ending-flags-with-bit-stuffing（位填充法）" class="headerlink" title="Starting and ending flags, with bit stuffing（位填充法）"></a>Starting and ending flags, with bit stuffing（位填充法）</h4><p>为HDLC（高级数据链路控制）所开发<br>USB中使用</p>
 <p>在数据帧中进行位填充<br>在五个连续1后加入0<br>在接收端，每五个1后的0被删除<br>帧标识有六个1</p>
-<p><img src="/2018/01/CN-Chapter-Three/dd88821380e53395d2a32155f80b591c.png" alt=""></p>
+<p><img src="dd88821380e53395d2a32155f80b591c.png" alt=""></p>
 <h4 id="Physical-layer-coding-violations（物理层违例编码法）"><a href="#Physical-layer-coding-violations（物理层违例编码法）" class="headerlink" title="Physical layer coding violations（物理层违例编码法）"></a>Physical layer coding violations（物理层违例编码法）</h4><p>在以太网中采用</p>
 <p>曼彻斯特编码</p>
 <ul>
@@ -517,11 +517,11 @@
 <li>纠错：海明码（Hamming）</li>
 </ul>
 <h4 id="海明码"><a href="#海明码" class="headerlink" title="海明码"></a>海明码</h4><h5 id="海明距离"><a href="#海明距离" class="headerlink" title="海明距离"></a>海明距离</h5><p>The minimum bits flips to turn one valid codeword into any other valid one<br>从一种有效码字转换到另外一种至少需要改变多少位（两个码字中不同位的个数）</p>
-<p><img src="/2018/01/CN-Chapter-Three/f67a78360be7c45e9531047548a193f9.png" alt=""></p>
+<p><img src="f67a78360be7c45e9531047548a193f9.png" alt=""></p>
 <h5 id="编码"><a href="#编码" class="headerlink" title="编码"></a>编码</h5><p>在原始编码中插入检错位<br>在所有2i的位置都是检错位  </p>
 <p>如下图，1,2,4,8<br>在剩余位中插入原码</p>
-<p><img src="/2018/01/CN-Chapter-Three/36e79235e95652a0f9511b0e5493d9f8.png" alt=""></p>
-<p><img src="/2018/01/CN-Chapter-Three/fd1d8f3ca434f093f81c15da61f5b563.png" alt=""></p>
+<p><img src="36e79235e95652a0f9511b0e5493d9f8.png" alt=""></p>
+<p><img src="fd1d8f3ca434f093f81c15da61f5b563.png" alt=""></p>
 <p>问题：如何确定检测位？</p>
 <p>编号：<br>&emsp;&emsp;1=2^0<br>&emsp;&emsp;2=2^1<br>&emsp;&emsp;3=2^0+2^1  </p>
 <p>确定2^i检测位</p>
@@ -554,15 +554,15 @@
 <p>  例：7个字符，横向排列编码，再竖向编码发送</p>
 </blockquote>
 <h4 id="奇偶校验码"><a href="#奇偶校验码" class="headerlink" title="奇偶校验码"></a>奇偶校验码</h4><p>在数据末尾加入校验码（比如偶校验：1的个数为偶，校验位为0）<br>单个校验位只能可靠地检测出一位错误<br>这种错误被检测出来的概率只有0.5<br>则将每个数据块作为一个数据矩阵处理<br>对于大批量数据只有少数位出错的情况中，效率很高<br>矩阵检测，则对突发连续错误的检测比较好  </p>
-<h4 id="CRC"><a href="#CRC" class="headerlink" title="CRC"></a>CRC</h4><p><img src="/2018/01/CN-Chapter-Three/3524e6711761a3e81dabe005db14131f.png" alt=""></p>
+<h4 id="CRC"><a href="#CRC" class="headerlink" title="CRC"></a>CRC</h4><p><img src="3524e6711761a3e81dabe005db14131f.png" alt=""></p>
 <p>也称多项式编码<br>将位串堪称是系数为0或1的多项式，进行长除<br>发送方和接收方预先商定一个生成多项式<br>生成多项式的最高位和最低位系数必须是1<br>（不借位除法，可以直接理解为异或）   </p>
 <h4 id="存传机制"><a href="#存传机制" class="headerlink" title="存传机制"></a>存传机制</h4><h4 id="定时器"><a href="#定时器" class="headerlink" title="定时器"></a>定时器</h4><h3 id="Flow-Control（流量控制）"><a href="#Flow-Control（流量控制）" class="headerlink" title="Flow Control（流量控制）"></a><strong>Flow Control（流量控制）</strong></h3><p>数据链路层&amp;传输层</p>
-<h2 id="基本数据链路层协议"><a href="#基本数据链路层协议" class="headerlink" title="基本数据链路层协议"></a>基本数据链路层协议</h2><p><img src="/2018/01/CN-Chapter-Three/7b46e70f97f9ea1fad3aac8646ca70f0.png" alt=""></p>
+<h2 id="基本数据链路层协议"><a href="#基本数据链路层协议" class="headerlink" title="基本数据链路层协议"></a>基本数据链路层协议</h2><p><img src="7b46e70f97f9ea1fad3aac8646ca70f0.png" alt=""></p>
 <p>协议头文件 protocol.h</p>
-<p><img src="/2018/01/CN-Chapter-Three/0d7d5ad9b1e2bd88369aaf8b79c4bf72.png" alt=""></p>
+<p><img src="0d7d5ad9b1e2bd88369aaf8b79c4bf72.png" alt=""></p>
 <p>一些协议（函数，事件）</p>
-<p><img src="/2018/01/CN-Chapter-Three/d9bff52c6d3918f205f7ef1003bfc4d7.png" alt=""></p>
-<p><img src="/2018/01/CN-Chapter-Three/3a61a7cf2ed9113c172c0c9f02c58b14.png" alt=""></p>
+<p><img src="d9bff52c6d3918f205f7ef1003bfc4d7.png" alt=""></p>
+<p><img src="3a61a7cf2ed9113c172c0c9f02c58b14.png" alt=""></p>
 <blockquote>
 <p>  在讨论协议前，需要知道，对于理想协议来说，前提十分重要</p>
 </blockquote>
@@ -575,10 +575,10 @@
 <li>B一直准备接收  </li>
 <li>机器不崩溃  </li>
 </ul>
-<p><img src="/2018/01/CN-Chapter-Three/93d5b4182f863c80bd22cfcf213ace14.png" alt=""></p>
+<p><img src="93d5b4182f863c80bd22cfcf213ace14.png" alt=""></p>
 <h3 id="无噪声信道单工停-等协议"><a href="#无噪声信道单工停-等协议" class="headerlink" title="无噪声信道单工停-等协议"></a>无噪声信道单工停-等协议</h3><p>A Simplex Stop-and-Wait Protocol for an Error-Free Channel</p>
 <p>实现了流量控制<br>当接收端收到数据后，发送确认帧</p>
-<p><img src="/2018/01/CN-Chapter-Three/1e4b3bf62883db90e8633f27f8e9e48d.png" alt=""></p>
+<p><img src="1e4b3bf62883db90e8633f27f8e9e48d.png" alt=""></p>
 <h3 id="有噪声信道单工停-等协议"><a href="#有噪声信道单工停-等协议" class="headerlink" title="有噪声信道单工停-等协议"></a>有噪声信道单工停-等协议</h3><p>不可靠的物理线路</p>
 <p>解决方案</p>
 <ul>
@@ -588,9 +588,9 @@
 </ul>
 <p>当ACK丢失<br>&emsp;&emsp;产生重复帧<br>&emsp;&emsp;一个一位序列数字来区别新老帧</p>
 <p>发送进程</p>
-<p><img src="/2018/01/CN-Chapter-Three/2d3e6446d0bca7b9cee57e9d69abc87e.png" alt=""></p>
+<p><img src="2d3e6446d0bca7b9cee57e9d69abc87e.png" alt=""></p>
 <p>接收进程</p>
-<p><img src="/2018/01/CN-Chapter-Three/f8ef1761bef58f60eddcca5678cb4a72.png" alt=""></p>
+<p><img src="f8ef1761bef58f60eddcca5678cb4a72.png" alt=""></p>
 <h2 id="滑动窗口协议"><a href="#滑动窗口协议" class="headerlink" title="滑动窗口协议"></a>滑动窗口协议</h2><h3 id="捎带Piggybacking"><a href="#捎带Piggybacking" class="headerlink" title="捎带Piggybacking"></a>捎带Piggybacking</h3><p>双向发送中，在发送分组时捎带确认帧</p>
 <p>条件：<br>&emsp;&emsp;收到发送的数据帧<br>&emsp;&emsp;接收方有向发送方送回的数据帧（不然发送方无法继续发送，无确认）<br>有时Timeout重发不是因为发送错误，而是因为接收方没有数据发送，而无法捎带确认<br>为避免上述情况，引入（ack_Timer）  </p>
 <blockquote>
@@ -653,9 +653,9 @@
 </li>
 </ul>
 <p>停等协议流程图</p>
-<p><img src="/2018/01/CN-Chapter-Three/d64325a0c67355b0a41f7251e786fd77.png" alt=""></p>
+<p><img src="d64325a0c67355b0a41f7251e786fd77.png" alt=""></p>
 <p>停等协议线路利用率</p>
-<p><img src="/2018/01/CN-Chapter-Three/7f00d0b8e1ec317d1f37a4e5395dcd52.png" alt=""></p>
+<p><img src="7f00d0b8e1ec317d1f37a4e5395dcd52.png" alt=""></p>
 <h3 id="1位滑动窗口协议"><a href="#1位滑动窗口协议" class="headerlink" title="1位滑动窗口协议"></a>1位滑动窗口协议</h3><ul>
 <li>数据传输双向</li>
 <li>捎带</li>
@@ -679,21 +679,21 @@
 <li>可接收的帧</li>
 <li>上下界指针同步变更</li>
 </ul>
-<p><img src="/2018/01/CN-Chapter-Three/f4ca265d8bdd834a7fa86c015fe3f4b7.png" alt=""></p>
+<p><img src="f4ca265d8bdd834a7fa86c015fe3f4b7.png" alt=""></p>
 <p>以圆盘表示滑动窗口，序列号几位决定扇形区域多少</p>
 <p>当窗口大小=1（目前的例子），接收数据帧的顺序与发送数据的顺序一致</p>
 <p>而大小&gt;1，可以不一致（选择性存传协议）</p>
-<p><img src="/2018/01/CN-Chapter-Three/fbee5dbbfbabf7385a73a40302130deb.png" alt=""></p>
-<p><img src="/2018/01/CN-Chapter-Three/e9c81707a580175b32e359142d982717.png" alt=""></p>
+<p><img src="fbee5dbbfbabf7385a73a40302130deb.png" alt=""></p>
+<p><img src="e9c81707a580175b32e359142d982717.png" alt=""></p>
 <blockquote>
 <p>  实际上还是停等协议，只不过双工</p>
 </blockquote>
-<p><img src="/2018/01/CN-Chapter-Three/ec8388a5c3017b4fbc8bfa5594f2bee1.png" alt=""></p>
+<p><img src="ec8388a5c3017b4fbc8bfa5594f2bee1.png" alt=""></p>
 <p>区分主从站点，从站点协议中没有第一次发送过程（to_physical_layer(&amp;s);start_timer(s.seq);）</p>
 <blockquote>
 <p>  原因：会导致第一次发送时，发送站点浪费一次发送</p>
 </blockquote>
-<p><img src="/2018/01/CN-Chapter-Three/a7a24f3d1d9d69a12cf886ebee270296.png" alt=""></p>
+<p><img src="a7a24f3d1d9d69a12cf886ebee270296.png" alt=""></p>
 <p>利用率和停等协议相当</p>
 <h3 id="回退N帧协议"><a href="#回退N帧协议" class="headerlink" title="回退N帧协议"></a>回退N帧协议</h3><table>
 <thead>
@@ -723,7 +723,7 @@
 </table>
 <p>收到n号确认—->n号到发送窗口下界指针的帧都被确认</p>
 <p>当出错数据帧发生定时时间溢出，指针回退到出错数据帧，重发到上边界指针</p>
-<p><img src="/2018/01/CN-Chapter-Three/a24371b737bf03651ceb4f6d95ac9ad0.png" alt=""></p>
+<p><img src="a24371b737bf03651ceb4f6d95ac9ad0.png" alt=""></p>
 <h3 id="选择性存传协议"><a href="#选择性存传协议" class="headerlink" title="选择性存传协议"></a>选择性存传协议</h3><table>
 <thead>
 <tr>
@@ -751,18 +751,18 @@
 </tbody>
 </table>
 <p>n为序列号位数<br>接收窗口指针同步滑动<br>下界指针只会收到时滑动<br>发送端等收到确认帧之后再发下一帧</p>
-<p><img src="/2018/01/CN-Chapter-Three/b71144b8374af7e7823abd02c7eb1ab0.png" alt=""></p>
-<p><img src="/2018/01/CN-Chapter-Three/44759957f4fd868ca73e863091cc39c2.png" alt="]"></p>
+<p><img src="b71144b8374af7e7823abd02c7eb1ab0.png" alt=""></p>
+<p><img src="44759957f4fd868ca73e863091cc39c2.png" alt="]"></p>
 <h2 id="Example-Data-Link-Protocols"><a href="#Example-Data-Link-Protocols" class="headerlink" title="Example Data Link Protocols"></a><strong>Example Data Link Protocols</strong></h2><h3 id="HDLC高级数据链路控制协议"><a href="#HDLC高级数据链路控制协议" class="headerlink" title="HDLC高级数据链路控制协议"></a>HDLC高级数据链路控制协议</h3><blockquote>
 <p>  全双工<br>  滑动窗口协议<br>  面向连接的可靠传输<br>  无序号帧用于链路连接的建立、维护和拆除<br>  信息帧用于发送数据并实现捎带的帧确认<br>  监控帧用于告诉对方数据帧传输出错并同时给出建议的差错控制方式</p>
 </blockquote>
-<p><img src="/2018/01/CN-Chapter-Three/9a5a8c76c18788cc312c2fc885c28897.png" alt=""></p>
-<p><img src="/2018/01/CN-Chapter-Three/63f93765cc0ba01684d1d2ab02bd4b33.png" alt=""></p>
+<p><img src="9a5a8c76c18788cc312c2fc885c28897.png" alt=""></p>
+<p><img src="63f93765cc0ba01684d1d2ab02bd4b33.png" alt=""></p>
 <p>P/F用来指示此帧是否为本次传输最后一帧</p>
-<p><img src="/2018/01/CN-Chapter-Three/eb9a48b162971f1ce7a78f190e125ec2.png" alt=""></p>
-<h3 id="PPP"><a href="#PPP" class="headerlink" title="PPP"></a>PPP</h3><h4 id="PPP架构"><a href="#PPP架构" class="headerlink" title="PPP架构"></a>PPP架构</h4><p><img src="/2018/01/CN-Chapter-Three/1a11890c04eb21df563cc6567d5d1f80.png" alt=""></p>
-<p><img src="/2018/01/CN-Chapter-Three/a4e2daf348ddf935efc01357b9f6bfc6.png" alt=""></p>
-<h4 id="PPP帧格式"><a href="#PPP帧格式" class="headerlink" title="PPP帧格式"></a>PPP帧格式</h4><p><img src="/2018/01/CN-Chapter-Three/7994a06376c2b0e4cdff779dbe09ab6e.png" alt=""></p>
+<p><img src="eb9a48b162971f1ce7a78f190e125ec2.png" alt=""></p>
+<h3 id="PPP"><a href="#PPP" class="headerlink" title="PPP"></a>PPP</h3><h4 id="PPP架构"><a href="#PPP架构" class="headerlink" title="PPP架构"></a>PPP架构</h4><p><img src="1a11890c04eb21df563cc6567d5d1f80.png" alt=""></p>
+<p><img src="a4e2daf348ddf935efc01357b9f6bfc6.png" alt=""></p>
+<h4 id="PPP帧格式"><a href="#PPP帧格式" class="headerlink" title="PPP帧格式"></a>PPP帧格式</h4><p><img src="7994a06376c2b0e4cdff779dbe09ab6e.png" alt=""></p>
 <p>面向字符，字符填充成帧  </p>
 <p>会话建立过程  </p>
 <ul>
@@ -941,7 +941,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-count">14</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>

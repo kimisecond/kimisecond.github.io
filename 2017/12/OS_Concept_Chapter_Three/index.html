@@ -453,7 +453,7 @@
 <li>Program counter  </li>
 <li>Stack  </li>
 <li>Data section  </li>
-<li>*heap  <h4 id="Process-in-Memory"><a href="#Process-in-Memory" class="headerlink" title="Process in Memory"></a>Process in Memory</h4><img src="/2017/12/OS_Concept_Chapter_Three/388ad9e85e2d1984da645e4bdbb93634.png" alt=""></li>
+<li>*heap  <h4 id="Process-in-Memory"><a href="#Process-in-Memory" class="headerlink" title="Process in Memory"></a>Process in Memory</h4><img src="388ad9e85e2d1984da645e4bdbb93634.png" alt=""></li>
 </ul>
 <h4 id="一些进程概念和特性："><a href="#一些进程概念和特性：" class="headerlink" title="一些进程概念和特性："></a>一些进程概念和特性：</h4><ul>
 <li>真实描述任务的<em>并发执行</em>  </li>
@@ -472,7 +472,7 @@
 </ul>
 <blockquote>
 </blockquote>
-<p><img src="/2017/12/OS_Concept_Chapter_Three/acad6a06f2f8b9985043cee67e1ce35c.png" alt=""></p>
+<p><img src="acad6a06f2f8b9985043cee67e1ce35c.png" alt=""></p>
 <h4 id="注意"><a href="#注意" class="headerlink" title="注意"></a><strong>注意</strong></h4><p><strong>进程和程序的联系与区别</strong></p>
 <h3 id="PCB-Process-Control-Block"><a href="#PCB-Process-Control-Block" class="headerlink" title="PCB(Process Control Block)"></a><em>PCB(Process Control Block)</em></h3><h4 id="Content-Brief"><a href="#Content-Brief" class="headerlink" title="Content(Brief)"></a>Content(Brief)</h4><ul>
 <li>Process state  </li>
@@ -489,9 +489,9 @@
 <li>索引表  </li>
 </ul>
 <p>PCB表的大小决定了系统中<em>最多可同时存在的进程个数</em>，称为系统的并发度</p>
-<h4 id="PCB组织方式-—-链接方式"><a href="#PCB组织方式-—-链接方式" class="headerlink" title="PCB组织方式 — 链接方式"></a>PCB组织方式 — 链接方式</h4><p><img src="/2017/12/OS_Concept_Chapter_Three/4308232d45a3a8285f09172e3e3379dc.png" alt=""></p>
-<h4 id="PCB组织方式-—-索引方式"><a href="#PCB组织方式-—-索引方式" class="headerlink" title="PCB组织方式 — 索引方式"></a>PCB组织方式 — 索引方式</h4><p><img src="/2017/12/OS_Concept_Chapter_Three/14b20852d6668bc54dc278ba90abceca.png" alt=""></p>
-<h4 id="PCB内容："><a href="#PCB内容：" class="headerlink" title="PCB内容："></a><strong>PCB内容：</strong></h4><p><img src="/2017/12/OS_Concept_Chapter_Three/7b7b79cd357ce5f042b474a2764fcc37.png" alt=""></p>
+<h4 id="PCB组织方式-—-链接方式"><a href="#PCB组织方式-—-链接方式" class="headerlink" title="PCB组织方式 — 链接方式"></a>PCB组织方式 — 链接方式</h4><p><img src="4308232d45a3a8285f09172e3e3379dc.png" alt=""></p>
+<h4 id="PCB组织方式-—-索引方式"><a href="#PCB组织方式-—-索引方式" class="headerlink" title="PCB组织方式 — 索引方式"></a>PCB组织方式 — 索引方式</h4><p><img src="14b20852d6668bc54dc278ba90abceca.png" alt=""></p>
+<h4 id="PCB内容："><a href="#PCB内容：" class="headerlink" title="PCB内容："></a><strong>PCB内容：</strong></h4><p><img src="7b7b79cd357ce5f042b474a2764fcc37.png" alt=""></p>
 <p><strong>进程标识符、处理机状态、进程调度信息、进程控制信息</strong></p>
 <h5 id="进程标识符"><a href="#进程标识符" class="headerlink" title="进程标识符"></a>进程标识符</h5><ul>
 <li>内部标识符：<br>操作系统赋予，一个进程的序号  </li>
@@ -515,7 +515,7 @@
 <li>进程同步和通信信息：消息队列指针、信号量等（可能全部或部分在PCB中）   </li>
 <li>链接指针：当前进程PCB所在队列中下一个进程PCB地址</li>
 </ul>
-<h3 id="CPU-Switch-所谓上下文"><a href="#CPU-Switch-所谓上下文" class="headerlink" title="CPU Switch 所谓上下文"></a><em>CPU Switch</em> 所谓上下文</h3><h4 id="CPU-Switch-From-Process-to-Process"><a href="#CPU-Switch-From-Process-to-Process" class="headerlink" title="CPU Switch From Process to Process"></a>CPU Switch From Process to Process</h4><p><img src="/2017/12/OS_Concept_Chapter_Three/412a4111a85827fd346fe0c1c7534878.png" alt=""></p>
+<h3 id="CPU-Switch-所谓上下文"><a href="#CPU-Switch-所谓上下文" class="headerlink" title="CPU Switch 所谓上下文"></a><em>CPU Switch</em> 所谓上下文</h3><h4 id="CPU-Switch-From-Process-to-Process"><a href="#CPU-Switch-From-Process-to-Process" class="headerlink" title="CPU Switch From Process to Process"></a>CPU Switch From Process to Process</h4><p><img src="412a4111a85827fd346fe0c1c7534878.png" alt=""></p>
 <h2 id="Process-Scheduling"><a href="#Process-Scheduling" class="headerlink" title="Process Scheduling"></a><strong>Process Scheduling</strong></h2><h3 id="Objective"><a href="#Objective" class="headerlink" title="Objective:"></a>Objective:</h3><ul>
 <li><em>Maximize</em> CPU usage  </li>
 <li><em>Quickly</em> switch processes onto CPU for time sharing   <h3 id="Process-Scheduler"><a href="#Process-Scheduler" class="headerlink" title="Process Scheduler"></a><em>Process Scheduler</em></h3></li>
@@ -534,9 +534,9 @@
 </ul>
 <blockquote>
 </blockquote>
-<p><img src="/2017/12/OS_Concept_Chapter_Three/6f9dd42e36edf9e7f09d28eb59353897.png" alt=""></p>
-<p><img src="/2017/12/OS_Concept_Chapter_Three/5e26c699832d1aa224c5560d796901ba.png" alt=""></p>
-<p><img src="/2017/12/OS_Concept_Chapter_Three/e77123bb57ec3e6dcf86b72a59d63848.png" alt=""></p>
+<p><img src="6f9dd42e36edf9e7f09d28eb59353897.png" alt=""></p>
+<p><img src="5e26c699832d1aa224c5560d796901ba.png" alt=""></p>
+<p><img src="e77123bb57ec3e6dcf86b72a59d63848.png" alt=""></p>
 <h3 id="进程上下文："><a href="#进程上下文：" class="headerlink" title="进程上下文："></a><em>进程上下文</em>：</h3><p>进程执行活动全过程的静态描述</p>
 <ul>
 <li>计算机系统中执行该进程有关的<em>各种寄存器的值</em>  </li>
@@ -602,7 +602,7 @@
 <li>Message passing消息传递  </li>
 <li>Pipe管道</li>
 </ul>
-<h3 id="Shared-memory"><a href="#Shared-memory" class="headerlink" title="Shared memory"></a>Shared memory</h3><p><img src="/2017/12/OS_Concept_Chapter_Three/e095dec99b7701eac1eec5753b348d29.png" alt=""></p>
+<h3 id="Shared-memory"><a href="#Shared-memory" class="headerlink" title="Shared memory"></a>Shared memory</h3><p><img src="e095dec99b7701eac1eec5753b348d29.png" alt=""></p>
 <h3 id="Message-passing"><a href="#Message-passing" class="headerlink" title="Message passing"></a>Message passing</h3><ul>
 <li>消息传递机制都是用得最广泛的一种进程间通信的机制。  </li>
 <li>在消息传递系统中，进程间的数据交换，是以格式化的消息(message)为单位的；  </li>
@@ -618,8 +618,8 @@
 <p>  Producer process produces information</p>
 <p>  Consumer process consume information</p>
 </blockquote>
-<p><img src="/2017/12/OS_Concept_Chapter_Three/4aa856f5723b5bf568edc3a69a8a14f3.png" alt=""></p>
-<p><img src="/2017/12/OS_Concept_Chapter_Three/d95f41d9209b25846d1974f280fd3723.png" alt=""></p>
+<p><img src="4aa856f5723b5bf568edc3a69a8a14f3.png" alt=""></p>
+<p><img src="d95f41d9209b25846d1974f280fd3723.png" alt=""></p>
 <ol>
 <li><p><strong>进程的状态有哪几种？请画出进程间基本的转换图，并说明不同状态之间怎样转换（语言描述转换图）</strong></p>
 </li>
@@ -642,7 +642,7 @@
 <li><p><strong>进程间通信有哪几种方式？简述每一种方式。</strong></p>
 </li>
 </ol>
-<p><img src="/2017/12/OS_Concept_Chapter_Three/31046a2b209f68690ab7f64bd317e4d8.png" alt=""></p>
+<p><img src="31046a2b209f68690ab7f64bd317e4d8.png" alt=""></p>
 
       
     </div>
@@ -813,7 +813,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-count">14</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>

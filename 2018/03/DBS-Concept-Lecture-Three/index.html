@@ -1,0 +1,1580 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="en">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Database_System_Concept," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Kimi's Blog" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="2018年3月8日13:35 写在前面本笔记仅仅是本人在上课时的一些随手记录，并不完整也不完全正确。如有错误，请在评论中或直接联系我指正，谢谢！">
+<meta name="keywords" content="Database_System_Concept">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据库概念 SQL（一） 第三课笔记">
+<meta property="og:url" content="https://blog.kimisecond.com/2018/03/DBS-Concept-Lecture-Three/index.html">
+<meta property="og:site_name" content="Kimi&#39;s Blog">
+<meta property="og:description" content="2018年3月8日13:35 写在前面本笔记仅仅是本人在上课时的一些随手记录，并不完整也不完全正确。如有错误，请在评论中或直接联系我指正，谢谢！">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://s1.ax1x.com/2018/03/27/9OYuv9.png">
+<meta property="og:image" content="https://s1.ax1x.com/2018/03/27/9OYngJ.png">
+<meta property="og:image" content="https://s1.ax1x.com/2018/03/27/9OYMuR.png">
+<meta property="og:image" content="https://s1.ax1x.com/2018/03/27/9OYlHx.png">
+<meta property="og:image" content="https://s1.ax1x.com/2018/03/27/9OYYCD.png">
+<meta property="og:image" content="https://s1.ax1x.com/2018/03/27/9OYDVP.png">
+<meta property="og:image" content="https://s1.ax1x.com/2018/03/27/9OYt8e.png">
+<meta property="og:image" content="https://s1.ax1x.com/2018/03/27/9OYdKA.png">
+<meta property="og:image" content="https://s1.ax1x.com/2018/03/27/9OYNgH.png">
+<meta property="og:image" content="https://s1.ax1x.com/2018/03/27/9OY2vj.png">
+<meta property="og:image" content="https://s1.ax1x.com/2018/03/27/9OYs58.png">
+<meta property="og:image" content="https://s1.ax1x.com/2018/03/27/9OYc8g.png">
+<meta property="og:image" content="https://s1.ax1x.com/2018/03/27/9OYhbq.png">
+<meta property="og:image" content="https://s1.ax1x.com/2018/03/27/9OYWKs.png">
+<meta property="og:image" content="https://s1.ax1x.com/2018/03/27/9OYIaV.png">
+<meta property="og:image" content="https://s1.ax1x.com/2018/03/27/9OYb24.png">
+<meta property="og:image" content="https://s1.ax1x.com/2018/03/27/9OY7PU.png">
+<meta property="og:image" content="https://s1.ax1x.com/2018/03/27/9OYQD1.png">
+<meta property="og:image" content="https://s1.ax1x.com/2018/03/27/9OY3E6.png">
+<meta property="og:image" content="https://s1.ax1x.com/2018/03/27/9OY8UK.png">
+<meta property="og:updated_time" content="2018-03-27T09:46:58.217Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="数据库概念 SQL（一） 第三课笔记">
+<meta name="twitter:description" content="2018年3月8日13:35 写在前面本笔记仅仅是本人在上课时的一些随手记录，并不完整也不完全正确。如有错误，请在评论中或直接联系我指正，谢谢！">
+<meta name="twitter:image" content="https://s1.ax1x.com/2018/03/27/9OYuv9.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://blog.kimisecond.com/2018/03/DBS-Concept-Lecture-Three/"/>
+
+
+
+
+
+  <title>数据库概念 SQL（一） 第三课笔记 | Kimi's Blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Kimi's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">一个垃圾分类站</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />
+            
+            Sitemap
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="Searching..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://blog.kimisecond.com/2018/03/DBS-Concept-Lecture-Three/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Kimisecond">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Kimi's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">数据库概念 SQL（一） 第三课笔记</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-27T16:54:58+08:00">
+                2018-03-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Notes/" itemprop="url" rel="index">
+                    <span itemprop="name">Notes</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/03/DBS-Concept-Lecture-Three/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/03/DBS-Concept-Lecture-Three/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>2018年3月8日<br>13:35</p>
+<h2 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h2><p>本笔记仅仅是本人在上课时的一些随手记录，并不完整也不完全正确。<br>如有错误，请在评论中或直接联系我指正，谢谢！  </p>
+<a id="more"></a>
+<p>原始文件下载：<a href="https://1drv.ms/u/s!AkFCnbJhobZ2jS53uqbtAnhFPQfR" target="_blank" rel="noopener">(mht)</a><a href="https://1drv.ms/b/s!AkFCnbJhobZ2jS_NvkkB5s68SCR2" target="_blank" rel="noopener">(pdf)</a></p>
+<h2 id="What-is-SQL"><a href="#What-is-SQL" class="headerlink" title="What is SQL?"></a>What is SQL?</h2><p>DDL Data-definition language DDL<br>DML Data-manipultaion language DML</p>
+<p>e.g:</p>
+<p><img src="https://s1.ax1x.com/2018/03/27/9OYuv9.png" alt="9OYuv9.png"></p>
+<blockquote>
+<p>  ID: Attributes of the resulting relation</p>
+<p>  Instructor: relation to which the query refers</p>
+<p>  Salary&gt;65000: Condition that must be satisfied</p>
+</blockquote>
+<h3 id="Define"><a href="#Define" class="headerlink" title="Define"></a>Define</h3><p><img src="https://s1.ax1x.com/2018/03/27/9OYngJ.png" alt="9OYngJ.png"></p>
+<h3 id="Retrieve"><a href="#Retrieve" class="headerlink" title="Retrieve"></a>Retrieve</h3><p><img src="https://s1.ax1x.com/2018/03/27/9OYMuR.png" alt="9OYMuR.png"></p>
+<h3 id="Insert-delete-or-update"><a href="#Insert-delete-or-update" class="headerlink" title="Insert, delete or update"></a>Insert, delete or update</h3><p><img src="https://s1.ax1x.com/2018/03/27/9OYlHx.png" alt="9OYlHx.png"></p>
+<h3 id="Data-Control-Language"><a href="#Data-Control-Language" class="headerlink" title="Data Control Language"></a>Data Control Language</h3><p><img src="https://s1.ax1x.com/2018/03/27/9OYYCD.png" alt="9OYYCD.png"></p>
+<h2 id="SQL-History"><a href="#SQL-History" class="headerlink" title="SQL: History"></a>SQL: History</h2><ul>
+<li><p>Commercial systems offer most, if not all, SQL-92 features, plus varying<br>feature sets from later standards and special proprietary features</p>
+<ul>
+<li>Not all examples here may work on your particular system.</li>
+</ul>
+</li>
+</ul>
+<h2 id="An-Action"><a href="#An-Action" class="headerlink" title="An Action"></a>An Action</h2><p><img src="https://s1.ax1x.com/2018/03/27/9OYDVP.png" alt="9OYDVP.png"></p>
+<h2 id="Main-contents-of-SQL"><a href="#Main-contents-of-SQL" class="headerlink" title="Main contents of SQL"></a>Main contents of SQL</h2><ul>
+<li>Data definition</li>
+<li>Basic query structure</li>
+<li>Set operations</li>
+<li>Aggregate functions</li>
+<li>Null values</li>
+<li>Nested subqueries</li>
+<li>Complex queries</li>
+<li>Views</li>
+<li>Modification of the database</li>
+</ul>
+<h2 id="Data-definition-data-definition-language"><a href="#Data-definition-data-definition-language" class="headerlink" title="Data definition - data definition language"></a>Data definition - data definition language</h2><ul>
+<li>The schema for each relation</li>
+<li>The domain of values associated with each attribute</li>
+<li>Integrity constraints</li>
+<li>The set of indices to be maintained for each relations</li>
+<li>Security and authorization information for each relation</li>
+<li>The physical storage structure of each relation on disk</li>
+</ul>
+<h3 id="Basic-Domain-Types"><a href="#Basic-Domain-Types" class="headerlink" title="Basic Domain Types"></a>Basic Domain Types</h3><p><img src="https://s1.ax1x.com/2018/03/27/9OYt8e.png" alt="9OYt8e.png"></p>
+<h3 id="Schema-definition-in-SQL-Create-Table-Construct"><a href="#Schema-definition-in-SQL-Create-Table-Construct" class="headerlink" title="Schema definition in SQL - Create Table Construct"></a>Schema definition in SQL - Create Table Construct</h3><p><img src="https://s1.ax1x.com/2018/03/27/9OYdKA.png" alt="9OYdKA.png"></p>
+<h3 id="Integrity-Constraints-in-Create-Table"><a href="#Integrity-Constraints-in-Create-Table" class="headerlink" title="Integrity Constraints in Create Table"></a>Integrity Constraints in Create Table</h3><p><img src="https://s1.ax1x.com/2018/03/27/9OYNgH.png" alt="9OYNgH.png"></p>
+<blockquote>
+<p>  Check(P)： 每一个元组必须满足P条件，是一个创建表时使用的约束条件</p>
+</blockquote>
+<p><img src="https://s1.ax1x.com/2018/03/27/9OY2vj.png" alt="9OY2vj.png"></p>
+<p><img src="https://s1.ax1x.com/2018/03/27/9OYs58.png" alt="9OYs58.png"></p>
+<h3 id="Drop-and-Alter-Table-Constructs"><a href="#Drop-and-Alter-Table-Constructs" class="headerlink" title="Drop and Alter Table Constructs"></a>Drop and Alter Table Constructs</h3><p><img src="https://s1.ax1x.com/2018/03/27/9OYc8g.png" alt="9OYc8g.png"></p>
+<h2 id="Basic-Query-Structure"><a href="#Basic-Query-Structure" class="headerlink" title="Basic Query Structure"></a>Basic Query Structure</h2><p><img src="https://s1.ax1x.com/2018/03/27/9OYhbq.png" alt="9OYhbq.png"></p>
+<blockquote>
+<p>  SQL查询的结果仍是一个关系</p>
+</blockquote>
+<h3 id="The-select-Clause"><a href="#The-select-Clause" class="headerlink" title="The select Clause"></a>The select Clause</h3><ul>
+<li>select语句列出一次查询所想要的属性<ul>
+<li>与关系代数的投影运算相对应</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>  e.g.：find the names of all instructors</p>
+  <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">name</span></span><br><span class="line"><span class="keyword">from</span> instructor</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<ul>
+<li>注意：SQL名字是大小写不敏感的 （i.e., 大小写字母都可使用）</li>
+<li><p>SQL允许关系中有重复，查询结果中亦是如此</p>
+</li>
+<li><p>为了强制消除重复，必须在选择后加入关键词 DISTINCT</p>
+</li>
+</ul>
+<blockquote>
+<p>  e.g. Find the names of all departments with instructor, and remove<br>  duplicates</p>
+  <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">DISTINCT</span> dept_name</span><br><span class="line"><span class="keyword">from</span> instructor</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<ul>
+<li>ALL关键词指的是重复结果不会被删除</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> all dept_name</span><br><span class="line"><span class="keyword">from</span> instructor</span><br></pre></td></tr></table></figure>
+<ul>
+<li>select语句中使用星号（*）表示“所有属性”</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> *</span><br><span class="line"><span class="keyword">from</span> instructor</span><br></pre></td></tr></table></figure>
+<ul>
+<li>select语句可以包含算数表达式，<br>包括运算（+，-，*，/）以及对元组的常量或属性的运算</li>
+</ul>
+<blockquote>
+<p>  e.g.<br>  <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">ID</span>, <span class="keyword">name</span>, salary/<span class="number">12</span></span><br><span class="line"><span class="keyword">from</span> instructor</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure></p>
+<p>  这个语句表示获得一个关系，其与instructor关系相同，但是salary属性的值被除以12</p>
+</blockquote>
+<h3 id="The-where-Clause"><a href="#The-where-Clause" class="headerlink" title="The where Clause"></a>The where Clause</h3><ul>
+<li>where语句规定结果必须满足的条件<ul>
+<li>与关系代数的选择运算对应</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>  e.g. find all instructors in Comp. Sci. dept with salary &gt; 80000<br>  <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">name</span></span><br><span class="line"><span class="keyword">from</span> instructor</span><br><span class="line"><span class="keyword">where</span> dept_name = <span class="string">'Comp. Sci.'</span> <span class="keyword">and</span> salary &gt; <span class="number">80000</span></span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<ul>
+<li>比较结果可以与逻辑连接词（AND OR NOT）一起用</li>
+<li>算术表达式结果可以被比较</li>
+</ul>
+<h3 id="The-from-Clause"><a href="#The-from-Clause" class="headerlink" title="The from Clause"></a>The from Clause</h3><ul>
+<li>from语句是查询所处的关系<ul>
+<li>与关系代数中的笛卡尔乘积相对应</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>  e.g. Instructor X teaches<br>  <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> *</span><br><span class="line"><span class="keyword">from</span> instructor, teaches</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure></p>
+<p>  产生所有可能的instructor - teaches对</p>
+</blockquote>
+<ul>
+<li>笛卡尔乘积的输出并不直接有用，不过与where语句一起用之后就有用了</li>
+</ul>
+<h3 id="Joins"><a href="#Joins" class="headerlink" title="Joins"></a>Joins</h3><p><img src="https://s1.ax1x.com/2018/03/27/9OYWKs.png" alt="9OYWKs.png"></p>
+<h3 id="Natural-Join"><a href="#Natural-Join" class="headerlink" title="Natural Join"></a>Natural Join</h3><ul>
+<li>即关系代数中的natual join运算，可以直接关键词使用</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> *</span><br><span class="line"><span class="keyword">from</span> instructor <span class="keyword">natural</span> <span class="keyword">join</span> teaches</span><br></pre></td></tr></table></figure>
+<p><img src="https://s1.ax1x.com/2018/03/27/9OYIaV.png" alt="9OYIaV.png"></p>
+<blockquote>
+<p>  e.g. List the names of instructors along with the course ID of the courses that they taught<br>  <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">name</span>, course_id</span><br><span class="line"><span class="keyword">from</span> instructor, teaches</span><br><span class="line"><span class="keyword">where</span> instructor.ID = teaches.ID</span><br><span class="line"><span class="keyword">select</span> <span class="keyword">name</span>, course_id</span><br><span class="line"><span class="keyword">from</span> instructor <span class="keyword">natural</span> <span class="keyword">join</span> teaches</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<ul>
+<li>注意：两张表之间可能会存在同属性名，语义却不同的情况</li>
+</ul>
+<blockquote>
+<p>  List the names of instructors along with the titles of courses that they teach</p>
+<p>  注意course的dept_name和instructor的dept_name表达的语义不相同  </p>
+<ul>
+<li><p>Incorrect version (makes course.dept_name = instructor.dept_name)  </p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">name</span>, title  </span><br><span class="line"><span class="keyword">from</span> instructor <span class="keyword">natural</span> <span class="keyword">join</span> teaches <span class="keyword">natural</span> <span class="keyword">join</span> course;</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Correct version</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">name</span>, title  </span><br><span class="line"><span class="keyword">from</span> instructor <span class="keyword">natural</span> <span class="keyword">join</span> teaches, course   <span class="keyword">where</span> teaches.course_id = course.course_id;</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Another correct version</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">name</span>, title  </span><br><span class="line"><span class="keyword">from</span> (instructor <span class="keyword">natural</span> <span class="keyword">join</span> teaches) <span class="keyword">join</span> course  </span><br><span class="line"><span class="keyword">using</span>(course_id);</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</blockquote>
+<h3 id="The-Rename-Operation"><a href="#The-Rename-Operation" class="headerlink" title="The Rename Operation"></a>The Rename Operation</h3><ul>
+<li>SQL允许重命名关系或属性（关键词as）</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">old-name as new-name</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>  e.g.<br>  <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">ID</span>, <span class="keyword">name</span>, salary/<span class="number">12</span> <span class="keyword">as</span> monthly_salary</span><br><span class="line"><span class="keyword">from</span> instructor</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure></p>
+<p>  e.g. Find the names of all instructors who have a higher salary than some instructor in ‘Camp. Sci’.<br>  <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">distinct</span> T.name</span><br><span class="line"><span class="keyword">from</span> instructor <span class="keyword">as</span> T, instructor <span class="keyword">as</span> S</span><br><span class="line"><span class="keyword">where</span> T.salary &gt; S.salary <span class="keyword">and</span> S.dept_name = <span class="string">'Comp. Sci.'</span></span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<ul>
+<li>as关键词是可选的，可以忽略<ul>
+<li>在Oracle中，as必须忽略</li>
+</ul>
+</li>
+</ul>
+<h3 id="String-Operations"><a href="#String-Operations" class="headerlink" title="String Operations"></a>String Operations</h3><ul>
+<li><p>SQL包含了一个字符串比对运算符，用来对字符串进行比较。”Like”<br>运算符使用两个特殊字符</p>
+<ul>
+<li><p>% 与所有字串配对</p>
+</li>
+<li><p>_ 与所有字符对应</p>
+</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>  e.g. find the names of all instructors whose name includes the substring “dar”<br>  <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">name</span></span><br><span class="line"><span class="keyword">from</span> instructor</span><br><span class="line"><span class="keyword">where</span> <span class="keyword">name</span> <span class="keyword">like</span> <span class="string">'%dar%'</span></span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li><p>Match the string “100 %”</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">like '100 \%' escape '\'</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>这些形式是大小写敏感的（与select中name大小写不敏感不同）</p>
+</li>
+</ul>
+</blockquote>
+<ul>
+<li><p>形式对应的例子</p>
+<ul>
+<li>‘Intro%’ 开头为”Intro”的串</li>
+<li>‘%Comp%’ 有”Comp”子串的串</li>
+<li>‘_ _ _‘ 三字符串</li>
+<li>‘_ _ _ %’ 至少三字符的串</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>SQL支持一些字符串操作</p>
+<ul>
+<li>级联（并列）”||“</li>
+<li>大小写转换</li>
+<li>串长，抓取子串等</li>
+</ul>
+</li>
+</ul>
+<h3 id="Ordering-the-Display-of-Tuples"><a href="#Ordering-the-Display-of-Tuples" class="headerlink" title="Ordering the Display of Tuples"></a>Ordering the Display of Tuples</h3><blockquote>
+<p>  List in alphabetic order the names of all instructors<br>  <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">distinct</span> <span class="keyword">name</span></span><br><span class="line"><span class="keyword">from</span> instructor</span><br><span class="line"><span class="keyword">order</span> <span class="keyword">by</span> <span class="keyword">name</span></span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<ul>
+<li><p>可以使用desc或asc关键词来确定排序的升降 默认为升序</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">order by name desc</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>可以同时对多个属性进行排序</p>
+</li>
+</ul>
+<h3 id="Where-Clause-Predicates"><a href="#Where-Clause-Predicates" class="headerlink" title="Where Clause Predicates"></a>Where Clause Predicates</h3><ul>
+<li>SQL包含了一个between比较运算符</li>
+</ul>
+<blockquote>
+<p>  e.g. Find the names of all instructors with salary between $90,000 and $100,000 (that is, $90,000 and $100,000)<br>  <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">name</span></span><br><span class="line"><span class="keyword">from</span> instructor</span><br><span class="line"><span class="keyword">where</span> salary <span class="keyword">between</span> <span class="number">90000</span> <span class="keyword">and</span> <span class="number">100000</span></span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure></p>
+<p>  元祖比较<br>  <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">name</span>, course_id  </span><br><span class="line"><span class="keyword">from</span> instructor, teaches  </span><br><span class="line"><span class="keyword">where</span> (instructor.ID, dept_name) = (teaches.ID,<span class="string">'Biology'</span>);</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h3 id="Duplicates"><a href="#Duplicates" class="headerlink" title="Duplicates"></a>Duplicates</h3><ul>
+<li><p>在有重复项的关系中，SQL可以定义在结果中显示多少份元组复制项</p>
+</li>
+<li><p>Multiset版本的关系代数运算符 - 以关系r1与r2为例</p>
+<ul>
+<li><p>σθ (r1): If there are c1 copies of tuple t1 in r1, and t1 satisfies<br>selections σθ,, then there are c1 copies of t1 in σθ(r1).</p>
+</li>
+<li><p>ΠA  (r ): For each copy of tuple t1 in r1, there is a copy of tuple<br>ΠA  (t1) in ΠA  (r1) where ΠA (t1) denotes the projection of<br>the single tuple t1.</p>
+</li>
+<li><p>r1 x r2 : If there are c1 copies of tuple t1 in r1 and c2 copies of<br>tuple t2 in r2, there are c1 x c2 copies of the tuple t1. t2 in r1 x r2</p>
+</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://s1.ax1x.com/2018/03/27/9OYb24.png" alt="9OYb24.png"></p>
+<h2 id="Set-Operations"><a href="#Set-Operations" class="headerlink" title="Set Operations"></a>Set Operations</h2><ul>
+<li><p>集合操作并集 (union)，交集 (intersect)和补集 (except)<br>基于关系操作，与关系代数的交并补相对应</p>
+</li>
+<li><p>上述所有的操作自动去除重复项；为了保留重复项，必须使用对应的multiset版本运算符union<br>all, intersect all 和 except all</p>
+</li>
+</ul>
+<p><img src="https://s1.ax1x.com/2018/03/27/9OY7PU.png" alt="9OY7PU.png"></p>
+<p>e.g.</p>
+<p><img src="https://s1.ax1x.com/2018/03/27/9OYQD1.png" alt="9OYQD1.png"></p>
+<h2 id="Null-Values"><a href="#Null-Values" class="headerlink" title="Null Values"></a>Null Values</h2><ul>
+<li>元组的一些属性值可以为空值，用null来表示</li>
+<li>null表示未知值或该值不存在</li>
+<li>所有带null的算数运算的结果都是null<ul>
+<li>e.g: <em>5 + null</em> returns null</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>谓词is null可用来检查空值<blockquote>
+<p>  e.g. find all instructors whose salary is null.</p>
+  <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">name</span></span><br><span class="line"><span class="keyword">from</span> instructor</span><br><span class="line"> <span class="keyword">where</span> salary <span class="keyword">is</span> <span class="literal">null</span></span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+</li>
+</ul>
+<h3 id="Null-Values-and-Three-Valued-Logic"><a href="#Null-Values-and-Three-Valued-Logic" class="headerlink" title="Null Values and Three Valued Logic"></a>Null Values and Three Valued Logic</h3><ul>
+<li>所有与空值的比较结果都为unknown<ul>
+<li>Example: 5 &lt; null or null &gt; null or null = null</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>使用真值unknown的三值逻辑</p>
+<ul>
+<li><p>OR:</p>
+<ul>
+<li><p>(unknown or true) = true</p>
+</li>
+<li><p>(unknown or false) = unknown</p>
+</li>
+<li><p>(unknown or unknown) = unknown</p>
+</li>
+</ul>
+</li>
+<li><p>AND:</p>
+<ul>
+<li><p>(T and U) = U</p>
+</li>
+<li><p>(F and U) = F</p>
+</li>
+<li><p>(U and U) = U</p>
+</li>
+</ul>
+</li>
+<li><p>NOT:</p>
+<ul>
+<li>(not unknown) = unknown</li>
+</ul>
+</li>
+<li><p>如P为U “P is unknown” 为真</p>
+</li>
+</ul>
+</li>
+<li><p>如果where谓词后为U，那此谓词为F</p>
+</li>
+</ul>
+<h3 id=""><a href="#" class="headerlink" title=" "></a> </h3><h2 id="Aggregate-Functions"><a href="#Aggregate-Functions" class="headerlink" title="Aggregate Functions"></a>Aggregate Functions</h2><ul>
+<li><p>这些函数在一个关系的一列中的多个值上操作</p>
+<ul>
+<li>Avg: average value</li>
+<li>Min: minimum value</li>
+<li>Max: maximum value</li>
+<li>Sum: sum of values</li>
+<li>Count: number of values</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>  e.g. find the average salary of instructors in the Computer Science department<br>  <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">avg</span> (salary)</span><br><span class="line"><span class="keyword">from</span> instructor</span><br><span class="line"><span class="keyword">where</span> dept_name = <span class="string">'Comp. Sci.'</span>;</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure></p>
+<p>  Find the total number of instructors who teach a course in the Spring 2010 semester<br>  <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">count</span> (<span class="keyword">distinct</span> <span class="keyword">ID</span>)</span><br><span class="line"><span class="keyword">from</span> teaches</span><br><span class="line"><span class="keyword">where</span> semester = <span class="string">'Spring'</span> <span class="keyword">and</span> <span class="keyword">year</span> = <span class="number">2010</span></span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure></p>
+<p>  Find the number of tuples in the course relation<br>  <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">count</span> (*)</span><br><span class="line"><span class="keyword">from</span> course;</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h3 id="Aggregate-Functions-Group-By"><a href="#Aggregate-Functions-Group-By" class="headerlink" title="Aggregate Functions - Group By"></a>Aggregate Functions - Group By</h3><blockquote>
+<p>  Find the average salary of instructors in each department<br>  <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> dept_name, <span class="keyword">avg</span> (salary)</span><br><span class="line"><span class="keyword">from</span> instructor</span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span> dept_name</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>Note: departments with no instructor will not appear in result</li>
+</ul>
+</blockquote>
+<p><img src="https://s1.ax1x.com/2018/03/27/9OY3E6.png" alt="9OY3E6.png"></p>
+<ul>
+<li>select语句中的属性（且在集合函数外的）必须在group by中出现</li>
+</ul>
+<blockquote>
+<p>  /* erroneous query */<br>  <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> dept_name, <span class="keyword">ID</span>, <span class="keyword">avg</span> (salary)</span><br><span class="line"><span class="keyword">from</span> instructor</span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span> dept_name;</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h3 id="Aggregate-Functions-Having-Clause"><a href="#Aggregate-Functions-Having-Clause" class="headerlink" title="Aggregate Functions - Having Clause"></a>Aggregate Functions - Having Clause</h3><blockquote>
+<p>  <strong>Find the names and average salaries of all departments whose average salary is greater than 42000</strong><br>  <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> dept_name, <span class="keyword">avg</span> (salary)</span><br><span class="line"><span class="keyword">from</span> instructor</span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span> dept_name</span><br><span class="line"><span class="keyword">having</span> <span class="keyword">avg</span> (salary) &gt; <span class="number">42000</span>;</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<ul>
+<li>注意：having语句中的谓词是在组形成之后再进行的；相对地，where语句则是在之前进行</li>
+</ul>
+<p><strong>e.g.</strong></p>
+<p><img src="https://s1.ax1x.com/2018/03/27/9OY8UK.png" alt="9OY8UK.png"></p>
+<p><strong>为上述代码</strong></p>
+<h3 id="操作顺序"><a href="#操作顺序" class="headerlink" title="操作顺序"></a>操作顺序</h3><ol>
+<li>From</li>
+</ol>
+<ul>
+<li>Where</li>
+<li>Group by</li>
+<li>Having</li>
+<li>select</li>
+</ul>
+<h3 id="Null-Values-and-Aggregates"><a href="#Null-Values-and-Aggregates" class="headerlink" title="Null Values and Aggregates"></a>Null Values and Aggregates</h3><blockquote>
+<p>  <strong>Total all salaries</strong><br>  <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">sum</span> (salary)</span><br><span class="line"><span class="keyword">from</span> instructor</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>上述语句忽略了空值</li>
+<li>如果没有非空值，结果为空值</li>
+</ul>
+</blockquote>
+<ul>
+<li>所有集合运算，除去count(*)，都忽略操作属性值中带空值的元组</li>
+<li>如果其中只有空值<ul>
+<li>Count 返回 0</li>
+<li>其他集合运算返回 null</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+        
+      <div>
+       
+       <ul class="post-copyright">
+           <li class="post-copyright-link">
+             <strong>本文标题：</strong>
+             <a href="https://blog.kimisecond.com/2018/03/DBS-Concept-Lecture-Three/" title="数据库概念 SQL（一） 第三课笔记">数据库概念 SQL（一） 第三课笔记</a>
+           </li>
+
+          <li class="post-copyright-link">
+           <strong>本文作者：</strong>
+           <a href="/" title="欢迎访问 Kimisecond 的个人博客">Kimisecond</a>
+         </li>
+
+         <li class="post-copyright-link">
+           <strong>本文链接：</strong>
+           <a href="https://blog.kimisecond.com/2018/03/DBS-Concept-Lecture-Three/" title="数据库概念 SQL（一） 第三课笔记">https://blog.kimisecond.com/2018/03/DBS-Concept-Lecture-Three/</a>
+         </li>
+
+         <li class="post-copyright-date">
+             <strong>发布时间：</strong>2018年3月27日 - 16时03分
+         </li>
+
+         <li class="post-copyright-date">
+             <strong>最后更新：</strong>2018年3月27日 - 17时03分
+         </li>
+
+
+
+         <li class="post-copyright-license">
+         <p><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"></p>
+           <strong>版权声明： </strong>
+           本文由基于<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="license" target="_blank">署名-非商业性使用-相同方式共享 4.0-国际许可协议</a> </br>欢迎转载，但是<strong>必须保留</strong>本文的署名<a href="https://blog.kimisecond.com/" target="_blank" rel="noopener">Kimisecond</a>及链接: <a href="https://blog.kimisecond.com/" target="_blank" rel="noopener">https://blog.kimisecond.com/</a>.</p>
+         </li>
+       </ul>
+     
+    </div>
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Database-System-Concept/" rel="tag"># Database_System_Concept</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/03/DBS-Concept-Lecture-Two/" rel="next" title="数据库概念 关系模型/Relational Model 第二课笔记">
+                <i class="fa fa-chevron-left"></i> 数据库概念 关系模型/Relational Model 第二课笔记
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="Kimisecond" />
+            
+              <p class="site-author-name" itemprop="name">Kimisecond</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/kimisecond" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://twitter.com/kimisecond" target="_blank" title="Twitter">
+                      
+                        <i class="fa fa-fw fa-twitter"></i>Twitter</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#写在前面"><span class="nav-number">1.</span> <span class="nav-text"><a href="#&#x5199;&#x5728;&#x524D;&#x9762;" class="headerlink" title="&#x5199;&#x5728;&#x524D;&#x9762;"></a>&#x5199;&#x5728;&#x524D;&#x9762;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#What-is-SQL"><span class="nav-number">2.</span> <span class="nav-text"><a href="#What-is-SQL" class="headerlink" title="What is SQL?"></a>What is SQL?</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Define"><span class="nav-number">2.1.</span> <span class="nav-text"><a href="#Define" class="headerlink" title="Define"></a>Define</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Retrieve"><span class="nav-number">2.2.</span> <span class="nav-text"><a href="#Retrieve" class="headerlink" title="Retrieve"></a>Retrieve</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Insert-delete-or-update"><span class="nav-number">2.3.</span> <span class="nav-text"><a href="#Insert-delete-or-update" class="headerlink" title="Insert, delete or update"></a>Insert, delete or update</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Data-Control-Language"><span class="nav-number">2.4.</span> <span class="nav-text"><a href="#Data-Control-Language" class="headerlink" title="Data Control Language"></a>Data Control Language</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SQL-History"><span class="nav-number">3.</span> <span class="nav-text"><a href="#SQL-History" class="headerlink" title="SQL: History"></a>SQL: History</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#An-Action"><span class="nav-number">4.</span> <span class="nav-text"><a href="#An-Action" class="headerlink" title="An Action"></a>An Action</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Main-contents-of-SQL"><span class="nav-number">5.</span> <span class="nav-text"><a href="#Main-contents-of-SQL" class="headerlink" title="Main contents of SQL"></a>Main contents of SQL</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Data-definition-data-definition-language"><span class="nav-number">6.</span> <span class="nav-text"><a href="#Data-definition-data-definition-language" class="headerlink" title="Data definition - data definition language"></a>Data definition - data definition language</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Basic-Domain-Types"><span class="nav-number">6.1.</span> <span class="nav-text"><a href="#Basic-Domain-Types" class="headerlink" title="Basic Domain Types"></a>Basic Domain Types</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Schema-definition-in-SQL-Create-Table-Construct"><span class="nav-number">6.2.</span> <span class="nav-text"><a href="#Schema-definition-in-SQL-Create-Table-Construct" class="headerlink" title="Schema definition in SQL - Create Table Construct"></a>Schema definition in SQL - Create Table Construct</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Integrity-Constraints-in-Create-Table"><span class="nav-number">6.3.</span> <span class="nav-text"><a href="#Integrity-Constraints-in-Create-Table" class="headerlink" title="Integrity Constraints in Create Table"></a>Integrity Constraints in Create Table</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Drop-and-Alter-Table-Constructs"><span class="nav-number">6.4.</span> <span class="nav-text"><a href="#Drop-and-Alter-Table-Constructs" class="headerlink" title="Drop and Alter Table Constructs"></a>Drop and Alter Table Constructs</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Basic-Query-Structure"><span class="nav-number">7.</span> <span class="nav-text"><a href="#Basic-Query-Structure" class="headerlink" title="Basic Query Structure"></a>Basic Query Structure</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#The-select-Clause"><span class="nav-number">7.1.</span> <span class="nav-text"><a href="#The-select-Clause" class="headerlink" title="The select Clause"></a>The select Clause</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#The-where-Clause"><span class="nav-number">7.2.</span> <span class="nav-text"><a href="#The-where-Clause" class="headerlink" title="The where Clause"></a>The where Clause</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#The-from-Clause"><span class="nav-number">7.3.</span> <span class="nav-text"><a href="#The-from-Clause" class="headerlink" title="The from Clause"></a>The from Clause</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Joins"><span class="nav-number">7.4.</span> <span class="nav-text"><a href="#Joins" class="headerlink" title="Joins"></a>Joins</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Natural-Join"><span class="nav-number">7.5.</span> <span class="nav-text"><a href="#Natural-Join" class="headerlink" title="Natural Join"></a>Natural Join</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#The-Rename-Operation"><span class="nav-number">7.6.</span> <span class="nav-text"><a href="#The-Rename-Operation" class="headerlink" title="The Rename Operation"></a>The Rename Operation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#String-Operations"><span class="nav-number">7.7.</span> <span class="nav-text"><a href="#String-Operations" class="headerlink" title="String Operations"></a>String Operations</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Ordering-the-Display-of-Tuples"><span class="nav-number">7.8.</span> <span class="nav-text"><a href="#Ordering-the-Display-of-Tuples" class="headerlink" title="Ordering the Display of Tuples"></a>Ordering the Display of Tuples</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Where-Clause-Predicates"><span class="nav-number">7.9.</span> <span class="nav-text"><a href="#Where-Clause-Predicates" class="headerlink" title="Where Clause Predicates"></a>Where Clause Predicates</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Duplicates"><span class="nav-number">7.10.</span> <span class="nav-text"><a href="#Duplicates" class="headerlink" title="Duplicates"></a>Duplicates</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Set-Operations"><span class="nav-number">8.</span> <span class="nav-text"><a href="#Set-Operations" class="headerlink" title="Set Operations"></a>Set Operations</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Null-Values"><span class="nav-number">9.</span> <span class="nav-text"><a href="#Null-Values" class="headerlink" title="Null Values"></a>Null Values</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Null-Values-and-Three-Valued-Logic"><span class="nav-number">9.1.</span> <span class="nav-text"><a href="#Null-Values-and-Three-Valued-Logic" class="headerlink" title="Null Values and Three Valued Logic"></a>Null Values and Three Valued Logic</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#"><span class="nav-number">9.2.</span> <span class="nav-text"><a href="#" class="headerlink" title=" "></a> </span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Aggregate-Functions"><span class="nav-number">10.</span> <span class="nav-text"><a href="#Aggregate-Functions" class="headerlink" title="Aggregate Functions"></a>Aggregate Functions</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Aggregate-Functions-Group-By"><span class="nav-number">10.1.</span> <span class="nav-text"><a href="#Aggregate-Functions-Group-By" class="headerlink" title="Aggregate Functions - Group By"></a>Aggregate Functions - Group By</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Aggregate-Functions-Having-Clause"><span class="nav-number">10.2.</span> <span class="nav-text"><a href="#Aggregate-Functions-Having-Clause" class="headerlink" title="Aggregate Functions - Having Clause"></a>Aggregate Functions - Having Clause</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#操作顺序"><span class="nav-number">10.3.</span> <span class="nav-text"><a href="#&#x64CD;&#x4F5C;&#x987A;&#x5E8F;" class="headerlink" title="&#x64CD;&#x4F5C;&#x987A;&#x5E8F;"></a>&#x64CD;&#x4F5C;&#x987A;&#x5E8F;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Null-Values-and-Aggregates"><span class="nav-number">10.4.</span> <span class="nav-text"><a href="#Null-Values-and-Aggregates" class="headerlink" title="Null Values and Aggregates"></a>Null Values and Aggregates</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Kimisecond</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://kimisecond.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'https://blog.kimisecond.com/2018/03/DBS-Concept-Lecture-Three/';
+          this.page.identifier = '2018/03/DBS-Concept-Lecture-Three/';
+          this.page.title = '数据库概念 SQL（一） 第三课笔记';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://kimisecond.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
