@@ -109,7 +109,7 @@
 <meta property="og:image" content="https://s1.ax1x.com/2018/03/27/9OYQD1.png">
 <meta property="og:image" content="https://s1.ax1x.com/2018/03/27/9OY3E6.png">
 <meta property="og:image" content="https://s1.ax1x.com/2018/03/27/9OY8UK.png">
-<meta property="og:updated_time" content="2018-03-27T09:46:58.217Z">
+<meta property="og:updated_time" content="2018-03-27T13:42:29.077Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据库概念 SQL（一） 第三课笔记">
 <meta name="twitter:description" content="2018年3月8日13:35 写在前面本笔记仅仅是本人在上课时的一些随手记录，并不完整也不完全正确。如有错误，请在评论中或直接联系我指正，谢谢！">
@@ -494,7 +494,7 @@
 </ul>
 <blockquote>
 <p>  e.g.：find the names of all instructors</p>
-  <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">name</span></span><br><span class="line"><span class="keyword">from</span> instructor</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+  <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">name</span></span><br><span class="line"><span class="keyword">from</span> instructor</span><br></pre></td></tr></table></figure>
 </blockquote>
 <ul>
 <li>注意：SQL名字是大小写不敏感的 （i.e., 大小写字母都可使用）</li>
@@ -505,7 +505,7 @@
 </ul>
 <blockquote>
 <p>  e.g. Find the names of all departments with instructor, and remove<br>  duplicates</p>
-  <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">DISTINCT</span> dept_name</span><br><span class="line"><span class="keyword">from</span> instructor</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+  <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">DISTINCT</span> dept_name</span><br><span class="line"><span class="keyword">from</span> instructor</span><br></pre></td></tr></table></figure>
 </blockquote>
 <ul>
 <li>ALL关键词指的是重复结果不会被删除</li>
@@ -519,7 +519,7 @@
 <li>select语句可以包含算数表达式，<br>包括运算（+，-，*，/）以及对元组的常量或属性的运算</li>
 </ul>
 <blockquote>
-<p>  e.g.<br>  <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">ID</span>, <span class="keyword">name</span>, salary/<span class="number">12</span></span><br><span class="line"><span class="keyword">from</span> instructor</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure></p>
+<p>  e.g.<br>  <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">ID</span>, <span class="keyword">name</span>, salary/<span class="number">12</span></span><br><span class="line"><span class="keyword">from</span> instructor</span><br></pre></td></tr></table></figure></p>
 <p>  这个语句表示获得一个关系，其与instructor关系相同，但是salary属性的值被除以12</p>
 </blockquote>
 <h3 id="The-where-Clause"><a href="#The-where-Clause" class="headerlink" title="The where Clause"></a>The where Clause</h3><ul>
@@ -529,7 +529,7 @@
 </li>
 </ul>
 <blockquote>
-<p>  e.g. find all instructors in Comp. Sci. dept with salary &gt; 80000<br>  <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">name</span></span><br><span class="line"><span class="keyword">from</span> instructor</span><br><span class="line"><span class="keyword">where</span> dept_name = <span class="string">'Comp. Sci.'</span> <span class="keyword">and</span> salary &gt; <span class="number">80000</span></span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure></p>
+<p>  e.g. find all instructors in Comp. Sci. dept with salary &gt; 80000<br>  <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">name</span></span><br><span class="line"><span class="keyword">from</span> instructor</span><br><span class="line"><span class="keyword">where</span> dept_name = <span class="string">'Comp. Sci.'</span> <span class="keyword">and</span> salary &gt; <span class="number">80000</span></span><br></pre></td></tr></table></figure></p>
 </blockquote>
 <ul>
 <li>比较结果可以与逻辑连接词（AND OR NOT）一起用</li>
@@ -542,7 +542,7 @@
 </li>
 </ul>
 <blockquote>
-<p>  e.g. Instructor X teaches<br>  <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> *</span><br><span class="line"><span class="keyword">from</span> instructor, teaches</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure></p>
+<p>  e.g. Instructor X teaches<br>  <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> *</span><br><span class="line"><span class="keyword">from</span> instructor, teaches</span><br></pre></td></tr></table></figure></p>
 <p>  产生所有可能的instructor - teaches对</p>
 </blockquote>
 <ul>
@@ -555,7 +555,7 @@
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> *</span><br><span class="line"><span class="keyword">from</span> instructor <span class="keyword">natural</span> <span class="keyword">join</span> teaches</span><br></pre></td></tr></table></figure>
 <p><img src="https://s1.ax1x.com/2018/03/27/9OYIaV.png" alt="9OYIaV.png"></p>
 <blockquote>
-<p>  e.g. List the names of instructors along with the course ID of the courses that they taught<br>  <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">name</span>, course_id</span><br><span class="line"><span class="keyword">from</span> instructor, teaches</span><br><span class="line"><span class="keyword">where</span> instructor.ID = teaches.ID</span><br><span class="line"><span class="keyword">select</span> <span class="keyword">name</span>, course_id</span><br><span class="line"><span class="keyword">from</span> instructor <span class="keyword">natural</span> <span class="keyword">join</span> teaches</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure></p>
+<p>  e.g. List the names of instructors along with the course ID of the courses that they taught<br>  <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">name</span>, course_id</span><br><span class="line"><span class="keyword">from</span> instructor, teaches</span><br><span class="line"><span class="keyword">where</span> instructor.ID = teaches.ID</span><br><span class="line"><span class="keyword">select</span> <span class="keyword">name</span>, course_id</span><br><span class="line"><span class="keyword">from</span> instructor <span class="keyword">natural</span> <span class="keyword">join</span> teaches</span><br></pre></td></tr></table></figure></p>
 </blockquote>
 <ul>
 <li>注意：两张表之间可能会存在同属性名，语义却不同的情况</li>
@@ -565,13 +565,13 @@
 <p>  注意course的dept_name和instructor的dept_name表达的语义不相同  </p>
 <ul>
 <li><p>Incorrect version (makes course.dept_name = instructor.dept_name)  </p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">name</span>, title  </span><br><span class="line"><span class="keyword">from</span> instructor <span class="keyword">natural</span> <span class="keyword">join</span> teaches <span class="keyword">natural</span> <span class="keyword">join</span> course;</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">name</span>, title  </span><br><span class="line"><span class="keyword">from</span> instructor <span class="keyword">natural</span> <span class="keyword">join</span> teaches <span class="keyword">natural</span> <span class="keyword">join</span> course;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>Correct version</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">name</span>, title  </span><br><span class="line"><span class="keyword">from</span> instructor <span class="keyword">natural</span> <span class="keyword">join</span> teaches, course   <span class="keyword">where</span> teaches.course_id = course.course_id;</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">name</span>, title  </span><br><span class="line"><span class="keyword">from</span> instructor <span class="keyword">natural</span> <span class="keyword">join</span> teaches, course   <span class="keyword">where</span> teaches.course_id = course.course_id;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>Another correct version</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">name</span>, title  </span><br><span class="line"><span class="keyword">from</span> (instructor <span class="keyword">natural</span> <span class="keyword">join</span> teaches) <span class="keyword">join</span> course  </span><br><span class="line"><span class="keyword">using</span>(course_id);</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">name</span>, title  </span><br><span class="line"><span class="keyword">from</span> (instructor <span class="keyword">natural</span> <span class="keyword">join</span> teaches) <span class="keyword">join</span> course  </span><br><span class="line"><span class="keyword">using</span>(course_id);</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </blockquote>
@@ -580,8 +580,8 @@
 </ul>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">old-name as new-name</span><br></pre></td></tr></table></figure>
 <blockquote>
-<p>  e.g.<br>  <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">ID</span>, <span class="keyword">name</span>, salary/<span class="number">12</span> <span class="keyword">as</span> monthly_salary</span><br><span class="line"><span class="keyword">from</span> instructor</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure></p>
-<p>  e.g. Find the names of all instructors who have a higher salary than some instructor in ‘Camp. Sci’.<br>  <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">distinct</span> T.name</span><br><span class="line"><span class="keyword">from</span> instructor <span class="keyword">as</span> T, instructor <span class="keyword">as</span> S</span><br><span class="line"><span class="keyword">where</span> T.salary &gt; S.salary <span class="keyword">and</span> S.dept_name = <span class="string">'Comp. Sci.'</span></span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure></p>
+<p>  e.g.<br>  <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">ID</span>, <span class="keyword">name</span>, salary/<span class="number">12</span> <span class="keyword">as</span> monthly_salary</span><br><span class="line"><span class="keyword">from</span> instructor</span><br></pre></td></tr></table></figure></p>
+<p>  e.g. Find the names of all instructors who have a higher salary than some instructor in ‘Camp. Sci’.<br>  <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">distinct</span> T.name</span><br><span class="line"><span class="keyword">from</span> instructor <span class="keyword">as</span> T, instructor <span class="keyword">as</span> S</span><br><span class="line"><span class="keyword">where</span> T.salary &gt; S.salary <span class="keyword">and</span> S.dept_name = <span class="string">'Comp. Sci.'</span></span><br></pre></td></tr></table></figure></p>
 </blockquote>
 <ul>
 <li>as关键词是可选的，可以忽略<ul>
@@ -600,10 +600,10 @@
 </li>
 </ul>
 <blockquote>
-<p>  e.g. find the names of all instructors whose name includes the substring “dar”<br>  <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">name</span></span><br><span class="line"><span class="keyword">from</span> instructor</span><br><span class="line"><span class="keyword">where</span> <span class="keyword">name</span> <span class="keyword">like</span> <span class="string">'%dar%'</span></span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure></p>
+<p>  e.g. find the names of all instructors whose name includes the substring “dar”<br>  <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">name</span></span><br><span class="line"><span class="keyword">from</span> instructor</span><br><span class="line"><span class="keyword">where</span> <span class="keyword">name</span> <span class="keyword">like</span> <span class="string">'%dar%'</span></span><br></pre></td></tr></table></figure></p>
 <ul>
 <li><p>Match the string “100 %”</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">like '100 \%' escape '\'</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">like '100 \%' escape '\'</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>这些形式是大小写敏感的（与select中name大小写不敏感不同）</p>
 </li>
@@ -629,7 +629,7 @@
 </li>
 </ul>
 <h3 id="Ordering-the-Display-of-Tuples"><a href="#Ordering-the-Display-of-Tuples" class="headerlink" title="Ordering the Display of Tuples"></a>Ordering the Display of Tuples</h3><blockquote>
-<p>  List in alphabetic order the names of all instructors<br>  <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">distinct</span> <span class="keyword">name</span></span><br><span class="line"><span class="keyword">from</span> instructor</span><br><span class="line"><span class="keyword">order</span> <span class="keyword">by</span> <span class="keyword">name</span></span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure></p>
+<p>  List in alphabetic order the names of all instructors<br>  <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">distinct</span> <span class="keyword">name</span></span><br><span class="line"><span class="keyword">from</span> instructor</span><br><span class="line"><span class="keyword">order</span> <span class="keyword">by</span> <span class="keyword">name</span></span><br></pre></td></tr></table></figure></p>
 </blockquote>
 <ul>
 <li><p>可以使用desc或asc关键词来确定排序的升降 默认为升序</p>
@@ -642,8 +642,8 @@
 <li>SQL包含了一个between比较运算符</li>
 </ul>
 <blockquote>
-<p>  e.g. Find the names of all instructors with salary between $90,000 and $100,000 (that is, $90,000 and $100,000)<br>  <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">name</span></span><br><span class="line"><span class="keyword">from</span> instructor</span><br><span class="line"><span class="keyword">where</span> salary <span class="keyword">between</span> <span class="number">90000</span> <span class="keyword">and</span> <span class="number">100000</span></span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure></p>
-<p>  元祖比较<br>  <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">name</span>, course_id  </span><br><span class="line"><span class="keyword">from</span> instructor, teaches  </span><br><span class="line"><span class="keyword">where</span> (instructor.ID, dept_name) = (teaches.ID,<span class="string">'Biology'</span>);</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure></p>
+<p>  e.g. Find the names of all instructors with salary between $90,000 and $100,000 (that is, $90,000 and $100,000)<br>  <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">name</span></span><br><span class="line"><span class="keyword">from</span> instructor</span><br><span class="line"><span class="keyword">where</span> salary <span class="keyword">between</span> <span class="number">90000</span> <span class="keyword">and</span> <span class="number">100000</span></span><br></pre></td></tr></table></figure></p>
+<p>  元祖比较<br>  <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">name</span>, course_id  </span><br><span class="line"><span class="keyword">from</span> instructor, teaches  </span><br><span class="line"><span class="keyword">where</span> (instructor.ID, dept_name) = (teaches.ID,<span class="string">'Biology'</span>);</span><br></pre></td></tr></table></figure></p>
 </blockquote>
 <h3 id="Duplicates"><a href="#Duplicates" class="headerlink" title="Duplicates"></a>Duplicates</h3><ul>
 <li><p>在有重复项的关系中，SQL可以定义在结果中显示多少份元组复制项</p>
@@ -680,7 +680,7 @@
 <ul>
 <li>谓词is null可用来检查空值<blockquote>
 <p>  e.g. find all instructors whose salary is null.</p>
-  <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">name</span></span><br><span class="line"><span class="keyword">from</span> instructor</span><br><span class="line"> <span class="keyword">where</span> salary <span class="keyword">is</span> <span class="literal">null</span></span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+  <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">name</span></span><br><span class="line"><span class="keyword">from</span> instructor</span><br><span class="line"> <span class="keyword">where</span> salary <span class="keyword">is</span> <span class="literal">null</span></span><br></pre></td></tr></table></figure>
 </blockquote>
 </li>
 </ul>
@@ -737,12 +737,12 @@
 </li>
 </ul>
 <blockquote>
-<p>  e.g. find the average salary of instructors in the Computer Science department<br>  <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">avg</span> (salary)</span><br><span class="line"><span class="keyword">from</span> instructor</span><br><span class="line"><span class="keyword">where</span> dept_name = <span class="string">'Comp. Sci.'</span>;</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure></p>
-<p>  Find the total number of instructors who teach a course in the Spring 2010 semester<br>  <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">count</span> (<span class="keyword">distinct</span> <span class="keyword">ID</span>)</span><br><span class="line"><span class="keyword">from</span> teaches</span><br><span class="line"><span class="keyword">where</span> semester = <span class="string">'Spring'</span> <span class="keyword">and</span> <span class="keyword">year</span> = <span class="number">2010</span></span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure></p>
-<p>  Find the number of tuples in the course relation<br>  <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">count</span> (*)</span><br><span class="line"><span class="keyword">from</span> course;</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure></p>
+<p>  e.g. find the average salary of instructors in the Computer Science department<br>  <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">avg</span> (salary)</span><br><span class="line"><span class="keyword">from</span> instructor</span><br><span class="line"><span class="keyword">where</span> dept_name = <span class="string">'Comp. Sci.'</span>;</span><br></pre></td></tr></table></figure></p>
+<p>  Find the total number of instructors who teach a course in the Spring 2010 semester<br>  <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">count</span> (<span class="keyword">distinct</span> <span class="keyword">ID</span>)</span><br><span class="line"><span class="keyword">from</span> teaches</span><br><span class="line"><span class="keyword">where</span> semester = <span class="string">'Spring'</span> <span class="keyword">and</span> <span class="keyword">year</span> = <span class="number">2010</span></span><br></pre></td></tr></table></figure></p>
+<p>  Find the number of tuples in the course relation<br>  <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">count</span> (*)</span><br><span class="line"><span class="keyword">from</span> course;</span><br></pre></td></tr></table></figure></p>
 </blockquote>
 <h3 id="Aggregate-Functions-Group-By"><a href="#Aggregate-Functions-Group-By" class="headerlink" title="Aggregate Functions - Group By"></a>Aggregate Functions - Group By</h3><blockquote>
-<p>  Find the average salary of instructors in each department<br>  <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> dept_name, <span class="keyword">avg</span> (salary)</span><br><span class="line"><span class="keyword">from</span> instructor</span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span> dept_name</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure></p>
+<p>  Find the average salary of instructors in each department<br>  <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> dept_name, <span class="keyword">avg</span> (salary)</span><br><span class="line"><span class="keyword">from</span> instructor</span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span> dept_name</span><br></pre></td></tr></table></figure></p>
 <ul>
 <li>Note: departments with no instructor will not appear in result</li>
 </ul>
@@ -752,10 +752,10 @@
 <li>select语句中的属性（且在集合函数外的）必须在group by中出现</li>
 </ul>
 <blockquote>
-<p>  /* erroneous query */<br>  <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> dept_name, <span class="keyword">ID</span>, <span class="keyword">avg</span> (salary)</span><br><span class="line"><span class="keyword">from</span> instructor</span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span> dept_name;</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure></p>
+<p>  /* erroneous query */<br>  <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> dept_name, <span class="keyword">ID</span>, <span class="keyword">avg</span> (salary)</span><br><span class="line"><span class="keyword">from</span> instructor</span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span> dept_name;</span><br></pre></td></tr></table></figure></p>
 </blockquote>
 <h3 id="Aggregate-Functions-Having-Clause"><a href="#Aggregate-Functions-Having-Clause" class="headerlink" title="Aggregate Functions - Having Clause"></a>Aggregate Functions - Having Clause</h3><blockquote>
-<p>  <strong>Find the names and average salaries of all departments whose average salary is greater than 42000</strong><br>  <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> dept_name, <span class="keyword">avg</span> (salary)</span><br><span class="line"><span class="keyword">from</span> instructor</span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span> dept_name</span><br><span class="line"><span class="keyword">having</span> <span class="keyword">avg</span> (salary) &gt; <span class="number">42000</span>;</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure></p>
+<p>  <strong>Find the names and average salaries of all departments whose average salary is greater than 42000</strong><br>  <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> dept_name, <span class="keyword">avg</span> (salary)</span><br><span class="line"><span class="keyword">from</span> instructor</span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span> dept_name</span><br><span class="line"><span class="keyword">having</span> <span class="keyword">avg</span> (salary) &gt; <span class="number">42000</span>;</span><br></pre></td></tr></table></figure></p>
 </blockquote>
 <ul>
 <li>注意：having语句中的谓词是在组形成之后再进行的；相对地，where语句则是在之前进行</li>
@@ -773,7 +773,7 @@
 <li>select</li>
 </ul>
 <h3 id="Null-Values-and-Aggregates"><a href="#Null-Values-and-Aggregates" class="headerlink" title="Null Values and Aggregates"></a>Null Values and Aggregates</h3><blockquote>
-<p>  <strong>Total all salaries</strong><br>  <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">sum</span> (salary)</span><br><span class="line"><span class="keyword">from</span> instructor</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure></p>
+<p>  <strong>Total all salaries</strong><br>  <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">sum</span> (salary)</span><br><span class="line"><span class="keyword">from</span> instructor</span><br></pre></td></tr></table></figure></p>
 <ul>
 <li>上述语句忽略了空值</li>
 <li>如果没有非空值，结果为空值</li>
@@ -825,7 +825,7 @@
          </li>
 
          <li class="post-copyright-date">
-             <strong>最后更新：</strong>2018年3月27日 - 17时03分
+             <strong>最后更新：</strong>2018年3月27日 - 21时03分
          </li>
 
 
