@@ -81,15 +81,23 @@
 
 
 
+<meta name="description" content="四、SQL（二）2018年3月13日11:11 写在前面本笔记仅仅是本人在上课时的一些随手记录，并不完整也不完全正确。如有错误，请在评论中或直接联系我指正，谢谢！">
 <meta name="keywords" content="Database_System_Concept">
 <meta property="og:type" content="article">
 <meta property="og:title" content="数据库概念 SQL（二） 第四课笔记">
 <meta property="og:url" content="https://blog.kimisecond.com/2018/03/DBS-Concept-Lecture-Four/index.html">
 <meta property="og:site_name" content="Kimi&#39;s Blog">
+<meta property="og:description" content="四、SQL（二）2018年3月13日11:11 写在前面本笔记仅仅是本人在上课时的一些随手记录，并不完整也不完全正确。如有错误，请在评论中或直接联系我指正，谢谢！">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-03-27T15:01:23.461Z">
+<meta property="og:image" content="https://s1.ax1x.com/2018/03/29/9v9sk6.png">
+<meta property="og:image" content="https://s1.ax1x.com/2018/03/29/9v9DTx.png">
+<meta property="og:image" content="https://s1.ax1x.com/2018/03/29/9v9ytK.png">
+<meta property="og:image" content="https://s1.ax1x.com/2018/03/29/9v9B01.png">
+<meta property="og:updated_time" content="2018-03-30T01:02:49.312Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据库概念 SQL（二） 第四课笔记">
+<meta name="twitter:description" content="四、SQL（二）2018年3月13日11:11 写在前面本笔记仅仅是本人在上课时的一些随手记录，并不完整也不完全正确。如有错误，请在评论中或直接联系我指正，谢谢！">
+<meta name="twitter:image" content="https://s1.ax1x.com/2018/03/29/9v9sk6.png">
 
 
 
@@ -335,8 +343,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-27T23:00:58+08:00">
-                2018-03-27
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-28T18:39:11+08:00">
+                2018-03-28
               </time>
             
 
@@ -406,7 +414,190 @@
       
 
       
-        
+        <p>四、SQL（二）<br>2018年3月13日<br>11:11</p>
+<h2 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h2><p>本笔记仅仅是本人在上课时的一些随手记录，并不完整也不完全正确。<br>如有错误，请在评论中或直接联系我指正，谢谢！<br><a id="more"></a><br><strong>原始文件下载：<a href="https://1drv.ms/u/s!AkFCnbJhobZ2jTm88iXKYnRGaBF6" target="_blank" rel="noopener">(mht)</a><a href="https://1drv.ms/b/s!AkFCnbJhobZ2jTuJ0QY7jpFnRhFg" target="_blank" rel="noopener">(pdf)</a></strong></p>
+<h2 id="Main-contents-of-SQL"><a href="#Main-contents-of-SQL" class="headerlink" title="Main contents of SQL"></a>Main contents of SQL</h2><ul>
+<li>Data definition</li>
+<li>Basic query structure</li>
+<li>Set operations</li>
+<li>Aggregate fuctions</li>
+<li>Null values</li>
+<li><strong>Nested subqueries</strong></li>
+<li>Complex queries</li>
+<li>Views</li>
+<li>Modification of the database</li>
+</ul>
+<h3 id="Nested-Subqueries"><a href="#Nested-Subqueries" class="headerlink" title="Nested Subqueries"></a>Nested Subqueries</h3><ul>
+<li>SQL提供了子查询的嵌套机制</li>
+<li>子查询 (subquery)是一个 <strong>select-from where</strong><br>表达式，它嵌套在另一个查询语句中</li>
+<li>子查询的通常使用场合是<strong>对集合成员测试</strong>，<strong>集合比较</strong>和<strong>得出集合基数</strong><h4 id="Example-Query"><a href="#Example-Query" class="headerlink" title="Example Query"></a><em>Example Query</em></h4><blockquote>
+<p>  <strong>Find courses offered in Fall 2009 and in Spring 2010</strong></p>
+  <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">distinct</span> course_id</span><br><span class="line"><span class="keyword">from</span> <span class="keyword">section</span></span><br><span class="line"><span class="keyword">where</span> semester = <span class="string">'Fall'</span> <span class="keyword">and</span> <span class="keyword">year</span> = <span class="number">2009</span> <span class="keyword">and</span> course_id <span class="keyword">in</span></span><br><span class="line">        (<span class="keyword">select</span> course_id</span><br><span class="line">        <span class="keyword">from</span> <span class="keyword">section</span></span><br><span class="line">        <span class="keyword">where</span> semester = <span class="string">'Spring'</span> <span class="keyword">and</span> <span class="keyword">year</span> = <span class="number">2010</span>);</span><br></pre></td></tr></table></figure>
+</blockquote>
+</li>
+</ul>
+<blockquote>
+<p>  <strong>Find courses offered in Fall 2009 but not in Spring 2010</strong><br>  <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">distinct</span> course_id</span><br><span class="line"><span class="keyword">from</span> <span class="keyword">section</span></span><br><span class="line"><span class="keyword">where</span> semester = <span class="string">'Fall'</span> <span class="keyword">and</span> <span class="keyword">year</span> = <span class="number">2009</span> <span class="keyword">and</span> course_id <span class="keyword">not</span></span><br><span class="line"><span class="keyword">in</span></span><br><span class="line">        (<span class="keyword">select</span> course_id</span><br><span class="line">        <span class="keyword">from</span> <span class="keyword">section</span></span><br><span class="line">        <span class="keyword">where</span> semester = <span class="string">'Spring'</span> <span class="keyword">and</span> <span class="keyword">year</span> = <span class="number">2010</span>);</span><br></pre></td></tr></table></figure></p>
+<p>  <strong>Find the total number of (distinct) students who have taken course sections taught by the instructor with ID 10101</strong><br>  <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">count</span> (<span class="keyword">distinct</span> <span class="keyword">ID</span>)</span><br><span class="line"><span class="keyword">from</span> takes</span><br><span class="line"><span class="keyword">where</span> (course_id, sec_id, semester, <span class="keyword">year</span>) <span class="keyword">in</span></span><br><span class="line">(<span class="keyword">select</span> course_id, sec_id, semester, <span class="keyword">year</span></span><br><span class="line"><span class="keyword">from</span> teaches</span><br><span class="line"><span class="keyword">where</span> teaches.ID = <span class="number">10101</span>);</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<ul>
+<li><strong>注意</strong>：上述查询语句可以大幅简化。上述式子仅仅是为了表现SQL的特性而已。<h4 id="Set-Comparison"><a href="#Set-Comparison" class="headerlink" title="Set Comparison"></a><em>Set Comparison</em></h4><blockquote>
+<p>  <strong>Find names of instructors with salary greater than that of some (at least one) instrutor in the Biology department</strong></p>
+  <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">distinct</span> T.name</span><br><span class="line"><span class="keyword">from</span> instructor <span class="keyword">as</span> T, instructor <span class="keyword">as</span> S</span><br><span class="line"><span class="keyword">where</span> T.salary &gt; S.salary <span class="keyword">and</span> S.dept_name = <span class="string">'Biology'</span>;</span><br></pre></td></tr></table></figure>
+</blockquote>
+</li>
+</ul>
+<blockquote>
+<p>  <strong>Same query using > some clause</strong><br>  <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">name</span></span><br><span class="line"><span class="keyword">from</span> instructor</span><br><span class="line"><span class="keyword">where</span> salary &gt; <span class="keyword">some</span></span><br><span class="line">        (<span class="keyword">select</span> salary</span><br><span class="line">        <span class="keyword">from</span> instructor</span><br><span class="line">        <span class="keyword">where</span> dept_name = <span class="string">'Biology'</span>);</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h4 id="Definition-of-Some-Clause"><a href="#Definition-of-Some-Clause" class="headerlink" title="Definition of Some Clause"></a><em>Definition of Some Clause</em></h4><ul>
+<li><some, <="some,">=some, &lt;&gt;some comparisons<br><img src="https://s1.ax1x.com/2018/03/29/9v9sk6.png" alt="9v9sk6.png"><h4 id="Definition-of-all-Clause"><a href="#Definition-of-all-Clause" class="headerlink" title="Definition of all Clause"></a><em>Definition of all Clause</em></h4></some,></li>
+<li><all, <="all,">=all, &lt;&gt;all comparisons<br><img src="https://s1.ax1x.com/2018/03/29/9v9DTx.png" alt="9v9DTx.png"></all,></li>
+</ul>
+<p><img src="https://s1.ax1x.com/2018/03/29/9v9ytK.png" alt="9v9ytK.png"></p>
+<h4 id="Test-for-Empty-Relations"><a href="#Test-for-Empty-Relations" class="headerlink" title="Test for Empty Relations"></a><em>Test for Empty Relations</em></h4><ul>
+<li>The exists construct returns the value true if the argument subquery is nonempty</li>
+<li>exists r ⇔ r ≠ Ø</li>
+<li><p>not exists r ⇔ r = Ø</p>
+<blockquote>
+<p>  Application:</p>
+<ul>
+<li>Note that X – Y = Ø ⇔ X ⊆ Y</li>
+<li>not exists (X except Y) ⇔ X ⊆ Y<h4 id="Correlation-Variables"><a href="#Correlation-Variables" class="headerlink" title="Correlation Variables"></a><em>Correlation Variables</em></h4><strong>E.g. Yet another way of specifying the query “Find all courses taught in both the Fall 2009 semester and in the Spring 2010 semester”</strong><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> course_id,</span><br><span class="line"><span class="keyword">from</span> <span class="keyword">section</span> <span class="keyword">as</span> S,</span><br><span class="line"><span class="keyword">where</span> semester = <span class="string">'Fall'</span> <span class="keyword">and</span> <span class="keyword">year</span> = <span class="number">2009</span> <span class="keyword">and</span></span><br><span class="line">        <span class="keyword">exists</span> (<span class="keyword">select</span> *,</span><br><span class="line">                <span class="keyword">from</span> <span class="keyword">section</span> <span class="keyword">as</span> T,</span><br><span class="line">                <span class="keyword">where</span> semester = <span class="string">'Spring'</span> <span class="keyword">and</span> <span class="keyword">year</span> = <span class="number">2010</span></span><br><span class="line">                <span class="keyword">and</span> S.course_id = T.course_id);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</blockquote>
+</li>
+<li><p><strong>Correlated subquery</strong></p>
+</li>
+<li><strong>Correlation name</strong> or <strong>correlation variable</strong><h4 id="Not-Exists"><a href="#Not-Exists" class="headerlink" title="Not Exists"></a><em>Not Exists</em></h4><blockquote>
+<p>  <strong>e.g. Find all students who have taken all courses offered in the Biology department</strong></p>
+  <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">distinct</span> S.ID, S.name,</span><br><span class="line"><span class="keyword">from</span> student <span class="keyword">as</span> S,</span><br><span class="line"><span class="keyword">where</span> <span class="keyword">not</span> <span class="keyword">exists</span> ((<span class="keyword">select</span> course_id,</span><br><span class="line">                        <span class="keyword">from</span> course,</span><br><span class="line">                        <span class="keyword">where</span> dept_name = <span class="string">'Biology'</span>)</span><br><span class="line">                <span class="keyword">except</span></span><br><span class="line">                        (<span class="keyword">select</span> T.course_id,</span><br><span class="line">                        <span class="keyword">from</span> takes <span class="keyword">as</span> T,</span><br><span class="line">                        <span class="keyword">where</span> S.ID = T.ID));</span><br></pre></td></tr></table></figure>
+</blockquote>
+</li>
+</ul>
+<p><img src="https://s1.ax1x.com/2018/03/29/9v9B01.png" alt="9v9B01.png"></p>
+<h4 id="Test-for-Absence-of-Duplicate-Tuples"><a href="#Test-for-Absence-of-Duplicate-Tuples" class="headerlink" title="Test for Absence of Duplicate Tuples"></a><em>Test for Absence of Duplicate Tuples</em></h4><ul>
+<li>The unique construct tests whether a subquery has any duplicate tuples in<br>its result.<ul>
+<li>(Evaluates to “true” on an empty set)<blockquote>
+<p>  <strong>e.g. Find all courses that were offered at most once in 2009</strong></p>
+  <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> T.course_id,</span><br><span class="line"><span class="keyword">from</span> course <span class="keyword">as</span> T,</span><br><span class="line"><span class="keyword">where</span> <span class="keyword">unique</span> (<span class="keyword">select</span> R.course_id,</span><br><span class="line">                      <span class="keyword">from</span> <span class="keyword">section</span> <span class="keyword">as</span> R,</span><br><span class="line">                      <span class="keyword">where</span> T.course_id = R.course_id</span><br><span class="line">                            <span class="keyword">and</span> R.year = <span class="number">2009</span>);</span><br></pre></td></tr></table></figure>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="Subqueries-in-the-From-Clause"><a href="#Subqueries-in-the-From-Clause" class="headerlink" title="Subqueries in the From Clause"></a><em>Subqueries in the From Clause</em></h4><ul>
+<li>SQL允许在From语句中使用子查询表达式<blockquote>
+<p>  <strong>e.g. Find the average instructors’ salaries of those departments where the average salary is greater than $42,000</strong></p>
+  <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> dept_name, avg_salary</span><br><span class="line"><span class="keyword">from</span> (<span class="keyword">select</span> dept_name, <span class="keyword">avg</span> (salary) <span class="keyword">as</span> avg_salary,</span><br><span class="line"><span class="keyword">from</span> instructor,</span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span> dept_name)</span><br><span class="line"><span class="keyword">where</span> avg_salary \&gt; <span class="number">42000</span>;</span><br></pre></td></tr></table></figure>
+</blockquote>
+</li>
+</ul>
+<blockquote>
+<ul>
+<li>注意：这里我们不需要使用having语句<ul>
+<li>上述查询的另一种表述方式：<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> dept_name, avg_salary,</span><br><span class="line"><span class="keyword">from</span> (<span class="keyword">select</span> dept_name, <span class="keyword">avg</span> (salary),</span><br><span class="line">          <span class="keyword">from</span> instructor,</span><br><span class="line">          <span class="keyword">group</span> <span class="keyword">by</span> dept_name)</span><br><span class="line">          <span class="keyword">as</span> dept_avg(dept_name, avg_salary)</span><br><span class="line"><span class="keyword">where</span> avg_salary &gt; <span class="number">42000</span>;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<ul>
+<li>还有一种：<blockquote>
+  <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">name</span>, salary, avg_salary</span><br><span class="line"><span class="keyword">from</span> instructor I1,</span><br><span class="line">         lateral (<span class="keyword">select</span> <span class="keyword">avg</span>(salary) <span class="keyword">as</span> <span class="keyword">avg</span> salary,</span><br><span class="line">                  <span class="keyword">from</span> instructor I2,</span><br><span class="line">                  <span class="keyword">where</span> I2.dept_name = I1.dept_name);</span><br><span class="line">```    </span><br><span class="line">-   Lateral语句允许from语句后面部分（在**lateral**关键词后）获取前面部分的关联变量</span><br><span class="line">    -   注意：Lateral语句是SQL标准的一部分，但是在许多DBS中是不被支持的；一些DB，例如SQL Server，提供了一些替代语法</span><br><span class="line"> </span><br><span class="line">#### *With Clause*</span><br><span class="line">-   with语句提供了定义临时view的方法 这个定义只有在有with语句的查询语句才会生效</span><br><span class="line">&gt;   **e.g. Find all departments with the maximum budget**</span><br><span class="line">&gt;   ```SQL</span><br><span class="line">with max_budget(value) as</span><br><span class="line">        (<span class="keyword">select</span> <span class="keyword">max</span>(budget)</span><br><span class="line">        <span class="keyword">from</span> department)</span><br><span class="line"><span class="keyword">select</span> budget</span><br><span class="line"><span class="keyword">from</span> department, max_budget</span><br><span class="line"><span class="keyword">where</span> department.budget = max_budget.value;</span><br></pre></td></tr></table></figure>
+</blockquote>
+</li>
+</ul>
+<h3 id="Complex-Queries"><a href="#Complex-Queries" class="headerlink" title="Complex Queries"></a>Complex Queries</h3><h4 id="Complex-Queries-using-With-Clause"><a href="#Complex-Queries-using-With-Clause" class="headerlink" title="Complex Queries using With Clause"></a><em>Complex Queries using With Clause</em></h4><ul>
+<li>with语句在写复杂查询语句时十分有用</li>
+<li>with语句被大多数DBS所支持，当然会有一些语法上的区别<blockquote>
+<p>  <strong>e.g. Find all departments where the total salary is greater than the average of the total salary at all departments</strong></p>
+  <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">with dept_total(dept_name, value)as</span><br><span class="line">        (<span class="keyword">select</span> dept_name, <span class="keyword">sum</span>(salary)</span><br><span class="line">        <span class="keyword">from</span> instructor</span><br><span class="line">        <span class="keyword">group</span> <span class="keyword">by</span> dept_name),</span><br><span class="line">        dept_total_avg(<span class="keyword">value</span>) <span class="keyword">as</span></span><br><span class="line">        (<span class="keyword">select</span> <span class="keyword">avg</span>(<span class="keyword">value</span>)</span><br><span class="line">        <span class="keyword">from</span> dept_total)</span><br><span class="line">&gt;    </span><br><span class="line"><span class="keyword">select</span> dept_name,</span><br><span class="line"><span class="keyword">from</span> dept_total, dept_total_avg</span><br><span class="line"><span class="keyword">where</span> dept_total.value &gt;= dept_total_avg.value</span><br></pre></td></tr></table></figure>
+</blockquote>
+</li>
+</ul>
+<h4 id="Scalar-Subquery"><a href="#Scalar-Subquery" class="headerlink" title="Scalar Subquery"></a><em>Scalar Subquery</em></h4><ul>
+<li>标量子查询是对单值的查询<blockquote>
+<p>  <strong>e.g.</strong></p>
+  <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> dept_name,</span><br><span class="line">            (<span class="keyword">select</span> <span class="keyword">count</span>(\*),</span><br><span class="line">            <span class="keyword">from</span> instructor,</span><br><span class="line">            <span class="keyword">where</span> department.dept_name = instructor.dept_name)</span><br><span class="line">            <span class="keyword">as</span> num_instructors</span><br><span class="line"><span class="keyword">from</span> department;</span><br><span class="line">&gt;   </span><br><span class="line"><span class="keyword">select</span> <span class="keyword">name</span>,</span><br><span class="line"><span class="keyword">from</span> instructor,</span><br><span class="line"><span class="keyword">where</span> salary*<span class="number">10</span> &gt;</span><br><span class="line">            (<span class="keyword">select</span> budget <span class="keyword">from</span> department</span><br><span class="line">            <span class="keyword">where</span> department.dept_name = instructor.dept_name)</span><br></pre></td></tr></table></figure>
+</blockquote>
+</li>
+</ul>
+<h3 id="Modification-of-the-Database"><a href="#Modification-of-the-Database" class="headerlink" title="Modification of the Database"></a>Modification of the Database</h3><h4 id="Deletion"><a href="#Deletion" class="headerlink" title="Deletion"></a><em>Deletion</em></h4><blockquote>
+<ul>
+<li><p><strong>Delete all instructors</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">delete</span> <span class="keyword">from</span> instructor</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>Delete all instructors from the Finance department</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">delete</span> <span class="keyword">from</span> instructor,</span><br><span class="line"><span class="keyword">where</span> dept_name= <span class="string">'Finance'</span>;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>Delete all tuples in the instructor relation for those instructors associated with a department located in the Watson building.</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">delete</span> <span class="keyword">from</span> instructor,</span><br><span class="line"><span class="keyword">where</span> dept_name <span class="keyword">in</span> (<span class="keyword">select</span> dept_name</span><br><span class="line">                              <span class="keyword">from</span> department</span><br><span class="line">                              <span class="keyword">where</span> building = <span class="string">'Watson'</span>);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>Delete all instructors whose salary is less than the average salary of instructors</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">delete</span> <span class="keyword">from</span> instructor</span><br><span class="line"><span class="keyword">where</span> salary&lt; (<span class="keyword">select</span> <span class="keyword">avg</span> (salary) <span class="keyword">from</span> instructor);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</blockquote>
+<ul>
+<li>问题：如果我们从deposit中删除元组，那么平均工资的值是会变化的</li>
+</ul>
+<p><strong>在SQL中的解决方案：</strong></p>
+<ol>
+<li>首先算出平均工资，并找到所有要删除的元组</li>
+<li>之后删除之前找到的元组（并不会重新计算或重新测试元组）</li>
+</ol>
+<h4 id="Insertion"><a href="#Insertion" class="headerlink" title="Insertion"></a><em>Insertion</em></h4><blockquote>
+<ul>
+<li><p><strong>Add a new tuple to course</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> course</span><br><span class="line">            <span class="keyword">values</span> (<span class="string">'CS-437'</span>, <span class="string">'Database Systems'</span>, <span class="string">'Comp. Sci.'</span>, <span class="number">4</span>);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>Or equivalently</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> course (course_id, title, dept_name, credits)</span><br><span class="line">            <span class="keyword">values</span> (<span class="string">'CS-437'</span>, <span class="string">'Database Systems'</span>, <span class="string">'Comp. Sci.'</span>, <span class="number">4</span>)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>Add a new tuple to student with tot_creds set to null</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> student</span><br><span class="line">            <span class="keyword">values</span> (<span class="string">'3003'</span>, <span class="string">'Green'</span>, <span class="string">'Finance'</span>, <span class="literal">null</span>);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>Add all instructors to the student relation with tot_creds set to 0</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> student</span><br><span class="line">            <span class="keyword">select</span> <span class="keyword">ID</span>, <span class="keyword">name</span>, dept_name, <span class="number">0</span></span><br><span class="line">            <span class="keyword">from</span> instructor</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</blockquote>
+<ul>
+<li>Select from where 语句会在它导致的任何结果插入这个关系之前计算结果<br>不然的话例如<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> table1 <span class="keyword">select</span> * <span class="keyword">from</span> table1</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>如果table1没有定义任何主码，那就会出现问题</p>
+<h4 id="Updates"><a href="#Updates" class="headerlink" title="Updates"></a><em>Updates</em></h4><ul>
+<li><p><strong>Increase salaries of instructors whose salary is over \$100,000 by 3%, and all others receive a 5% raise</strong></p>
+<ul>
+<li>Write two <strong>update</strong> statements<blockquote>
+  <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">update</span> instructor</span><br><span class="line">            <span class="keyword">set</span> salary = salary * <span class="number">1.03</span></span><br><span class="line">            <span class="keyword">where</span> salary &gt; <span class="number">100000</span>;</span><br><span class="line">&gt;   </span><br><span class="line"><span class="keyword">update</span> instructor</span><br><span class="line">            <span class="keyword">set</span> salary = salary * <span class="number">1.05</span></span><br><span class="line">            <span class="keyword">where</span> salary &lt;= <span class="number">100000</span>;</span><br></pre></td></tr></table></figure>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><p><strong>顺序十分重要</strong></p>
+</li>
+<li>上述语句可以使用<strong>case</strong>语句更好实现<h4 id="Case-Statement-for-Conditional-Updates"><a href="#Case-Statement-for-Conditional-Updates" class="headerlink" title="Case Statement for Conditional Updates"></a><em>Case Statement for Conditional Updates</em></h4></li>
+<li>之前语句的<strong>case</strong>版本<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">update</span> instructor</span><br><span class="line">        <span class="keyword">set</span> salary = <span class="keyword">case</span></span><br><span class="line">            <span class="keyword">when</span> salary &lt;= <span class="number">100000</span> <span class="keyword">then</span> salary * <span class="number">1.05</span></span><br><span class="line">            <span class="keyword">else</span> salary * <span class="number">1.03</span></span><br><span class="line">        <span class="keyword">end</span></span><br><span class="line"><span class="string">``</span><span class="string">`    </span></span><br><span class="line"><span class="string">#### *Updates with Scalar Subqueries*</span></span><br><span class="line"><span class="string">&gt;   -   **Recompute and update tot_creds value for all students**</span></span><br><span class="line"><span class="string">&gt;   `</span><span class="string">``</span><span class="keyword">SQL</span></span><br><span class="line"><span class="keyword">update</span> student S</span><br><span class="line">            <span class="keyword">set</span> tot_cred = (<span class="keyword">select</span> <span class="keyword">sum</span>(credits)</span><br><span class="line">                            <span class="keyword">from</span> takes <span class="keyword">natural</span> <span class="keyword">join</span> course</span><br><span class="line">                            <span class="keyword">where</span> S.ID = takes.ID <span class="keyword">and</span></span><br><span class="line">                                takes.grade \&lt;\&gt; <span class="string">'F'</span> <span class="keyword">and</span></span><br><span class="line">                                takes.grade <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">null</span>);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<blockquote>
+<ul>
+<li><strong>Sets tot_creds to null for students who have not taken any course</strong><ul>
+<li>除了sum(credits)之外，可以使用：<pre><code class="SQL">case
+      when sum(credits) is not null then sum(credits)
+      else 0
+<span class="keyword">end</span>
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+
       
     </div>
     
@@ -440,11 +631,11 @@
          </li>
 
          <li class="post-copyright-date">
-             <strong>发布时间：</strong>2018年3月27日 - 23时03分
+             <strong>发布时间：</strong>2018年3月28日 - 18时03分
          </li>
 
          <li class="post-copyright-date">
-             <strong>最后更新：</strong>2018年3月27日 - 23时03分
+             <strong>最后更新：</strong>2018年3月30日 - 09时03分
          </li>
 
 
@@ -543,8 +734,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -631,6 +831,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#写在前面"><span class="nav-number">1.</span> <span class="nav-text"><a href="#&#x5199;&#x5728;&#x524D;&#x9762;" class="headerlink" title="&#x5199;&#x5728;&#x524D;&#x9762;"></a>&#x5199;&#x5728;&#x524D;&#x9762;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Main-contents-of-SQL"><span class="nav-number">2.</span> <span class="nav-text"><a href="#Main-contents-of-SQL" class="headerlink" title="Main contents of SQL"></a>Main contents of SQL</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Nested-Subqueries"><span class="nav-number">2.1.</span> <span class="nav-text"><a href="#Nested-Subqueries" class="headerlink" title="Nested Subqueries"></a>Nested Subqueries</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Example-Query"><span class="nav-number">2.1.1.</span> <span class="nav-text"><a href="#Example-Query" class="headerlink" title="Example Query"></a><em>Example Query</em></span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Set-Comparison"><span class="nav-number">2.1.2.</span> <span class="nav-text"><a href="#Set-Comparison" class="headerlink" title="Set Comparison"></a><em>Set Comparison</em></span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Definition-of-Some-Clause"><span class="nav-number">2.1.3.</span> <span class="nav-text"><a href="#Definition-of-Some-Clause" class="headerlink" title="Definition of Some Clause"></a><em>Definition of Some Clause</em></span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Definition-of-all-Clause"><span class="nav-number">2.1.4.</span> <span class="nav-text"><a href="#Definition-of-all-Clause" class="headerlink" title="Definition of all Clause"></a><em>Definition of all Clause</em></span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Test-for-Empty-Relations"><span class="nav-number">2.1.5.</span> <span class="nav-text"><a href="#Test-for-Empty-Relations" class="headerlink" title="Test for Empty Relations"></a><em>Test for Empty Relations</em></span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Correlation-Variables"><span class="nav-number">2.1.6.</span> <span class="nav-text"><a href="#Correlation-Variables" class="headerlink" title="Correlation Variables"></a><em>Correlation Variables</em></span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Not-Exists"><span class="nav-number">2.1.7.</span> <span class="nav-text"><a href="#Not-Exists" class="headerlink" title="Not Exists"></a><em>Not Exists</em></span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Test-for-Absence-of-Duplicate-Tuples"><span class="nav-number">2.1.8.</span> <span class="nav-text"><a href="#Test-for-Absence-of-Duplicate-Tuples" class="headerlink" title="Test for Absence of Duplicate Tuples"></a><em>Test for Absence of Duplicate Tuples</em></span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Subqueries-in-the-From-Clause"><span class="nav-number">2.1.9.</span> <span class="nav-text"><a href="#Subqueries-in-the-From-Clause" class="headerlink" title="Subqueries in the From Clause"></a><em>Subqueries in the From Clause</em></span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Complex-Queries"><span class="nav-number">2.2.</span> <span class="nav-text"><a href="#Complex-Queries" class="headerlink" title="Complex Queries"></a>Complex Queries</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Complex-Queries-using-With-Clause"><span class="nav-number">2.2.1.</span> <span class="nav-text"><a href="#Complex-Queries-using-With-Clause" class="headerlink" title="Complex Queries using With Clause"></a><em>Complex Queries using With Clause</em></span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Scalar-Subquery"><span class="nav-number">2.2.2.</span> <span class="nav-text"><a href="#Scalar-Subquery" class="headerlink" title="Scalar Subquery"></a><em>Scalar Subquery</em></span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Modification-of-the-Database"><span class="nav-number">2.3.</span> <span class="nav-text"><a href="#Modification-of-the-Database" class="headerlink" title="Modification of the Database"></a>Modification of the Database</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Deletion"><span class="nav-number">2.3.1.</span> <span class="nav-text"><a href="#Deletion" class="headerlink" title="Deletion"></a><em>Deletion</em></span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Insertion"><span class="nav-number">2.3.2.</span> <span class="nav-text"><a href="#Insertion" class="headerlink" title="Insertion"></a><em>Insertion</em></span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Updates"><span class="nav-number">2.3.3.</span> <span class="nav-text"><a href="#Updates" class="headerlink" title="Updates"></a><em>Updates</em></span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Case-Statement-for-Conditional-Updates"><span class="nav-number">2.3.4.</span> <span class="nav-text"><a href="#Case-Statement-for-Conditional-Updates" class="headerlink" title="Case Statement for Conditional Updates"></a><em>Case Statement for Conditional Updates</em></span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
